@@ -1,0 +1,27 @@
+{
+  "semi": true,
+  "trailingComma": "es5",
+  "singleQuote": true,
+  "endOfLine": "lf",
+  "importOrder": [
+    "(react$|next$|next(?!-)[^/]*/)",
+    "<THIRD_PARTY_MODULES>",
+    "(.|^@)/app",
+    "(.|^@)/redux/store(?!\\/interface)",
+    "(.|^@)/redux/hooks(?!\\/interface)",
+    "(.|^@)/redux/slices(?!\\/interface)",
+    "(.|^@)/redux/apiSlices(?!\\/interface)",
+    "(.|^@)/hooks(?!\\/interface)",
+    "(.|^@)/(components)(?!\\/interface)|\\.\\/[^/]+(?!\\/)",
+    "(.|^@)/(helpers|constants)(?!\\/interface)",
+    "(.|^@)/(forms)(?!\\/interface)",
+    "(.|^@)/adapters(?!\\/interface)",
+    "(.|^@)/dti(?!\\/interface)",
+    "(.|^@)/(styles|.*\\/styles)",
+    "(.|^@)/(interface|.*\\/interface)"
+  ],
+  "importOrderSeparation": true,
+  "importOrderCaseInsensitive": true,
+  "importOrderSortSpecifiers": true,
+  "plugins": ["@trivago/prettier-plugin-sort-imports"]
+}
