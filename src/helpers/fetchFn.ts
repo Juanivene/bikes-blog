@@ -26,7 +26,7 @@ interface FetchFnProps<T> {
 const envBaseURL = process.env.NEXT_PUBLIC_API_BASE_URL;
 
 /**
- * **Fetch function** - Use this wrapper to fetch data from **server components**.
+ * **Fetch function** - Use this wrapper to fetch data from server components.
  * @param {string} [props.baseUrl] *Optional*. Base URL to concat with the URL. If not sent, it will use `NEXT_PUBLIC_API_BASE_URL` from Env variables. If not defined, it will throw an error.
  * @param {string} props.url URL to be send the request, concatenated with the baseUrl.
  * @param {RequestInit} [props.options] *Optional*. Options to be passed to the fetch function. See https://nextjs.org/docs/app/api-reference/functions/fetch#fetchurl-options

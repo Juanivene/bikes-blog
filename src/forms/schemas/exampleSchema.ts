@@ -1,9 +1,9 @@
 import { z } from 'zod';
 
 import {
-  dateRules,
-  fromDateAndToDate,
-  fromDateBeforeToDate,
+  // dateRules,
+  // fromDateAndToDate,
+  // fromDateBeforeToDate,
   notEmptyForm,
   resolutionRules,
   typeRules,
@@ -15,24 +15,25 @@ import {
 // Common rules can be found in src\forms\rules\rules.ts
 // It's encouraged to create new rules there and use them here, for reusability
 
+// DATE IS IN PROGRESS
+
 export const exampleSchema = z
   .object({
-    resolution: resolutionRules(),
-    fromDate: dateRules('desde'),
-    toDate: dateRules('hasta'),
-    text: z.string().default(''),
-    type: typeRules(),
+    resolution: resolutionRules(true),
+    // fromDate: dateRules('desde'),
+    // toDate: dateRules('hasta'),
+    type: typeRules(true),
   })
   .refine(notEmptyForm, notEmptyForm.msg)
-  .refine(fromDateBeforeToDate, fromDateBeforeToDate.msg)
-  .refine(
-    (data) => fromDateAndToDate(data, 'fromDate'),
-    () => fromDateAndToDate.msg('fromDate')
-  )
-  .refine(
-    (data) => fromDateAndToDate(data, 'toDate'),
-    () => fromDateAndToDate.msg('toDate')
-  )
+  // .refine(fromDateBeforeToDate, fromDateBeforeToDate.msg)
+  // .refine(
+  //   (data) => fromDateAndToDate(data, 'fromDate'),
+  //   () => fromDateAndToDate.msg('fromDate')
+  // )
+  // .refine(
+  //   (data) => fromDateAndToDate(data, 'toDate'),
+  //   () => fromDateAndToDate.msg('toDate')
+  // )
   .refine(
     (data) => {
       // If type is selected, then at least one more field should be filled

@@ -1,3 +1,5 @@
+import * as React from 'react';
+
 import InputController from './InputController';
 import { InputProps } from '@/components/ui/interface';
 
@@ -6,7 +8,15 @@ import { cn } from '@/helpers/cn';
 import { FormSchemas } from '@/forms';
 
 const TextInput = <T extends FormSchemas>(props: InputProps<T>) => {
-  const { control, name, label, className = '', dti, ...rest } = props;
+  const {
+    control,
+    name,
+    label,
+    className = '',
+    type = 'text',
+    dti,
+    ...rest
+  } = props;
 
   return (
     <fieldset className={cn('form-control ', className)}>
@@ -19,12 +29,15 @@ const TextInput = <T extends FormSchemas>(props: InputProps<T>) => {
         defaultValue=""
         render={({ field, fieldState: { error } }) => (
           <input
-            {...field}
+            value={field.value as string}
+            onChange={field.onChange}
+            onBlur={field.onBlur}
+            ref={field.ref}
             className={`input input-bordered w-full ${error && 'border-red'}`}
             id={name as string}
-            name={name as string}
-            type="text"
+            type={type}
             data-testid={dti}
+            placeholder={rest?.placeholder ?? 'Ingrese un valor'}
             {...rest}
           />
         )}

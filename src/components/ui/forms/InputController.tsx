@@ -1,34 +1,15 @@
-import {
-  Controller,
-  ControllerFieldState,
-  ControllerRenderProps,
-  Path,
-  PathValue,
-  UseFormStateReturn,
-} from 'react-hook-form';
+import { Controller, Path, PathValue } from 'react-hook-form';
 
-import { FormHandling } from '@/components/ui/interface';
+import { ControllerProps } from '../interface';
 
 import { FormSchemas } from '@/forms';
-
-interface Props<T extends FormSchemas> extends FormHandling<T> {
-  defaultValue: string | number | boolean | null;
-  render: ({
-    field,
-    fieldState: { error },
-  }: {
-    field: ControllerRenderProps<T, Path<T>>;
-    fieldState: ControllerFieldState;
-    formState: UseFormStateReturn<T>;
-  }) => React.ReactElement;
-}
 
 /**
  * React Hook Form's Controller that simplifies typing issues by
  * encapsulating the Controller component, types, and its props
  */
 
-const InputController = <T extends FormSchemas>(props: Props<T>) => {
+const InputController = <T extends FormSchemas>(props: ControllerProps<T>) => {
   const { name, control, defaultValue, render } = props;
 
   return (

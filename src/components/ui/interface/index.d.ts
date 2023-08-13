@@ -1,4 +1,10 @@
-import { Control } from 'react-hook-form';
+import {
+  Control,
+  ControllerFieldState,
+  ControllerRenderProps,
+  Path,
+  UseFormStateReturn,
+} from 'react-hook-form';
 
 import { FormSchemas } from '@/forms';
 
@@ -13,10 +19,23 @@ export interface FormHandling<T extends FormSchemas> {
   name: keyof T;
 }
 
+export interface ControllerProps<T extends FormSchemas>
+  extends FormHandling<T> {
+  defaultValue: string | number | boolean | null;
+  render: ({
+    field,
+    fieldState: { error },
+  }: {
+    field: ControllerRenderProps<T, Path<T>>;
+    fieldState: ControllerFieldState;
+    formState: UseFormStateReturn<T>;
+  }) => React.ReactElement;
+}
+
 export interface InputProps<T extends FormSchemas>
   extends FormHandling<T>,
     DataTestId,
-    React.InputHTMLAttributes<HTMLInputElement> {
+    Omit<React.InputHTMLAttributes<HTMLInputElement>, 'required'> {
   label: string;
   className?: string;
 }
@@ -24,7 +43,7 @@ export interface InputProps<T extends FormSchemas>
 export interface SelectProps<T extends FormSchemas>
   extends FormHandling<T>,
     DataTestId,
-    React.SelectHTMLAttributes<HTMLSelectElement> {
+    Omit<React.SelectHTMLAttributes<HTMLSelectElement>, 'required'> {
   label: string;
   options: BasicList[];
   className?: string;

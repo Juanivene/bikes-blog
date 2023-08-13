@@ -2,7 +2,7 @@
 
 import useZodForm from '@/hooks/useZodForm';
 
-import DateInput from '../ui/forms/DateInput';
+// import DateInput from '../ui/forms/DateInput2';
 import SelectInput from '../ui/forms/SelectInput';
 import TextInput from '../ui/forms/TextInput';
 
@@ -36,7 +36,6 @@ const FormExample = () => {
         name="resolution"
         label="Nro Acordada"
         placeholder="Ingrese un número"
-        required
         dti={DTI(DTI_LIST.FORM.RESOLUTION)}
       />
       <SelectInput
@@ -44,17 +43,16 @@ const FormExample = () => {
         name="type"
         label="Tipo Acordada"
         options={exampleList}
-        required
         saveId
         dti={DTI(DTI_LIST.FORM.TYPE)}
       />
-      <DateInput
+      {/* DateInput is still in progress... */}
+      {/* <DateInput
         control={control}
         name="fromDate"
         label="Fecha desde"
-        required
         dti={DTI(DTI_LIST.FORM.FROM_DATE)}
-      />
+      /> */}
       <button type="submit" className="btn btn-primary mt-2">
         Enviar
       </button>

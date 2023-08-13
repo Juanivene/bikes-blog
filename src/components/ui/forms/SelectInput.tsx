@@ -5,6 +5,9 @@ import { cn } from '@/helpers/cn';
 
 import { FormSchemas } from '@/forms';
 
+/**
+ * This is a **Select** input, not an **Autocomplete**
+ */
 const SelectInput = <T extends FormSchemas>(props: SelectProps<T>) => {
   const {
     control,
@@ -28,12 +31,14 @@ const SelectInput = <T extends FormSchemas>(props: SelectProps<T>) => {
         defaultValue=""
         render={({ field, fieldState: { error } }) => (
           <select
-            {...field}
+            value={field.value as string}
+            onChange={field.onChange}
+            onBlur={field.onBlur}
+            ref={field.ref}
             className={`input input-bordered w-full ${error && 'border-red'}`}
             id={name as string}
-            name={name as string}
             data-testid={dti}
-            placeholder="Seleccione una opción"
+            placeholder={rest?.placeholder ?? 'Seleccione una opción'}
             disabled={options.length === 0}
             {...rest}
           >
@@ -44,6 +49,7 @@ const SelectInput = <T extends FormSchemas>(props: SelectProps<T>) => {
               <option
                 value={saveId ? option.id : option.description}
                 key={option.id}
+                className="py-2"
               >
                 {option.description}
               </option>
