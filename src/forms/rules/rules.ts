@@ -2,50 +2,65 @@ import dayjs, { Dayjs } from 'dayjs';
 import { z } from 'zod';
 
 // ----------------------------------------------------
+// HELPERS
+// ----------------------------------------------------
+
+const optionalWrapper = (
+  required: boolean,
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  rule: z.ZodType<any, any>
+) => {
+  if (!required) {
+    return z.optional(rule);
+  }
+  return rule;
+};
+
+// ----------------------------------------------------
 // COMMON RULES
 // ----------------------------------------------------
 
-export const resolutionRules = () =>
-  z
-    .string()
-    .max(25, {
-      message: 'El número de acordada debe tener como máximo 25 caracteres',
-    })
-    .refine(
-      // Min length is 3 when it does have content (cannot use .min() because it's initially empty)
-      (data) => {
-        return !data || data.length >= 3;
-      },
-      {
-        message: 'El número de acordada debe tener al menos 3 caracteres',
-      }
-    )
-    .default('');
+export const resolutionRules = (required = false) =>
+  optionalWrapper(
+    required,
+    z
+      .string()
+      .max(25, {
+        message: 'El número de acordada debe tener como máximo 25 caracteres',
+      })
+      .refine(
+        // Min length is 3 when it does have content (cannot use .min() because it's initially empty)
+        (data) => {
+          return !data || data.length >= 3;
+        },
+        {
+          message: 'El número de acordada debe tener al menos 3 caracteres',
+        }
+      )
+      .default('')
+  );
 
-export const dateRules = (name = '') =>
-  z
-    .instanceof(dayjs as unknown as typeof Dayjs)
-    .nullable()
-    .default(null)
-    .refine(
-      // If it has a value, it must be a valid date
-      (data) => {
-        if (!data) return true;
-        return data.isValid();
-      },
-      {
-        message: `La fecha ${name} no es válida`,
-      }
-    );
+export const dateRules = (name = '', required = false) =>
+  optionalWrapper(
+    required,
+    z
+      .instanceof(dayjs as unknown as typeof Dayjs)
+      .nullable()
+      .default(null)
+      .refine(
+        // If it has a value, it must be a valid date
+        (data) => {
+          if (!data) return true;
+          return data.isValid();
+        },
+        {
+          message: `La fecha ${name} no es válida`,
+        }
+      )
+  );
 
-export const typeRules = () =>
-  z
-    .object({
-      description: z.string(),
-      id: z.union([z.string(), z.number()]).nullable(),
-    })
-    .nullable()
-    .default(null);
+export const typeRules = (required = false) =>
+  optionalWrapper(required, z.string().nullable().default(null));
 
 // ----------------------------------------------------
 // COMMON REFINES
