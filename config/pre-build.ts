@@ -1,6 +1,25 @@
 /* eslint-disable no-console */
+import * as fs from 'fs';
 import gradient from 'gradient-string';
 import { exec, ExecException } from 'node:child_process';
+
+const copyEnv = (env: string) => {
+  const envContents = fs.readFileSync(`.env.${env}`, 'utf8');
+  const envProdContents = fs.readFileSync('.env.production', 'utf8');
+
+  // write the contents to .env_temp
+  fs.writeFileSync('.env_temp', envProdContents);
+
+  // write the contents to .env.production
+  fs.writeFileSync('.env.production', envContents);
+};
+
+const restoreEnv = () => {
+  const envProdContents = fs.readFileSync('.env_temp', 'utf8');
+
+  fs.writeFileSync('.env.production', envProdContents);
+  fs.unlinkSync('.env_temp');
+};
 
 const runCommand = (
   command: string,
@@ -56,6 +75,7 @@ const parseArguments = () => {
 
   return parsedArgs;
 };
+
 const runBuildCommand = () => {
   const buildArguments = parseArguments();
   const args = buildArguments.join(' ');
@@ -63,11 +83,16 @@ const runBuildCommand = () => {
     ? buildArguments.find((arg) => arg.includes('--mode'))?.split(' ')[1]
     : 'production';
 
-  const buildCommand = `next build ${args}`;
+  // Copy .env.${env} to .env.production
+  copyEnv(env!);
+
+  const buildCommand = `next build`;
 
   console.log('\x1b[33m🚀 Running build command...\x1b[0m');
   if (args) console.log(`\n\x1b[33m🔧 Args are: \x1b[0m${args}`);
   console.log(`\x1b[33m⚙️  Using .env: \x1b[0m${env}`);
+
+  console.log(fs.readFileSync('.env.production', 'utf8'));
 
   exec(
     buildCommand,
@@ -83,6 +108,9 @@ const runBuildCommand = () => {
       console.log(
         '\n═════════════════════════════════════════════════════════════\n'
       );
+
+      // Restore .env.production
+      restoreEnv();
     }
   );
 };

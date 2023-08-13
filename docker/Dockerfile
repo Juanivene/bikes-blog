@@ -18,7 +18,7 @@ ENV CI=false
 COPY --chown=node ./ /${NODE_HOME}/
 
 RUN npm -v
-RUN npm install --force --ignore-scripts
+RUN npm install --ignore-scripts
 RUN npm install tsx serve --unsafe-perm=true --allow-root
 RUN npm run build
 
