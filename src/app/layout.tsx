@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <html lang="es">
+    <html lang="es" data-theme="light" style={{ colorScheme: 'light' }}>
       <body className={roboto.className}>
         <ThemeProvider defaultTheme="system" enableSystem>
           <SkipNavButton />
