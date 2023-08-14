@@ -56,7 +56,9 @@ export const dateRules = (name = '', required = false) => {
 };
 
 export const typeRules = (required = false) => {
-  const rule = z.string().default('');
+  const rule = z.string().min(1, {
+    message: 'Debe seleccionar un tipo',
+  });
 
   return optionalWrapper<typeof rule>(required, rule);
 };

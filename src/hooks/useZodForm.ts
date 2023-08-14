@@ -2,9 +2,8 @@ import { useEffect } from 'react';
 
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm as useFormRHF } from 'react-hook-form';
+import { toast } from 'sonner';
 import { z, ZodSchema } from 'zod';
-
-import { ErrorToast } from '@/helpers/customSwal';
 
 const useZodForm = <T extends ZodSchema>(validationSchema: T) => {
   const {
@@ -17,7 +16,7 @@ const useZodForm = <T extends ZodSchema>(validationSchema: T) => {
 
   useEffect(() => {
     Object.values(errors).forEach((error) => {
-      ErrorToast(error?.message?.toString() || 'Revise los campos');
+      toast.error(error?.message?.toString() || 'Revise los campos');
     });
   }, [errors]);
 

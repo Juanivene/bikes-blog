@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import ThemeProvider from '@/providers/themeProvider';
 
 import SkipNavButton from '@/components/Accessibility/SkipNavButton';
+import SonnerToast from '@/components/Common/SonnerToast';
 
 // import FixedButtons from '@/components/Common/FixedButtons/FixedButtons';
 // import Footer from '@/components/Common/Footer';
@@ -30,6 +31,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
           {/* isLoggedIn && <Footer /> */}
 
           {/* <FixedButtons /> if any */}
+          <SonnerToast />
         </ThemeProvider>
       </body>
     </html>
