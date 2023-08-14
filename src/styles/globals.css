@@ -6,9 +6,9 @@
 
 :root {
   --background: radial-gradient(
-    circle 815px at 26% 0%,
-    rgba(9, 29, 85, 1) 0.2%,
-    rgba(0, 0, 0, 1) 100%
+    circle 600px at 26% 0%,
+    rgb(18, 28, 56) 0.1%,
+    rgb(48, 48, 48) 100%
   );
   --code-background: rgb(58, 58, 70);
 }
@@ -19,7 +19,6 @@
     rgb(170, 186, 230) 0.2%,
     rgb(216, 216, 216) 100%
   );
-  --code-background: rgb(216, 216, 216);
 }
 
 /* GENERAL ------------------------------------------------ */
