@@ -1,3 +1,5 @@
+'use client';
+
 const ErrorScreen = () => {
   return <div>ErrorScreen</div>;
 };
