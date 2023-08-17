@@ -134,6 +134,16 @@ const runPreBuildScript = async () => {
     fixESLint = true;
   }
 
+  if (args.includes('-h')) {
+    console.log(`
+    \x1b[33m🔧 Available commands:\x1b[0m
+    \x1b[33m--pre-commit\x1b[0m - Runs pre-commit script
+    \x1b[33m--ignore-build\x1b[0m - Runs lint script without building
+    \x1b[33m--fix\x1b[0m - Runs lint script, fixing any ESLint errors that can be automatically solved
+    `);
+    return;
+  }
+
   console.clear();
   if (isPreCommit)
     console.log('\x1b[33m🔍 Running pre-commit script...\x1b[0m\n');
