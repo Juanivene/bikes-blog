@@ -6,3 +6,7 @@ export interface BasicList {
 export interface DataTestId {
   dti: string | undefined;
 }
+
+export interface AnyProp {
+  [key: string]: unknown;
+}
