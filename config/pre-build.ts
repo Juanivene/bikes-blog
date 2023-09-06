@@ -92,8 +92,6 @@ const runBuildCommand = () => {
   if (args) console.log(`\n\x1b[33m🔧 Args are: \x1b[0m${args}`);
   console.log(`\x1b[33m⚙️  Using .env: \x1b[0m${env}`);
 
-  console.log(fs.readFileSync('.env.production', 'utf8'));
-
   exec(
     buildCommand,
     (error: ExecException | null, stdout: string, stderr: string) => {

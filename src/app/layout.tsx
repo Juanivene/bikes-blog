@@ -1,37 +1,58 @@
+'use client';
+
 import type { Metadata } from 'next';
+import { useState } from 'react';
 
 import ThemeProvider from '@/providers/themeProvider';
 
 import SkipNavButton from '@/components/Accessibility/SkipNavButton';
+// import Header from '@/components/Common/Header';
+// import LandscapeMenu from '@/components/Common/LandscapeMenu/LandscapeMenu';
 import SonnerToast from '@/components/Common/SonnerToast';
 
-// import FixedButtons from '@/components/Common/FixedButtons/FixedButtons';
-// import Footer from '@/components/Common/Footer';
-// import Header from '@/components/Common/Header';
 import { roboto } from '@/styles/fonts';
 import '@/styles/globals.css';
+import '@/styles/tailwind.css';
 
+// TODO: Change Metadata
 export const metadata: Metadata = {
-  title: 'template-next',
-  description: 'Change this description in src/app/layout.tsx',
+  title: 'PUAS | Sistemas Judiciales',
+  description:
+    'Sistema Judicial para la utilizacion de servicios internos del Poder Judicial de Tucumán',
   authors: [{ name: 'Dirección de Sistemas del Poder Judicial de Tucumán' }],
-  keywords: ['...', 'pjt', 'poder judicial', 'tucuman', 'corte justicia'],
+  keywords: [
+    'sistema judicial',
+    'pjt',
+    'poder judicial',
+    'tucuman',
+    'corte justicia',
+  ],
 };
 
-const RootLayout = ({ children }: { children: React.ReactNode }) => {
-  return (
-    <html lang="es" data-theme="light" style={{ colorScheme: 'light' }}>
-      <body className={roboto.className}>
-        <ThemeProvider defaultTheme="system" enableSystem>
-          <SkipNavButton />
-          {/* isLoggedIn && <Header /> */}
-          <main id="main" className="md:pt-6 pb-8 mt-16">
-            {children}
-          </main>
-          {/* isLoggedIn && <Footer /> */}
+// TODO: Change this const
+const isLoggedIn = true;
 
-          {/* <FixedButtons /> if any */}
+const RootLayout = ({ children }: { children: React.ReactNode }) => {
+  // DECLARACIONES
+  const [open, setOpen] = useState(false);
+  const [scrolling, setScrolling] = useState(false);
+  // RENDERIZO
+  return (
+    <html lang="es" suppressHydrationWarning>
+      <body className={roboto.className}>
+        <ThemeProvider>
+          <SkipNavButton />
+          {/* <LandscapeMenu
+            isLoggedIn={isLoggedIn}
+            open={open}
+            setOpen={setOpen}
+            setScrolling={setScrolling}
+          > */}
+          {/* {isLoggedIn && <Header scrolling={scrolling} />} */}
+          <main id="main">{children}</main>
           <SonnerToast />
+          {/* </LandscapeMenu> */}
+          {/* <FixedButtons /> if any */}
         </ThemeProvider>
       </body>
     </html>

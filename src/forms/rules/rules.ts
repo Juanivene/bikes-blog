@@ -36,19 +36,27 @@ export const resolutionRules = (required = false) => {
   return optionalWrapper<typeof rule>(required, rule);
 };
 
-export const dateRules = (name = '', required = false) => {
+export const dateRules = (required = false) => {
   const rule = z
-    .instanceof(dayjs as unknown as typeof Dayjs)
-    .nullable()
-    .default(null)
+    .union([z.date(), z.string()])
+    // Check if it's a string (empty field)
+    .refine(
+      (data) => {
+        return !(typeof data === 'string');
+      },
+      {
+        message: `Debe ingresar una fecha valida`,
+      }
+    )
     .refine(
       // If it has a value, it must be a valid date
       (data) => {
         if (!data) return true;
-        return data.isValid();
+        const date = dayjs(data);
+        return date.isValid();
       },
       {
-        message: `La fecha ${name} no es válida`,
+        message: `La fecha no es válida`,
       }
     );
 

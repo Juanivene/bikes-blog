@@ -1,13 +1,11 @@
-import { z } from 'zod';
-
 import {
-  // dateRules,
-  // fromDateAndToDate,
+  dateRules, // fromDateAndToDate,
   // fromDateBeforeToDate,
   notEmptyForm,
   resolutionRules,
   typeRules,
 } from '../rules/rules';
+import { z } from 'zod';
 
 // EVERY validation for this form should be included in this schema.
 // For documentation on how to validate, check https://zod.dev
@@ -23,6 +21,7 @@ export const exampleSchema = z
     // fromDate: dateRules('desde'),
     // toDate: dateRules('hasta'),
     type: typeRules(true),
+    date: dateRules(true),
   })
   .refine(notEmptyForm, notEmptyForm.msg)
   // .refine(fromDateBeforeToDate, fromDateBeforeToDate.msg)

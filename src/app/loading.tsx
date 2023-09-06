@@ -1,5 +1,5 @@
 const LoadingScreen = () => {
-  return <div>LoadingScreen</div>;
+  return <div className="modules-padding">LoadingScreen</div>;
 };
 
 export default LoadingScreen;

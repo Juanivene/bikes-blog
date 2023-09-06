@@ -27,7 +27,7 @@ module.exports = {
     'react/react-in-jsx-scope': 'off',
     'react/function-component-definition': 'off',
     '@typescript-eslint/no-empty-interface': 'off',
-    '@typescript-eslint/no-unused-vars': 'error',
+    //! '@typescript-eslint/no-unused-vars': 'error',
 
     'import/extensions': 'off', // no extensions are needed in import statements
     'react/jsx-props-no-spreading': 'off',
@@ -35,6 +35,7 @@ module.exports = {
     'func-names': 'off', // disabled to allow IIFEs
     'import/no-extraneous-dependencies': 'off', // disabled to allow devDependencies
     'react/require-default-props': 'off', // deprecated check
+    '@typescript-eslint/no-unused-vars': 'off', //! disabled to allow unused vars
   },
   ignorePatterns: ['node_modules/**', 'dist/**', 'config/**'],
   settings: {

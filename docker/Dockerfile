@@ -22,6 +22,6 @@ RUN npm install --ignore-scripts
 RUN npm install tsx serve --unsafe-perm=true --allow-root
 RUN npm run build
 
-CMD ["serve", "-s", "dist"]
+CMD ["serve", "-s", "build"]
 
 EXPOSE 3000

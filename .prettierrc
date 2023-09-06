@@ -12,13 +12,13 @@
     "(.|^@)/redux/slices(?!\\/interface)",
     "(.|^@)/redux/apiSlices(?!\\/interface)",
     "(.|^@)/hooks(?!\\/interface)",
-    "(.|^@)/(components)(?!\\/interface)|\\.\\/[^/]+(?!\\/)",
+    "(.|^@)/components(?!.*\\/interface)",
     "(.|^@)/(helpers|constants)(?!\\/interface)",
-    "(.|^@)/(forms)(?!\\/interface)",
+    "(.|^@)/forms(?!\\/interface)",
     "(.|^@)/adapters(?!\\/interface)",
     "(.|^@)/dti(?!\\/interface)",
     "(.|^@)/(styles|.*\\/styles)",
-    "(.|^@)/(interface|.*\\/interface)"
+    "(.|^@)(interface|.*\\/interface)"
   ],
   "importOrderSeparation": true,
   "importOrderCaseInsensitive": true,
