@@ -1,39 +1,20 @@
-type ModeTypes = 'json' | 'blob' | undefined;
+import { store } from '@/redux/store/store';
 
-/**
- * @param T is the (data) adapter return type, or Blob if it is a File
- * @param [Mode] is the mode of the fetch function. "json" (default) | "blob"
- */
-interface Result<T> {
-  isSuccess: boolean;
-  isError: boolean;
-  error: unknown;
-  data: T | null;
-}
+import type { FetchFnProps, FetchFnResult } from './interface';
 
-/**
- * T is the adapter return type, or Blob if it is a File.
- */
-interface FetchFnProps<T> {
-  baseUrl?: string;
-  url: RequestInfo;
-  options?: RequestInit;
-  mode?: ModeTypes;
-  adapter?: (data: unknown) => T;
-  skip?: boolean;
-}
-
-const envBaseURL = process.env.NEXT_PUBLIC_API_BASE_URL;
+let statusCode: number | null = null;
 
 /**
  * **Fetch function** - Use this wrapper to fetch data from server components.
- * @param {string} [props.baseUrl] *Optional*. Base URL to concat with the URL. If not sent, it will use `NEXT_PUBLIC_API_BASE_URL` from Env variables. If not defined, it will throw an error.
- * @param {string} props.url URL to be send the request, concatenated with the baseUrl.
- * @param {RequestInit} [props.options] *Optional*. Options to be passed to the fetch function. See https://nextjs.org/docs/app/api-reference/functions/fetch#fetchurl-options
- * @param {ModeTypes} [props.mode] *Optional*. `"json"` (default) | `"blob"`
- * @param {Function} [props.adapter] *Optional*. Function to be used to parse the data. Use this to return only the data you need.
- * @param {boolean} [props.skip] *Optional*. If true, the fetch will not be executed.
- * @returns {Promise<any>} Returns a promise with the result of the fetch. Data will have the type of the generic passed, or `object` if not.
+ * By default, it WON'T cache the data, so it will always fetch from the server.
+ * @param baseUrl - *Optional*. Base URL to concat with the URL. If not sent, it will use `NEXT_PUBLIC_API_BASE_URL` from Env variables. If not defined, it will throw an error.
+ * @param url - URL to be send the request, concatenated with the baseUrl.
+ * @param options - *Optional*. Options to be passed to the fetch function. See https://nextjs.org/docs/app/api-reference/functions/fetch#fetchurl-options
+ * @param mode - *Optional*. `"json"` (default) | `"blob"`
+ * @param adapter - *Optional*. Function to be used to parse the data. Use this to return only the data you need.
+ * @param skip - *Optional*. If true, the fetch will not be executed.
+ * @param params - *Optional*. Object containing the query params to be sent to the server.
+ * @returns Promise<any> - Returns a promise with the result of the fetch. Data will have the type of the generic passed, or `object` if not.
  * @example const { data, isSuccess, isError, error } = await fetchFn<HelloResponseType>({
  *              baseUrl: 'https://example.com',
  *              url: '/api/hello',
@@ -47,50 +28,94 @@ const envBaseURL = process.env.NEXT_PUBLIC_API_BASE_URL;
  *                };
  *              },
  *              skip: false, // this is the default behavior - no "skip" option is needed
- *          });
+ *            });
  */
 export async function fetchFn<T extends object | Blob>({
-  baseUrl,
-  url,
-  options,
-  mode = 'json',
   adapter,
+  baseUrl,
+  cache = false,
+  log = false,
+  mode = 'json',
   skip = false,
-}: FetchFnProps<T>): Promise<Result<T extends Blob ? Blob : T>> {
+  options,
+  params = {},
+  url,
+  useToken = false,
+  useCredentials = false,
+}: FetchFnProps<T>): Promise<FetchFnResult<T extends Blob ? Blob : T>> {
   if (skip) {
     return {
       isSuccess: false,
       isError: false,
       error: null,
       data: null,
+      statusCode,
     };
   }
 
+  const { token } = store.auth;
+
   try {
-    let data: Result<T>['data'] = null;
+    let data: FetchFnResult<T>['data'] = null;
+
+    // remove empty params from req
+    const paramsToSearch = Object.entries(params)
+      .filter(([, value]) => value !== '')
+      .reduce<Record<string, string>>((acc, [key, value]) => {
+        acc[key] = value;
+        return acc;
+      }, {});
+
+    const searchParams = new URLSearchParams(paramsToSearch).toString();
 
     let path = url;
     if (baseUrl) {
       path = `${baseUrl}${url}`;
-    } else {
-      // To concat, baseUrl must be defined
-      if (!envBaseURL) {
-        throw new Error(
-          'NEXT_PUBLIC_API_BASE_URL is not defined in your .env file'
-        );
-      }
-      path = `${envBaseURL}${url}`;
+    }
+    if (searchParams) {
+      path += `?${searchParams}`;
     }
 
-    const response = await fetch(path, options);
+    let reqOptions = {
+      ...options,
+      ...(useCredentials ? { credentials: 'include' as const } : {}),
+      headers: {
+        ...options?.headers,
+        ...(useToken && token && { Authorization: `Bearer ${token}` }),
+      },
+    };
+    if (!options?.next?.revalidate) {
+      reqOptions = {
+        ...reqOptions,
+        cache: cache ? 'force-cache' : 'no-store',
+      };
+    }
+
+    if (log) console.log('🚀 fetchFn - PATH:', path);
+
+    const response = await fetch(path, reqOptions);
+    statusCode = response.status;
+
+    if (log) console.log('🚀 fetchFn - RESPONSE:', response);
 
     if (!response.ok) {
-      throw new Error('An error occurred');
+      try {
+        const errorData = await response.json();
+        throw new Error(errorData?.message || '');
+      } catch (e) {
+        console.error(`${response.status.toString()} - ${response.statusText}`);
+        throw new Error(
+          (e instanceof Error && e.message) ||
+            `${response.status.toString()} - ${
+              response.statusText
+            }: An error occurred`
+        );
+      }
     }
 
     switch (mode) {
       case 'blob':
-        // @ts-expect-error - TODO: SHOULD BE FIXED
+        // @ts-expect-error - TODO: TS SHOULD BE FIXED
         data = await response.blob();
         break;
       case 'json':
@@ -99,23 +124,40 @@ export async function fetchFn<T extends object | Blob>({
         break;
     }
 
+    if (log) console.log('🚀 fetchFn - DATA:', data);
+
     if (adapter) {
       data = adapter(data);
     }
 
+    if (log) console.log('🚀 fetchFn - ADAPTED DATA:', data);
+
+    // TODO: Make data be null type only if isError is true
     return {
       isSuccess: true,
       isError: false,
       error: null,
-      // @ts-expect-error - TODO: SHOULD BE FIXED
+      // @ts-expect-error - TODO: TS SHOULD BE FIXED
       data,
+      statusCode,
     };
   } catch (error) {
+    if (error instanceof Error) {
+      return {
+        isSuccess: false,
+        isError: true,
+        error,
+        data: null,
+        statusCode,
+      };
+    }
+
     return {
       isSuccess: false,
       isError: true,
-      error,
+      error: new Error('Unknown error'),
       data: null,
+      statusCode,
     };
   }
 }

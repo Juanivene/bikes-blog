@@ -5,6 +5,7 @@ import {
   ThunkAction,
 } from '@reduxjs/toolkit';
 
+import authSlice from '@/redux/slices/auth';
 import globalDataSlice from '@/redux/slices/globalData';
 import loadingSlice from '@/redux/slices/loading';
 import paginationSlice from '@/redux/slices/pagination';
@@ -13,6 +14,7 @@ const rootReducer = combineReducers({
   globalData: globalDataSlice,
   loading: loadingSlice,
   pagination: paginationSlice,
+  auth: authSlice,
 });
 
 export const store = configureStore({

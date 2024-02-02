@@ -36,6 +36,13 @@ module.exports = {
     'import/no-extraneous-dependencies': 'off', // disabled to allow devDependencies
     'react/require-default-props': 'off', // deprecated check
     '@typescript-eslint/no-unused-vars': 'off', //! disabled to allow unused vars
+    'react/jsx-sort-props': [
+      1,
+      {
+        shorthandFirst: true,
+        callbacksLast: true,
+      },
+    ],
   },
   ignorePatterns: ['node_modules/**', 'dist/**', 'config/**'],
   settings: {

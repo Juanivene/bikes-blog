@@ -2,37 +2,26 @@
 
 import { useRef } from 'react';
 
-const SkipNavButton = () => {
+const SkipNavButton = (): JSX.Element => {
   const element = useRef<HTMLAnchorElement>(null);
 
-  const handleFocus = () => {
+  const handleFocus = (): void => {
     if (element.current) element.current.style.opacity = '1';
   };
 
-  const handleBlur = () => {
+  const handleBlur = (): void => {
     if (element.current) element.current.style.opacity = '0';
   };
 
   return (
     <a
-      ref={element}
-      style={{
-        opacity: 0,
-        position: 'fixed',
-        top: 0,
-        left: 0,
-        border: '1px solid #ccc',
-        backgroundColor: '#333333',
-        color: '#ccc',
-        zIndex: '99999',
-        padding: '0.5rem 1rem',
-        pointerEvents: 'none',
-      }}
-      href="#main"
       aria-label="Saltar navegación"
+      className="skip-nav-button"
+      href="#main"
+      ref={element}
       tabIndex={0}
-      onFocus={handleFocus}
       onBlur={handleBlur}
+      onFocus={handleFocus}
     >
       Saltar navegación
     </a>

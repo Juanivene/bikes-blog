@@ -9,7 +9,7 @@ const runPrepareScript = () => {
 
     // Run husky install
     process.stdout.write('⌛ (1/3) Installing Husky...');
-    execSync('husky install');
+    execSync('pnpm exec husky init    ');
     process.stdout.clearLine(0);
     process.stdout.cursorTo(0);
     process.stdout.write('✅ (1/3) Installed Husky\n');
@@ -17,7 +17,7 @@ const runPrepareScript = () => {
     // Install global dependencies
     process.stdout.write('⌛ (2/3) Installing global dependencies...');
     execSync(
-      'npm install npm-check-updates typescript prettier eslint @trivago/prettier-plugin-sort-imports -g --silent'
+      'pnpm install npm-check-updates typescript prettier eslint @trivago/prettier-plugin-sort-imports -g --silent'
     );
     process.stdout.clearLine(0);
     process.stdout.cursorTo(0);
