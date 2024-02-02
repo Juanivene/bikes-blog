@@ -2,14 +2,15 @@
 
 import { useState } from 'react';
 
-import { useHydrate } from 'hooks';
-
-import { cn } from 'utilities';
-
 import Icon from '../Icon/Icon';
 import InputController from '../InputController/InputController';
-import type { FormSchemas } from 'form-schemas';
 import { IoMdEye, IoMdEyeOff } from 'react-icons/io';
+
+import { useHydrate } from '@/hooks';
+
+import { cn } from '@/utilities';
+
+import type { FormSchemas } from '@/forms';
 
 import type { InputProps } from '../TextInput/TextInput.types';
 
@@ -62,14 +63,15 @@ const PasswordInput = <T extends FormSchemas>(
               placeholder={rest.placeholder ?? 'Ingrese un valor'}
               ref={field.ref}
               type={displayPass ? 'text' : 'password'}
-              value={field.value}
+              value={field.value as string}
               onBlur={field.onBlur}
               onChange={field.onChange}
               {...rest}
             />
             <button
-              className="btn btn-ghost rounded-btn absolute bottom-0 right-0 top-0 z-50 block h-full w-[40px] p-0"
+              className="btn btn-ghost absolute bottom-0 right-0 top-0 z-50 block h-full w-[40px] rounded-btn p-0"
               disabled={!hydrated || rest.disabled}
+              tabIndex={-1}
               type="button"
               onClick={handleChange}
             >

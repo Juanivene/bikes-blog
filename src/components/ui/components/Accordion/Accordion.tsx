@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 
-import { cn, removeLineBreaks } from 'utilities';
+import { cn, removeLineBreaks } from '@/utilities';
 
 import type { AccordionPropsType } from './Accordion.types';
 
@@ -32,7 +32,7 @@ const Accordion = (props: AccordionPropsType): JSX.Element => {
         className={cn(
           removeLineBreaks`
             ${open ? 'collapse-open' : 'collapse-close'}
-            collapse-arrow join-item border-base-300 collapse border`,
+            collapse join-item collapse-arrow border border-base-300`,
           className
         )}
       >

@@ -1,12 +1,13 @@
 'use client';
 
-import { useHydrate } from 'hooks';
-
-import { cn } from 'utilities';
-
 import DatePicker from '../DatePicker/DatePicker';
 import InputController from '../InputController/InputController';
-import type { FormSchemas } from 'form-schemas';
+
+import { useHydrate } from '@/hooks';
+
+import { cn } from '@/utilities';
+
+import type { FormSchemas } from '@/forms';
 
 import type { InputProps } from './DateInput.types';
 

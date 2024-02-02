@@ -1,10 +1,7 @@
 'use client';
 
-import { useEffect } from 'react';
-
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
-
-import { DTI, DTI_LIST } from 'dti';
+import { useEffect } from 'react';
 
 import IconButton from '../IconButton/IconButton';
 import {
@@ -13,6 +10,8 @@ import {
   MdFirstPage,
   MdLastPage,
 } from 'react-icons/md';
+
+import { DTI, DTI_LIST } from '@/dti';
 
 import type { PaginationPropsType } from './Pagination.types';
 

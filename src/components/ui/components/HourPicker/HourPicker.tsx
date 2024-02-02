@@ -2,9 +2,9 @@
 
 import { type ForwardedRef, forwardRef } from 'react';
 
-import { cn } from 'utilities';
+import { cn } from '@/utilities';
 
-import { DTI, DTI_LIST } from 'dti';
+import { DTI, DTI_LIST } from '@/dti';
 
 import type { HourPickerProps } from './HourPicker.types';
 

@@ -1,11 +1,12 @@
 'use client';
 
-import { useHydrate } from 'hooks';
-
-import { cn } from 'utilities';
-
 import InputController from '../InputController/InputController';
-import type { FormSchemas } from 'form-schemas';
+
+import { useHydrate } from '@/hooks';
+
+import { cn } from '@/utilities';
+
+import type { FormSchemas } from '@/forms';
 
 import type { InputProps } from './TextInput.types';
 
@@ -50,7 +51,7 @@ const TextInput = <T extends FormSchemas>(
             placeholder={rest.placeholder ?? 'Ingrese un valor'}
             ref={field.ref}
             type={type}
-            value={field.value}
+            value={field.value as string}
             onBlur={field.onBlur}
             onChange={field.onChange}
             {...rest}

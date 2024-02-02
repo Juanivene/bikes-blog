@@ -1,4 +1,4 @@
-import type { FormSchemas } from 'form-schemas';
+import type { FormSchemas } from '@/forms';
 
 import type { FormHandling } from '../../types/index';
 

@@ -3,6 +3,7 @@ export const DTI = (val: string) =>
 
 export const DTI_LIST = {
   BUTTON: (val: string) => `${val}-button`,
+  DIV: (val: string) => `${val}-div`,
   FORM: {
     ADDRESS: 'address-input',
     AMOUNT: 'amount-input',
@@ -29,6 +30,7 @@ export const DTI_LIST = {
     FILES: 'files-input',
     FIRST_NAME: 'first-name-input',
     FROM_DATE: 'from-date-input',
+    HOUR: 'hour-input',
     IPP: 'ipp-input',
     JURISDICTION: 'jurisdiction-input',
     LAST_NAME: 'last-name-input',
@@ -38,12 +40,14 @@ export const DTI_LIST = {
     PROCEEDING: 'proceeding-input',
     PROSECUTOR: 'prosecutor-input',
     PHONE: 'phone-input',
+    RADIO: (val: string) => `${val}-radio-input`,
     RECAPTCHA: 'recaptcha-input',
     RESOLUTION: 'resolution-input',
     ROLE: 'role-input',
     SEARCH: 'search-button',
     STATE: 'state-input',
     SUBMIT: 'submit-button',
+    TOGGLE: (val: string) => `${val}-toggle-input`,
     TYPE: 'type-input',
     TYPE_PAYMENT: 'type-payment-input',
     UNIT: 'unit-input',

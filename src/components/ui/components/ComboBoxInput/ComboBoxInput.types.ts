@@ -1,6 +1,7 @@
-import type { FormSchemas } from 'form-schemas';
+import type { FormSchemas } from '@/forms';
 
-import type { DataTestId, FormHandling, ListOption } from '../../types';
+import type { FormHandling } from '../../types';
+import { DataTestId, ListOption } from '@/interface/globalTypes';
 
 export interface ComboBoxInputProps<T extends FormSchemas>
   extends FormHandling<T>,

@@ -31,7 +31,7 @@ export const daisyui = {
   themes: [
     {
       light: {
-        ...daisyuiTheme['[data-theme=light]'],
+        ...daisyuiTheme.light,
         primary: '#3f75a8',
         primaryContent: '#ffffff',
         secondary: '#723fa8',
@@ -47,7 +47,7 @@ export const daisyui = {
         },
       },
       dark: {
-        ...daisyuiTheme['[data-theme=dark]'],
+        ...daisyuiTheme.dark,
         primary: '#3f75a8',
         secondary: '#723fa8',
         accent: '#3fa8a6',

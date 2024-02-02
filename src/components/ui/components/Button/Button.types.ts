@@ -1,5 +1,5 @@
-import type { DataTestId } from '../../types';
 import type { ButtonColorType, TextColorType } from '../../types/tailwind';
+import type { DataTestId } from '@/interface/globalTypes';
 
 export type ButtonPropsType = React.ButtonHTMLAttributes<HTMLButtonElement> &
   DataTestId & {

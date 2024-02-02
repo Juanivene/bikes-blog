@@ -103,7 +103,7 @@ export const typeRules = <T extends boolean = false>(
 };
 
 export const multipleValuesRules = <T extends boolean = false>(required: T) => {
-  // each value is of type {id: string, description: string}, that's an interface called BasicList
+  // each value is of type {id: string, description: string}, that's an interface called ListOption
   const rule = z
     .array(
       z.object({

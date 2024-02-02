@@ -1,10 +1,11 @@
 'use client';
 
-import { cn } from 'utilities';
-
 import HourPicker from '../HourPicker/HourPicker';
 import InputController from '../InputController/InputController';
-import type { FormSchemas } from 'form-schemas';
+
+import { cn } from '@/utilities';
+
+import type { FormSchemas } from '@/forms';
 
 import type { InputProps } from '../TextInput/TextInput.types';
 

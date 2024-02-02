@@ -1,10 +1,11 @@
-import type { FormSchemas } from 'form-schemas';
 import type {
   ControllerFieldState,
   ControllerRenderProps,
   Path,
   UseFormStateReturn,
 } from 'react-hook-form';
+
+import type { FormSchemas } from '@/forms';
 
 import type { FormHandling } from '../../types';
 

@@ -1,12 +1,12 @@
 'use client';
 
-import { cn } from 'utilities';
-
-import { DTI, DTI_LIST } from 'dti';
-
 import IconButton from '../IconButton/IconButton';
 import { MdClose } from 'react-icons/md';
 import { Drawer as VaulDrawer } from 'vaul';
+
+import { cn } from '@/utilities';
+
+import { DTI, DTI_LIST } from '@/dti';
 
 import type { DrawerPropsType } from './Drawer.types';
 

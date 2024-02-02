@@ -1,5 +1,3 @@
-import { cn, removeLineBreaks } from 'utilities';
-
 import {
   AlignContentTypes,
   AlignItemsTypes,
@@ -13,6 +11,8 @@ import {
   XlColTypes,
   XsColTypes,
 } from './Grid.classes';
+
+import { cn, removeLineBreaks } from '@/utilities';
 
 import type { GridProps } from './Grid.types';
 

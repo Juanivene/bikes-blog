@@ -3,18 +3,18 @@
 import { useEffect, useState } from 'react';
 
 // import Button from '../ui/Button';
-import useZodForm from '@/hooks/useZodForm';
+import { useZodForm } from '@/hooks';
 
 // import DateInput from '../ui/forms/DateInput';
 // import SelectInput from '../ui/forms/SelectInput';
 // import TextInput from '../ui/forms/TextInput';
 import { ExampleSchema, exampleSchema } from '@/forms/schemas/exampleSchema';
 
-import { DTI, DTI_LIST } from '@/dti/dti';
+import { DTI, DTI_LIST } from '@/dti';
 
-import { BasicList } from '@/interface/globalTypes';
+import { ListOption } from '@/interface/globalTypes';
 
-const exampleList: BasicList[] = [
+const exampleList: ListOption[] = [
   {
     id: '1',
     description: 'Acordada 1',

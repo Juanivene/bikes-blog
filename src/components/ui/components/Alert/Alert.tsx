@@ -5,9 +5,6 @@ import { useState } from 'react';
 import Grid from '../Grid/Grid';
 import Icon from '../Icon/Icon';
 import IconButton from '../IconButton/IconButton';
-import type { AlertPropsType } from './Alert.types';
-import { DTI, DTI_LIST } from 'dti';
-import { usePortrait } from 'hooks';
 import {
   MdCheckCircleOutline,
   MdClose,
@@ -15,7 +12,14 @@ import {
   MdOutlineErrorOutline,
   MdOutlineHighlightOff,
 } from 'react-icons/md';
-import { cn, removeLineBreaks } from 'utilities';
+
+import { usePortrait } from '@/hooks';
+
+import { cn, removeLineBreaks } from '@/utilities';
+
+import { DTI, DTI_LIST } from '@/dti';
+
+import type { AlertPropsType } from './Alert.types';
 
 /**
  * A custom Alert component.
@@ -66,8 +70,8 @@ const Alert = (props: AlertPropsType): JSX.Element => {
         ${!open ? 'hidden' : ''}
         rounded-xl px-2 
         py-3
-        md:pr-3
-        dark:text-white`,
+        dark:text-white
+        md:pr-3`,
         className
       )}
       data-testid={DTI(DTI_LIST.DIV('alert'))}

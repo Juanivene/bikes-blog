@@ -1,4 +1,4 @@
-export interface BasicList {
+export interface ListOption {
   id: string;
   description: string;
 }

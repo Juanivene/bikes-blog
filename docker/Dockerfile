@@ -1,4 +1,4 @@
-FROM node:18.17-alpine
+FROM node:20.11-alpine
 
 ARG BUILD_ID
 ENV BUILD_ID $BUILD_ID
@@ -19,9 +19,9 @@ COPY --chown=node ./ /${NODE_HOME}/
 
 RUN npm -v
 RUN npm install --ignore-scripts
-RUN npm install tsx serve --unsafe-perm=true --allow-root
+RUN npm install tsx --unsafe-perm=true --allow-root
 RUN npm run build
 
-CMD ["serve", "-s", "build"]
+CMD ["npm", "run", "start"]
 
 EXPOSE 3000

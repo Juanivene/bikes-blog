@@ -53,7 +53,7 @@ export async function fetchFn<T extends object | Blob>({
     };
   }
 
-  const { token } = store.auth;
+  const { token } = store.getState().auth;
 
   try {
     let data: FetchFnResult<T>['data'] = null;
@@ -81,7 +81,7 @@ export async function fetchFn<T extends object | Blob>({
       ...(useCredentials ? { credentials: 'include' as const } : {}),
       headers: {
         ...options?.headers,
-        ...(useToken && token && { Authorization: `Bearer ${token}` }),
+        ...(useToken && token ? { Authorization: `Bearer ${token}` } : {}),
       },
     };
     if (!options?.next?.revalidate) {
@@ -100,8 +100,17 @@ export async function fetchFn<T extends object | Blob>({
 
     if (!response.ok) {
       try {
-        const errorData = await response.json();
-        throw new Error(errorData?.message || '');
+        const errorData = response.json() as Promise<{
+          message?: string | null;
+        } | null>;
+        if (await errorData) {
+          const errorMessage =
+            'message' in errorData && typeof errorData.message === 'string'
+              ? errorData.message
+              : undefined;
+          throw new Error(errorMessage);
+        }
+        throw new Error();
       } catch (e) {
         console.error(`${response.status.toString()} - ${response.statusText}`);
         throw new Error(

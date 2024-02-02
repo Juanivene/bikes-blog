@@ -5,11 +5,14 @@ import { useEffect, useRef, useState } from 'react';
 import Button from '../Button/Button';
 import Icon from '../Icon/Icon';
 import './MultipleFilePicker.styles.css';
-import type { MultipleFilePickerProps } from './MultipleFilePicker.types';
-import { DTI, DTI_LIST } from 'dti';
 import { IoDocumentAttach, IoRemoveOutline } from 'react-icons/io5';
 import { toast } from 'sonner';
-import { cn } from 'utilities';
+
+import { cn } from '@/utilities';
+
+import { DTI, DTI_LIST } from '@/dti';
+
+import type { MultipleFilePickerProps } from './MultipleFilePicker.types';
 
 const hasFiles = ({
   dataTransfer: { types = [] },

@@ -1,12 +1,12 @@
 import type { ControllerRenderProps, FieldValues, Path } from 'react-hook-form';
 
-import type { DataTestId, ListOption } from '../../types';
 import type {
   BgColorProp,
   HeightType,
   TextColorProp,
   WidthType,
 } from '../../types/tailwind';
+import { DataTestId, ListOption } from '@/interface/globalTypes';
 
 export type ComboBoxProps<T extends FieldValues> = DataTestId & {
   className?: string;

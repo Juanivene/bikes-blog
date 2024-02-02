@@ -1,4 +1,4 @@
-import type { AnyProp } from '../../types';
+import { AnyProp } from '@/interface/globalTypes';
 
 export type GridProps = AnyProp &
   (

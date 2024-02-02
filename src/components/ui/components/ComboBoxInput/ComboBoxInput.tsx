@@ -2,10 +2,14 @@
 
 import ComboBox from '../ComboBox/ComboBox';
 import InputController from '../InputController/InputController';
+
+import { useHydrate } from '@/hooks';
+
+import { cn } from '@/utilities';
+
+import type { FormSchemas } from '@/forms';
+
 import type { ComboBoxInputProps } from './ComboBoxInput.types';
-import type { FormSchemas } from 'form-schemas';
-import { useHydrate } from 'hooks';
-import { cn } from 'utilities';
 
 const ComboBoxInput = <T extends FormSchemas>(
   props: ComboBoxInputProps<T>

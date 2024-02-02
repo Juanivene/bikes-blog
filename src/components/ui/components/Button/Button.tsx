@@ -4,8 +4,10 @@ import type { ForwardedRef } from 'react';
 import { forwardRef, useEffect, useState } from 'react';
 
 import Icon from '../Icon/Icon';
+
+import { cn, removeLineBreaks } from '@/utilities';
+
 import type { ButtonPropsType } from './Button.types';
-import { cn, removeLineBreaks } from 'utilities';
 
 /**
  * Generates the ARIA label for the button.

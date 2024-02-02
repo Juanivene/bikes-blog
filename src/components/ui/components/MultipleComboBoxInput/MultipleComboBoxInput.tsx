@@ -1,10 +1,13 @@
 'use client';
 
-import type { ComboBoxInputProps } from '../ComboBoxInput/ComboBoxInput.types';
 import InputController from '../InputController/InputController';
 import MultipleComboBox from '../MultipleComboBox/MultipleComboBox';
-import type { FormSchemas } from 'form-schemas';
-import { cn } from 'utilities';
+
+import { cn } from '@/utilities';
+
+import type { FormSchemas } from '@/forms';
+
+import type { ComboBoxInputProps } from '../ComboBoxInput/ComboBoxInput.types';
 
 const MultipleComboBoxInput = <T extends FormSchemas>(
   props: ComboBoxInputProps<T>

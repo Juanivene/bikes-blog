@@ -1,6 +1,7 @@
-import type { FormSchemas } from 'form-schemas';
+import type { FormSchemas } from '@/forms';
 
-import type { DataTestId, FormHandling } from '../../types';
+import { FormHandling } from '../../types';
+import type { DataTestId } from '@/interface/globalTypes';
 
 export interface InputProps<T extends FormSchemas>
   extends FormHandling<T>,

@@ -5,11 +5,15 @@ import { useState } from 'react';
 import Button from '../Button/Button';
 import Icon from '../Icon/Icon';
 import InputController from '../InputController/InputController';
-import type { FileInputProps } from './FileInput.types';
-import { DTI, DTI_LIST } from 'dti';
-import type { FormSchemas } from 'form-schemas';
 import { IoTrashBin } from 'react-icons/io5';
-import { cn } from 'utilities';
+
+import { cn } from '@/utilities';
+
+import type { FormSchemas } from '@/forms';
+
+import { DTI, DTI_LIST } from '@/dti';
+
+import type { FileInputProps } from './FileInput.types';
 
 const FileInput = <T extends FormSchemas>(
   props: FileInputProps<T>
@@ -59,7 +63,7 @@ const FileInput = <T extends FormSchemas>(
           render={({ field, fieldState: { error } }) => (
             <input
               className={cn(
-                `file-input file-input-ghost file-input-sm md:file-input-md w-full max-w-xs border border-gray-300 focus:bg-gray-200 dark:border-gray-500 dark:focus:bg-gray-800 ${
+                `file-input file-input-ghost file-input-sm w-full max-w-xs border border-gray-300 md:file-input-md focus:bg-gray-200 dark:border-gray-500 dark:focus:bg-gray-800 ${
                   error ? 'border-error' : ''
                 }`,
                 inputClassName
@@ -76,7 +80,7 @@ const FileInput = <T extends FormSchemas>(
           )}
         />
         <Button
-          className="btn-sm md:btn-md md:tooltip md:tooltip-bottom inline-block border border-gray-300"
+          className="btn-sm inline-block border border-gray-300 md:btn-md md:tooltip md:tooltip-bottom"
           data-tip="Borrar archivo"
           disabled={!hasLoadedFile || disabled}
           dti={DTI(DTI_LIST.FORM.CLEAR_FORM)}

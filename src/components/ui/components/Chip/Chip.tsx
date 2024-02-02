@@ -2,13 +2,12 @@
 
 import { useState } from 'react';
 
-import { cn, removeLineBreaks } from 'utilities';
-
-import { DTI, DTI_LIST } from 'dti';
-
+import './Chip.styles.css';
 import { MdClose } from 'react-icons/md';
 
-import './Chip.styles.css';
+import { cn, removeLineBreaks } from '@/utilities';
+
+import { DTI, DTI_LIST } from '@/dti';
 
 import type { ChipPropsType } from './Chip.types';
 

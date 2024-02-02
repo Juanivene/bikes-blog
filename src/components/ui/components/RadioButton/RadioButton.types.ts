@@ -1,13 +1,13 @@
 import type { CheckboxColorType, TextColorType } from '../../types/tailwind';
+import type { DataTestId } from '@/interface/globalTypes';
 
-export interface RadioButtonProps {
+export interface RadioButtonProps extends DataTestId {
   ariaLabel: string;
   className?: string;
   colorDark?: CheckboxColorType['dark'];
   colorLight?: CheckboxColorType['light'];
   defaultChecked?: boolean;
   disabled?: boolean;
-  dti: string;
   id: string;
   label?: string;
   textColorDark?: TextColorType['dark'];

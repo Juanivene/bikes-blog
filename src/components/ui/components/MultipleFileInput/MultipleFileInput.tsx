@@ -5,9 +5,12 @@ import { useEffect, useState } from 'react';
 import Alert from '../Alert/Alert';
 import InputController from '../InputController/InputController';
 import MultipleFilePicker from '../MultipleFilePicker/MultipleFilePicker';
+
+import { cn } from '@/utilities';
+
+import type { FormSchemas } from '@/forms';
+
 import type { MultipleFileInputProps } from './MultipleFileInput.types';
-import type { FormSchemas } from 'form-schemas';
-import { cn } from 'utilities';
 
 const MultipleFileInput = <T extends FormSchemas>(
   props: MultipleFileInputProps<T>

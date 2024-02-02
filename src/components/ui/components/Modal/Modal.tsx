@@ -1,9 +1,12 @@
 'use client';
 
 import Button from '../Button/Button';
+
+import { cn } from '@/utilities';
+
+import { DTI, DTI_LIST } from '@/dti';
+
 import type { ModalProps } from './Modal.types';
-import { DTI, DTI_LIST } from 'dti';
-import { cn } from 'utilities';
 
 const Modal = (props: ModalProps): JSX.Element | null => {
   const {
@@ -30,7 +33,7 @@ const Modal = (props: ModalProps): JSX.Element | null => {
       }`}
       id={modalId}
     >
-      <div className="modal-box overflow-y-hidden border border-b-0 border-l-0 border-r-0 border-t bg-white md:max-w-[48rem] md:border-b-[1px] md:border-l-[1px] md:border-r-[1px] lg:ml-[272px] dark:border-gray-500 dark:bg-gray-800">
+      <div className="modal-box overflow-y-hidden border border-b-0 border-l-0 border-r-0 border-t bg-white dark:border-gray-500 dark:bg-gray-800 md:max-w-[48rem] md:border-b-[1px] md:border-l-[1px] md:border-r-[1px] lg:ml-[272px]">
         <h3 className="pb-3 text-lg font-bold">{title}</h3>
         <section
           className={cn('max-h-[400px] overflow-y-auto pt-4', className)}

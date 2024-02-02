@@ -1,9 +1,10 @@
 'use client';
 
-import { cn } from 'utilities';
-
 import InputController from '../InputController/InputController';
-import type { FormSchemas } from 'form-schemas';
+
+import { cn } from '@/utilities';
+
+import type { FormSchemas } from '@/forms';
 
 import type { InputProps } from '../TextInput/TextInput.types';
 
@@ -44,7 +45,7 @@ const TextAreaInput = <T extends FormSchemas>(
             placeholder={rest.placeholder ?? 'Ingrese un valor'}
             ref={field.ref}
             type={type}
-            value={field.value}
+            value={field.value as string}
             // @ts-expect-error -- Somehow TS detects these functions are for an input, but that isn't defined!
             onBlur={field.onBlur}
             // @ts-expect-error -- Somehow TS detects these functions are for an input, but that isn't defined!

@@ -2,9 +2,9 @@
 
 import { useState } from 'react';
 
-import { cn, removeLineBreaks } from 'utilities';
+import { cn, removeLineBreaks } from '@/utilities';
 
-import { DTI, DTI_LIST } from 'dti';
+import { DTI, DTI_LIST } from '@/dti';
 
 import type { RadioButtonProps } from './RadioButton.types';
 
@@ -37,7 +37,7 @@ const RadioButton = (props: RadioButtonProps): JSX.Element => {
           ${textColorDark ? `dark:${textColorDark}` : ''}`,
           className
         )}
-        data-testid={DTI(DTI_LIST.RADIO(dti))}
+        data-testid={DTI(DTI_LIST.FORM.RADIO(dti))}
         disabled={disabled}
         id={`${dti}-switch`}
         type="radio"
@@ -48,7 +48,7 @@ const RadioButton = (props: RadioButtonProps): JSX.Element => {
 
       <label
         className="inline-block pl-[0.15rem] hover:cursor-pointer"
-        htmlFor="RadioButton"
+        htmlFor={`${dti}-switch`}
       >
         {label}
       </label>

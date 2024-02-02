@@ -1,8 +1,8 @@
 'use client';
 
-import { LoadingBackdrop } from 'puas-components';
+import { useAppSelector } from '@/redux/hooks/hook';
 
-import { useAppSelector } from '../store/hook';
+import LoadingBackdrop from '@/components/Loading/LoadingBackdrop';
 
 const LoadingProvider = (): JSX.Element => {
   const { loading } = useAppSelector((state) => state.loading);

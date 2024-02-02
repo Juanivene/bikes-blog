@@ -3,14 +3,17 @@
 import { Combobox, Transition } from '@headlessui/react';
 import { Fragment, useEffect, useState } from 'react';
 
-import type { ListOption } from '../../types';
 import Button from '../Button/Button';
 import Icon from '../Icon/Icon';
-import type { ComboBoxProps } from './ComboBox.types';
-import { DTI, DTI_LIST } from 'dti';
 import type { FieldValues } from 'react-hook-form';
 import { MdCheck, MdClear, MdExpandMore } from 'react-icons/md';
-import { cn } from 'utilities';
+
+import { cn } from '@/utilities';
+
+import { DTI, DTI_LIST } from '@/dti';
+
+import type { ComboBoxProps } from './ComboBox.types';
+import type { ListOption } from '@/interface/globalTypes';
 
 /**
  * A custom combo box component that provides autocompletion functionality.
@@ -115,7 +118,7 @@ const ComboBox = <T extends FieldValues>(
         <div className={`relative mt-1 ${sizing?.width ?? ''}`}>
           <div
             aria-label="Combo Box"
-            className="relative grid w-full cursor-default overflow-hidden rounded-lg bg-gray-100 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-teal-300 sm:text-sm dark:bg-slate-700"
+            className="relative grid w-full cursor-default overflow-hidden rounded-lg bg-gray-100 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-teal-300 dark:bg-slate-700 sm:text-sm"
           >
             <Combobox.Input
               aria-label="Ingrese su selección"
@@ -171,7 +174,7 @@ const ComboBox = <T extends FieldValues>(
             leaveFrom="opacity-100"
             leaveTo="opacity-0"
           >
-            <Combobox.Options className="absolute z-40 mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm dark:bg-gray-500 dark:*:text-white">
+            <Combobox.Options className="absolute z-40 mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none dark:bg-gray-500 dark:*:text-white sm:text-sm">
               {filteredOption.length === 0 && !query ? (
                 <div
                   aria-atomic="true"

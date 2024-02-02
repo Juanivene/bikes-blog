@@ -2,17 +2,17 @@
 
 import { useEffect, useRef } from 'react';
 
-import { cn } from 'utilities';
-
 import flatpickr from 'flatpickr';
 import 'flatpickr/dist/flatpickr.min.css';
 import { Spanish } from 'flatpickr/dist/l10n/es.js';
-import type { Instance } from 'flatpickr/dist/types/instance';
+
+import { cn } from '@/utilities';
 
 import type {
   DatePickerProps,
   OptionsDatePickerProps,
 } from './DatePicker.types';
+import type { Instance } from 'flatpickr/dist/types/instance';
 
 const optionsDefaultValues: OptionsDatePickerProps = {
   enableTime: false,

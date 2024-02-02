@@ -1,6 +1,6 @@
 'use client';
 
-import { cn, removeLineBreaks } from 'utilities';
+import { cn, removeLineBreaks } from '@/utilities';
 
 import type { TooltipPropsType } from './Tooltip.types';
 
