@@ -1,7 +1,5 @@
 'use client';
 
-import { useEffect, useState } from 'react';
-
 // import Button from '../ui/Button';
 import { useZodForm } from '@/hooks';
 
@@ -10,36 +8,25 @@ import { useZodForm } from '@/hooks';
 // import TextInput from '../ui/forms/TextInput';
 import { ExampleSchema, exampleSchema } from '@/forms/schemas/exampleSchema';
 
-import { DTI, DTI_LIST } from '@/dti';
+// import { DTI, DTI_LIST } from '@/dti';
+// import { ListOption } from '@/interface/globalTypes';
 
-import { ListOption } from '@/interface/globalTypes';
-
-const exampleList: ListOption[] = [
-  {
-    id: '1',
-    description: 'Acordada 1',
-  },
-  {
-    id: '2',
-    description: 'Acordada 2',
-  },
-];
+// const exampleList: ListOption[] = [
+//   {
+//     id: '1',
+//     description: 'Acordada 1',
+//   },
+//   {
+//     id: '2',
+//     description: 'Acordada 2',
+//   },
+// ];
 
 const FormExample = () => {
   const { onSubmitMiddleware, control } = useZodForm(exampleSchema);
 
-  const [buttonDisabled, setButtonDisabled] = useState<boolean>(true);
-
   // eslint-disable-next-line no-console
   const handleSubmit = (data: ExampleSchema) => console.log(data);
-
-  // ------------------------------------------------
-  // USEEFFECT
-  // ------------------------------------------------
-
-  useEffect(() => {
-    setButtonDisabled(false);
-  }, []);
 
   return (
     <form onSubmit={onSubmitMiddleware(handleSubmit)}>

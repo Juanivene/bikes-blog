@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 
 import { Spinner } from '@/components/ui';
 
-import type { LoadingBackdropProps } from '../interface';
+import type { LoadingBackdropProps } from '../interface/loading';
 
 const LoadingBackdrop = (props: LoadingBackdropProps): JSX.Element => {
   const { open } = props;
