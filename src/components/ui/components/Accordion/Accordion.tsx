@@ -1,8 +1,4 @@
-'use client';
-
-import { useState } from 'react';
-
-import { cn, removeLineBreaks } from '@/utilities';
+import { cn } from '@/utilities';
 
 import type { AccordionPropsType } from './Accordion.types';
 
@@ -13,10 +9,9 @@ import type { AccordionPropsType } from './Accordion.types';
  * @param title - Title element.
  * @returns JSX.Element The rendered Icon component.
  *
- * ```
  * @example
- *
  * - Standalone usage:
+ * ```
  * <Accordion title="Some Text">Some Content</Accordion>
  * ```
  */
@@ -24,29 +19,11 @@ import type { AccordionPropsType } from './Accordion.types';
 const Accordion = (props: AccordionPropsType): JSX.Element => {
   const { children, className = '', title = '' } = props;
 
-  const [open, setOpen] = useState(false);
-
   return (
-    <div className="join join-vertical w-full">
-      <div
-        className={cn(
-          removeLineBreaks`
-            ${open ? 'collapse-open' : 'collapse-close'}
-            collapse join-item collapse-arrow border border-base-300`,
-          className
-        )}
-      >
-        <input
-          checked={open}
-          name="my-accordion"
-          type="radio"
-          onClick={() => {
-            setOpen(!open);
-          }}
-        />
-        <div className="collapse-title text-xl font-medium">{title}</div>
-        <div className="collapse-content">{children}</div>
-      </div>
+    <div className={cn('collapse collapse-arrow', className)}>
+      <input type="checkbox" />
+      <div className="collapse-title text-xl font-medium">{title}</div>
+      <div className="collapse-content">{children}</div>
     </div>
   );
 };
