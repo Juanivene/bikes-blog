@@ -44,7 +44,7 @@ module.exports = {
       },
     ],
   },
-  ignorePatterns: ['node_modules/**', 'dist/**', 'config/**'],
+  ignorePatterns: ['node_modules/**', 'dist/**', 'config/**', '**/*.json', '**/*.md', '**/*.yml'],
   settings: {
     react: {
       version: 'detect',

@@ -9,19 +9,28 @@ const ErrorScreen = ({ error, reset }: { error: Error; reset: () => void }) => {
   }, [error]);
 
   return (
-    <div className="modules-padding">
-      <h2>Something went wrong!</h2>
-      <button
-        type="button"
-        className="btn btn-primary"
-        onClick={
-          // Attempt to recover by trying to re-render the segment
-          () => reset()
-        }
-      >
-        Try again
-      </button>
-    </div>
+    <section className="flex justify-center text-center">
+      <div className="content-card w-fit">
+        <h2 className="text-3xl font-bold">¡Ocurrió un error!</h2>
+        <div className="divider my-1" />
+        <p className="mb-3">
+          Lo sentimos, ocurrió un error cargando esta página. Por favor, utilice
+          el botón debajo para reintentar.
+        </p>
+        <div className="flex justify-center">
+          <button
+            className="btn btn-primary w-[200px] text-white"
+            type="button"
+            onClick={
+              // Attempt to recover by trying to re-render the segment
+              () => reset()
+            }
+          >
+            REINTENTAR
+          </button>
+        </div>
+      </div>
+    </section>
   );
 };
 
