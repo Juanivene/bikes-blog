@@ -3,6 +3,7 @@ import Alert from './components/Alert/Alert';
 import Button from './components/Button/Button';
 import Card from './components/Card/Card';
 import Checkbox from './components/Checkbox/Checkbox';
+import CheckboxInput from './components/CheckboxInput/CheckboxInput';
 import Chip from './components/Chip/Chip';
 import ComboBoxInput from './components/ComboBoxInput/ComboBoxInput';
 import DateInput from './components/DateInput/DateInput';
@@ -36,6 +37,7 @@ export {
   Card,
   Chip,
   Checkbox,
+  CheckboxInput,
   ComboBoxInput,
   DateInput,
   Drawer,

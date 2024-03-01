@@ -22,6 +22,7 @@ const TextInput = <T extends FormSchemas>(
     label,
     type = 'text',
     dti,
+    defaultValue = '',
     ...rest
   } = props;
 
@@ -36,7 +37,7 @@ const TextInput = <T extends FormSchemas>(
       )}
       <InputController
         control={control}
-        defaultValue=""
+        defaultValue={defaultValue}
         name={name}
         render={({ field, fieldState: { error } }) => (
           <input

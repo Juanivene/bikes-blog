@@ -1,1 +1,1 @@
-tsc --pretty && pnpm lint-staged --allow-empty
+echo "Running tsc..." && tsc --pretty && pnpm lint-staged --allow-empty

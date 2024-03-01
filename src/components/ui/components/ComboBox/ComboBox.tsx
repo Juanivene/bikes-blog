@@ -55,7 +55,6 @@ const ComboBox = <T extends FieldValues>(
     controller,
   } = props;
 
-  const [disabledState, setDisabledState] = useState(true);
   const [isOptionSelected, setIsOptionSelected] = useState(false); // Track if an option is selected
   const [query, setQuery] = useState('');
   const [selectedOption, setSelectedOption] = useState<ListOption | null>(null);
@@ -95,10 +94,6 @@ const ComboBox = <T extends FieldValues>(
   };
 
   useEffect(() => {
-    setDisabledState(disabled);
-  }, [disabled]);
-
-  useEffect(() => {
     if (JSON.stringify(controller.value) !== JSON.stringify(selectedOption)) {
       handleSelect(controller.value);
     }
@@ -110,7 +105,7 @@ const ComboBox = <T extends FieldValues>(
       <Combobox
         aria-describedby="error-message"
         aria-label="Seleccione una opción"
-        disabled={disabledState || options.length === 0}
+        disabled={disabled || options.length === 0}
         ref={controller.ref}
         value={selectedOption}
         onChange={handleSelect}
@@ -145,8 +140,8 @@ const ComboBox = <T extends FieldValues>(
                 ariaHidden
                 unstyled
                 aria-label="Borrar selección"
-                className="absolute inset-y-[1px] right-[1px] flex h-auto items-center bg-gray-100 px-3 hover:bg-gray-200 disabled:bg-transparent disabled:text-gray-400 disabled:text-gray-400 disabled:hover:bg-transparent disabled:hover:bg-transparent dark:bg-slate-700 dark:bg-transparent hover:dark:bg-slate-800 disabled:dark:bg-gray-900"
-                disabled={disabledState}
+                className="absolute inset-y-[1px] right-[1px] flex h-auto items-center bg-gray-100 px-3 hover:bg-gray-200 disabled:bg-transparent disabled:text-gray-400 disabled:hover:bg-transparent dark:bg-transparent hover:dark:bg-slate-800 disabled:dark:bg-transparent disabled:hover:dark:bg-transparent"
+                disabled={disabled}
                 dti={DTI(DTI_LIST.BUTTON('clear-cmb'))}
                 type="button"
                 onClick={handleClearSelection}
@@ -156,7 +151,7 @@ const ComboBox = <T extends FieldValues>(
             ) : (
               <Combobox.Button
                 aria-label="Expandir/comprimir opciones"
-                className="absolute inset-y-[1px] right-[1px] flex items-center bg-gray-100 p-3 hover:bg-gray-200 disabled:bg-transparent disabled:text-gray-400 disabled:hover:bg-transparent dark:bg-slate-700 dark:bg-transparent hover:dark:bg-slate-800"
+                className="absolute inset-y-[1px] right-[1px] flex items-center bg-gray-100 p-3 hover:bg-gray-200 disabled:bg-transparent dark:bg-slate-700 dark:bg-transparent hover:dark:bg-slate-800 disabled:hover:dark:bg-transparent"
               >
                 <Icon
                   iconComponent={<MdExpandMore />}

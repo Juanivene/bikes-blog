@@ -3,6 +3,8 @@
 import InputController from '../InputController/InputController';
 import MultipleComboBox from '../MultipleComboBox/MultipleComboBox';
 
+import { useHydrate } from '@/hooks';
+
 import { cn } from '@/utilities';
 
 import type { FormSchemas } from '@/forms';
@@ -24,6 +26,8 @@ const MultipleComboBoxInput = <T extends FormSchemas>(
     ...rest
   } = props;
 
+  const hydrated = useHydrate();
+
   return (
     <fieldset className={cn('form-control w-72', className)}>
       <label className="text-lg" htmlFor={name as string}>
@@ -36,7 +40,7 @@ const MultipleComboBoxInput = <T extends FormSchemas>(
         render={({ field, fieldState: { error } }) => (
           <MultipleComboBox<T>
             controller={field}
-            disabled={rest.disabled}
+            disabled={!hydrated || rest.disabled}
             error={!!error}
             id={name as string}
             inputClassName={inputClassName}
