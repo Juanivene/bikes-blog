@@ -27,7 +27,6 @@ module.exports = {
     'react/react-in-jsx-scope': 'off',
     'react/function-component-definition': 'off',
     '@typescript-eslint/no-empty-interface': 'off',
-    //! '@typescript-eslint/no-unused-vars': 'error',
 
     'import/extensions': 'off', // no extensions are needed in import statements
     'react/jsx-props-no-spreading': 'off',
@@ -48,9 +47,10 @@ module.exports = {
     'node_modules/**',
     'dist/**',
     'config/**',
-    '**/*.json',
     '**/*.md',
     '**/*.yml',
+    '**/*.json',
+    '**/*.css',
   ],
   settings: {
     react: {

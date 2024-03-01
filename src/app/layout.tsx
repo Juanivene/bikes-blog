@@ -14,17 +14,10 @@ import '@/styles/tailwind.css';
 
 // TODO: Change Metadata
 export const metadata: Metadata = {
-  title: 'PUAS | Sistemas Judiciales',
-  description:
-    'Sistema Judicial para la utilizacion de servicios internos del Poder Judicial de Tucumán',
+  title: 'Template NextJS',
+  description: '...',
   authors: [{ name: 'Dirección de Sistemas del Poder Judicial de Tucumán' }],
-  keywords: [
-    'sistema judicial',
-    'pjt',
-    'poder judicial',
-    'tucuman',
-    'corte justicia',
-  ],
+  keywords: ['...', 'pjt', 'poder judicial', 'tucuman', 'corte justicia'],
 };
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => {

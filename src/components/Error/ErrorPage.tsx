@@ -1,65 +1,27 @@
-// TODO: Recreate this page
+import Link from 'next/link';
+
+import { PATHS } from '@/constants/paths';
 
 const ErrorPage = (): JSX.Element => {
   return (
-    <div>Error!</div>
-    // <div>
-    //   <Stack
-    //     justifyContent="center"
-    //     alignItems="center"
-    //     sx={{ minHeight: '100vh' }}
-    //   >
-    //     <img
-    //       src="/img/logos/logo-144.png"
-    //       alt="Logo Poder Judicial de Tucumán"
-    //       width="100px"
-    //       height="100px"
-    //     />
-    //     <Typography
-    //       variant="h4"
-    //       component="h1"
-    //       textAlign="center"
-    //       sx={{ mt: 1 }}
-    //     >
-    //       Ha ocurrido un error
-    //     </Typography>
-    //     <hr
-    //       style={{
-    //         width: '100%',
-    //         marginTop: '0.5rem',
-    //         marginBottom: '0.75rem',
-    //       }}
-    //     />
-    //     <Typography variant="h5" component="h2" textAlign="center">
-    //       Lamentamos lo ocurrido. Este error fue registrado en nuestros sistemas
-    //       y será evaluado lo antes posible.
-    //     </Typography>
-    //     <Typography
-    //       variant="h6"
-    //       component="h2"
-    //       textAlign="center"
-    //       fontWeight="400"
-    //       sx={{ mt: 2 }}
-    //     >
-    //       <span>
-    //         Por favor, recargue la página con el boton superior izquierdo{' '}
-    //         <ReplayRounded sx={{ ml: 0.5, mb: -0.5 }} />.
-    //       </span>
-    //     </Typography>
-    //   </Stack>
-    //   <Box
-    //     sx={{
-    //       position: 'absolute',
-    //       bottom: 10,
-    //       left: '50%',
-    //       transform: 'translateX(-50%)',
-    //       textAlign: 'center',
-    //       whiteSpace: 'nowrap',
-    //     }}
-    //   >
-    //     Dirección de Sistemas - PJT
-    //   </Box>
-    // </div>
+    <section className="flex justify-center text-center">
+      <div className="content-card w-fit">
+        <h2 className="text-3xl font-bold">¡Ocurrió un error!</h2>
+        <div className="divider my-1" />
+        <p className="mb-3">
+          Lo sentimos, ocurrió un error cargando esta página. Por favor, utilice
+          el botón debajo para reintentar.
+        </p>
+        <div className="flex justify-center">
+          <Link
+            className="btn btn-primary w-[200px] text-white"
+            href={PATHS.HOME}
+          >
+            Volver a inicio
+          </Link>
+        </div>
+      </div>
+    </section>
   );
 };
 

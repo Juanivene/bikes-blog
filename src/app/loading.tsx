@@ -1,5 +1,7 @@
+import LoadingPage from '@/components/Loading/LoadingPage';
+
 const LoadingScreen = () => {
-  return <div className="modules-padding">LoadingScreen</div>;
+  return <LoadingPage />;
 };
 
 export default LoadingScreen;
