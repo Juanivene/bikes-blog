@@ -20,7 +20,7 @@ COPY --chown=node ./ /${NODE_HOME}/
 RUN npm -v
 RUN npm install --ignore-scripts
 RUN npm install tsx --unsafe-perm=true --allow-root
-RUN npm run build --docker
+RUN npm run build -- --docker
 
 CMD ["npm", "run", "start"]
 

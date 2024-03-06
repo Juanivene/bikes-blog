@@ -18,10 +18,9 @@ const copyEnv = (env: string) => {
   fs.writeFileSync('.env.production', envContents);
 
   console.log(
-    `\x1b[32m⚙️  Finished! New \x1b[0m.env.production\x1b[32m contents:\x1b[0m\n`
+    `\x1b[32m⚙️  Finished! New \x1b[0m.env.production\x1b[32m contents:\n`
   );
-  console.log(envContents);
-  console.log();
+  console.log(`\x1b[2m${envContents}\x1b[0m\n`);
 };
 
 const restoreEnv = (env: string) => {
@@ -30,7 +29,7 @@ const restoreEnv = (env: string) => {
   fs.writeFileSync('.env.production', envProdContents);
   fs.unlinkSync('.env_temp');
 
-  console.log(`\x1b[32m⚙️  Restored \x1b[0m.env.${env}\n`);
+  console.log(`\x1b[32m⚙️ Restored \x1b[0m.env.${env}\n`);
 };
 
 const runCommand = (
@@ -97,6 +96,9 @@ const runBuildCommand = () => {
 
   const isDockerized = args.includes('--docker');
 
+  if (isDockerized)
+    console.log('🐳 \x1b[44;37m Dockerized build \x1b[0m Welcome waiter! 🤵🏻‍♂️\n');
+
   // Copy .env.${env} to .env.production
   copyEnv(env!);
 
@@ -105,10 +107,12 @@ const runBuildCommand = () => {
   console.log('\x1b[33m🚀 Running build command...\x1b[0m');
   if (args) console.log(`\x1b[33m🔧 Args are: \x1b[0m${args}`);
 
-  console.log('\n\x1b[33m⏱️  Building. Please wait...\x1b[0m');
-  console.log(
-    '\n\x1b[33m⚠️  Warning: If you are running an instance of this project in "dev" mode, please stop it. Otherwise, building won\'t work as expected and may never even start.\x1b[0m'
-  );
+  console.log('\n\x1b[33m⏱️ Building. Please wait...\x1b[0m');
+
+  if (!isDockerized)
+    console.log(
+      '\n\x1b[33m⚠️ Warning: If you are running an instance of this project in "dev" mode, please stop it. Otherwise, building won\'t work as expected and may never even start.\x1b[0m'
+    );
 
   exec(
     buildCommand,
@@ -129,7 +133,7 @@ const runBuildCommand = () => {
       if (!isDockerized) restoreEnv(env!);
       else
         console.log(
-          '\x1b[33m⚙️  Skipping .env.production restoration because of \x1b[0m"--docker"\x1b[33m arg\x1b[0m\n'
+          '\x1b[33m⚙️  Skipping .env.production restoration because of \x1b[34m"--docker" 🐳\x1b[33m arg\x1b[0m\n'
         );
     }
   );

@@ -16,12 +16,12 @@
     "incremental": true,
     "plugins": [
       {
-        "name": "next",
-      },
+        "name": "next"
+      }
     ],
     "paths": {
-      "@/*": ["./src/*"],
-    },
+      "@/*": ["./src/*"]
+    }
   },
   "include": [
     "next-env.d.ts",
@@ -30,8 +30,8 @@
     "commitlint.config.ts",
     "tailwind.config.ts",
     ".eslintrc.cjs",
-    "next.config.js",
-    "postcss.config.js",
+    "next.config.mjs",
+    "postcss.config.js"
   ],
-  "exclude": ["node_modules", ".next"],
+  "exclude": ["node_modules", ".next"]
 }
