@@ -4,6 +4,10 @@ import gradient from 'gradient-string';
 import { exec, ExecException } from 'node:child_process';
 
 const copyEnv = (env: string) => {
+  console.log(
+    `\x1b[33m⚙️  Copying \x1b[0m.env.${env}\x1b[33m to \x1b[0m.env.production\x1b[33m...\x1b[0m`
+  );
+
   const envContents = fs.readFileSync(`.env.${env}`, 'utf8');
   const envProdContents = fs.readFileSync('.env.production', 'utf8');
 
@@ -12,13 +16,21 @@ const copyEnv = (env: string) => {
 
   // write the contents to .env.production
   fs.writeFileSync('.env.production', envContents);
+
+  console.log(
+    `\x1b[32m⚙️  Finished! New \x1b[0m.env.production\x1b[32m contents:\x1b[0m\n`
+  );
+  console.log(envContents);
+  console.log();
 };
 
-const restoreEnv = () => {
+const restoreEnv = (env: string) => {
   const envProdContents = fs.readFileSync('.env_temp', 'utf8');
 
   fs.writeFileSync('.env.production', envProdContents);
   fs.unlinkSync('.env_temp');
+
+  console.log(`\x1b[32m⚙️  Restored \x1b[0m.env.${env}\n`);
 };
 
 const runCommand = (
@@ -83,14 +95,20 @@ const runBuildCommand = () => {
     ? buildArguments.find((arg) => arg.includes('--mode'))?.split(' ')[1]
     : 'production';
 
+  const isDockerized = args.includes('--docker');
+
   // Copy .env.${env} to .env.production
   copyEnv(env!);
 
   const buildCommand = `next build`;
 
   console.log('\x1b[33m🚀 Running build command...\x1b[0m');
-  if (args) console.log(`\n\x1b[33m🔧 Args are: \x1b[0m${args}`);
-  console.log(`\x1b[33m⚙️  Using .env: \x1b[0m${env}`);
+  if (args) console.log(`\x1b[33m🔧 Args are: \x1b[0m${args}`);
+
+  console.log('\n\x1b[33m⏱️  Building. Please wait...\x1b[0m');
+  console.log(
+    '\n\x1b[33m⚠️  Warning: If you are running an instance of this project in "dev" mode, please stop it. Otherwise, building won\'t work as expected and may never even start.\x1b[0m'
+  );
 
   exec(
     buildCommand,
@@ -107,8 +125,12 @@ const runBuildCommand = () => {
         '\n═════════════════════════════════════════════════════════════\n'
       );
 
-      // Restore .env.production
-      restoreEnv();
+      // Restore .env.production only in local machine
+      if (!isDockerized) restoreEnv(env!);
+      else
+        console.log(
+          '\x1b[33m⚙️  Skipping .env.production restoration because of \x1b[0m"--docker"\x1b[33m arg\x1b[0m\n'
+        );
     }
   );
 };
