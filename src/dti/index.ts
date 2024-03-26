@@ -1,6 +1,5 @@
-import { ENVS } from '@/constants/envs';
-
-export const DTI = (val: string) => (ENVS.env === 'test' ? val : undefined);
+export const DTI = (val: string) =>
+  process.env.env === 'test' ? val : undefined;
 
 export const DTI_LIST = {
   BUTTON: (val: string) => `${val}-button`,

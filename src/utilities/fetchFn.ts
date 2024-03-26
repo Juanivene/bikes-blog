@@ -99,6 +99,8 @@ export async function fetchFn<T extends object | Blob>({
     if (log) console.log('🚀 fetchFn - RESPONSE:', response);
 
     if (!response.ok) {
+      if (response.status !== 401)
+        console.error(`⚠️ Error in fetchFn while connecting to: ${path}`);
       try {
         const errorData = response.json() as Promise<{
           message?: string | null;
