@@ -14,6 +14,12 @@ pnpm-lock.yaml
 # docker
 docker
 
+# environment
+.env
+.env.development
+.env.production
+.env.test
+
 # local env files
 .env*.local
 
