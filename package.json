@@ -1,15 +1,17 @@
 {
   "name": "template-next",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "npx tsx ./config/pre-build.ts --mode development",
     "start": "next start",
     "lint": "npx tsx ./config/pre-build.ts --ignore-build",
+    "prettier": "npx prettier -w .",
     "prettier:check": "npx prettier -c .",
-    "prettier:write": "npx prettier -w .",
-    "prepare": "husky"
+    "prepare": "husky",
+    "update": "ncu",
+    "update:check": "ncu --interactive --format group"
   },
   "dependencies": {
     "@headlessui/react": "1.7.18",
@@ -55,6 +57,7 @@
     "gradient-string": "2.0.2",
     "husky": "9.0.11",
     "lint-staged": "15.2.2",
+    "npm-check-updates": "^16.14.20",
     "prettier": "3.2.5",
     "prettier-plugin-tailwindcss": "0.5.12",
     "tailwind-merge": "2.2.2"
