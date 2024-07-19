@@ -10,7 +10,7 @@
     "prettier": "npx prettier -w .",
     "prettier:check": "npx prettier -c .",
     "prepare": "husky",
-    "test": "echo '👨‍💻 Running tsc...' && tsc --pretty && pnpm lint-staged --allow-empty",
+    "test": "echo '💻 Running tsc...' && tsc --pretty && pnpm lint-staged --allow-empty",
     "update": "ncu",
     "update:check": "ncu --interactive --format group"
   },
@@ -57,16 +57,19 @@
     "eslint-plugin-react": "7.34.1",
     "gradient-string": "2.0.2",
     "husky": "9.1.1",
-    "lint-staged": "15.2.2",
+    "lint-staged": "15.2.7",
     "npm-check-updates": "^16.14.20",
     "prettier": "3.2.5",
     "prettier-plugin-tailwindcss": "0.5.12",
     "tailwind-merge": "2.2.2"
   },
   "lint-staged": {
-    "*.{ts,tsx,js,jsx,html,css,md,json}": [
-      "prettier -w",
-      "eslint --fix"
+    "*.{ts,tsx}": [
+      "eslint --fix",
+      "prettier -w"
+    ],
+    "*.{html,css,md,json}": [
+      "prettier -w"
     ]
   }
 }
