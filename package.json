@@ -10,6 +10,7 @@
     "prettier": "npx prettier -w .",
     "prettier:check": "npx prettier -c .",
     "prepare": "husky",
+    "test": "echo '👨‍💻 Running tsc...' && tsc --pretty && pnpm lint-staged --allow-empty",
     "update": "ncu",
     "update:check": "ncu --interactive --format group"
   },
