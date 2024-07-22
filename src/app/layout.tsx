@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 import ReduxProvider from '@/providers/ReduxProvider';
-import ThemeProvider from '@/providers/themeProvider';
+import ThemeProvider from '@/providers/ThemeProvider';
 
 import SkipNavButton from '@/components/Accessibility/SkipNavButton';
 import SonnerToast from '@/components/Common/SonnerToast';
