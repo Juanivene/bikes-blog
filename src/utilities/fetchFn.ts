@@ -91,15 +91,18 @@ export async function fetchFn<T extends object | Blob>({
       };
     }
 
+    // eslint-disable-next-line no-console
     if (log) console.log('🚀 fetchFn - PATH:', path);
 
     const response = await fetch(path, reqOptions);
     statusCode = response.status;
 
+    // eslint-disable-next-line no-console
     if (log) console.log('🚀 fetchFn - RESPONSE:', response);
 
     if (!response.ok) {
       if (response.status !== 401)
+        // eslint-disable-next-line no-console
         console.error(`⚠️ Error in fetchFn while connecting to: ${path}`);
       try {
         const errorData = response.json() as Promise<{
@@ -114,6 +117,7 @@ export async function fetchFn<T extends object | Blob>({
         }
         throw new Error();
       } catch (e) {
+        // eslint-disable-next-line no-console
         console.error(`${response.status.toString()} - ${response.statusText}`);
         throw new Error(
           (e instanceof Error && e.message) ||
@@ -135,12 +139,14 @@ export async function fetchFn<T extends object | Blob>({
         break;
     }
 
+    // eslint-disable-next-line no-console
     if (log) console.log('🚀 fetchFn - DATA:', data);
 
     if (adapter) {
       data = adapter(data);
     }
 
+    // eslint-disable-next-line no-console
     if (log) console.log('🚀 fetchFn - ADAPTED DATA:', data);
 
     // TODO: Make data be null type only if isError is true
