@@ -10,10 +10,10 @@ module.exports = {
     'next/core-web-vitals',
     'plugin:@next/next/recommended',
     'airbnb',
+    'airbnb-typescript',
     'plugin:prettier/recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:jsx-a11y/recommended',
-    'airbnb-typescript',
   ],
   parser: '@typescript-eslint/parser', // Use TypeScript parser.
   parserOptions: {
