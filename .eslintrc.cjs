@@ -20,7 +20,7 @@ module.exports = {
     sourceType: 'module', // Use ECMAScript modules.
     project: './tsconfig.json', // Specify the TypeScript configuration file.
   },
-  plugins: ['react', 'react-hooks', '@typescript-eslint'],
+  plugins: ['react', 'react-hooks', '@typescript-eslint', 'prettier'],
   rules: {
     'no-param-reassign': 'off',
     'import/prefer-default-export': 'off',
