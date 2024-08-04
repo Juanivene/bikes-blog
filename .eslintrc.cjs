@@ -7,9 +7,9 @@ module.exports = {
   extends: [
     'eslint:recommended',
     'plugin:react/recommended',
+    'next/core-web-vitals',
     'airbnb',
     'airbnb-typescript',
-    'next/core-web-vitals',
     'plugin:@typescript-eslint/recommended',
     'plugin:jsx-a11y/recommended',
     'plugin:prettier/recommended',
