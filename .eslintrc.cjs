@@ -44,6 +44,34 @@ module.exports = {
     'no-use-before-define': 'error', // Disallows the use of variables before they are defined.
     'consistent-return': 'error', // Requires return statements to either always or never specify values.
     'no-else-return': ['error', { allowElseIf: false }], // Disallows else blocks after return statements unless in an else-if chain.
+    'valid-jsdoc': [
+      'warn',
+      {
+        requireReturn: true, // Requires functions to have a @returns comment if they return a value.
+        requireReturnType: true, // Requires functions to have a type specified in @returns.
+        requireParamDescription: true, // Requires a description for each parameter in @param.
+        requireReturnDescription: true, // Requires a description for the return value in @returns.
+        matchDescription: '.+', // Ensures that the overview is not empty.
+        prefer: {
+          return: 'returns', // Prefer to use @returns instead of @return.
+          arg: 'param', // Prefer to use @param instead of @arg.
+          argument: 'param', // Prefer to use @param instead of @argument.
+          constructor: 'class', // Prefer to use @class instead of @constructor.
+          throws: 'exception', // Prefer to use @exception instead of @throws.
+        },
+        preferType: {
+          // Prefer the use of lowercase primitive types.
+          Boolean: 'boolean',
+          Number: 'number',
+          String: 'string',
+          Object: 'object',
+          Array: 'Array',
+          Undefined: 'undefined',
+        },
+        requireParamType: true, // Requires all @param to have a specified type.
+        requireHyphenBeforeParamDescription: 'always', // Requires a dash before the parameter description.
+      },
+    ],
 
     // ! eslint-plugin-react Rules
     'react/react-in-jsx-scope': 'off', // Disables the rule requiring React to be in scope for JSX files (unnecessary in React 17+).
