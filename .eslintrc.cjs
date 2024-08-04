@@ -16,9 +16,9 @@ module.exports = {
   ],
   parser: '@typescript-eslint/parser', // Use TypeScript parser.
   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: './tsconfig.json',
+    ecmaVersion: 'latest', // Use the latest ECMAScript features.
+    sourceType: 'module', // Use ECMAScript modules.
+    project: './tsconfig.json', // Specify the TypeScript configuration file.
   },
   plugins: ['react', '@typescript-eslint'],
   rules: {
