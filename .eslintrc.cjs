@@ -56,7 +56,7 @@ module.exports = {
   ],
   settings: {
     react: {
-      version: 'detect',
+      version: 'detect', // Automatically detects the React version.
     },
   },
 };
