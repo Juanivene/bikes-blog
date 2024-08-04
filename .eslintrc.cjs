@@ -45,13 +45,19 @@ module.exports = {
     'consistent-return': 'error', // Requires return statements to either always or never specify values.
     'no-else-return': ['error', { allowElseIf: false }], // Disallows else blocks after return statements unless in an else-if chain.
 
-    'import/extensions': 'off', // no extensions are needed in import statements
-    'react/jsx-props-no-spreading': 'off',
-    'import/order': 'off', // customized order in .prettierrc
-    'func-names': 'off', // disabled to allow IIFEs
-    'import/no-extraneous-dependencies': 'off', // disabled to allow devDependencies
-    'react/require-default-props': 'off', // deprecated check
-    '@typescript-eslint/no-unused-vars': 'off', //! disabled to allow unused vars
+    // ! eslint-plugin-import Rules
+    'import/prefer-default-export': 'error', // Allows named exports even if there is only one export.
+    'import/extensions': 'off', // Allows omitting file extensions in imports.
+    'import/order': 'off', // Disables automatic sorting of imports (controlled by Prettier).
+    'import/no-extraneous-dependencies': 'off', // Allows importing dependencies marked as devDependencies.
+    'import/no-unresolved': 'error', // Ensures all imports can be resolved.
+    'import/named': 'error', // Ensures named imports exist.
+    'import/no-absolute-path': 'error', // Disallows the use of absolute paths in imports.
+
+    // // ! eslint-plugin-react Rules
+    // 'react/react-in-jsx-scope': 'off', // Disables the rule requiring React to be in scope for JSX files (unnecessary in React 17+).
+    // 'react/function-component-definition': 'off', // Allows defining functional components without style restrictions.
+    // 'react/jsx-props-no-spreading': 'off', // Allows the use of spread props in JSX.
     'react/jsx-sort-props': [
       1,
       {
