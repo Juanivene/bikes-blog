@@ -14,7 +14,7 @@ module.exports = {
     'plugin:jsx-a11y/recommended',
     'plugin:prettier/recommended',
   ],
-  parser: '@typescript-eslint/parser',
+  parser: '@typescript-eslint/parser', // Use TypeScript parser.
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',
