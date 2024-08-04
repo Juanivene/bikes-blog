@@ -73,6 +73,9 @@ module.exports = {
     // ! Additional rules disabled or modified from eslint-config-airbnb and others
     'func-names': 'off', // Allows the use of anonymous functions, especially in IIFEs.
 
+    // ! eslint-plugin-prettier Rules
+    'prettier/prettier': 'error', // Run Prettier as an ESLint rule and report differences as errors.
+
     // ! eslint-plugin-import Rules
     'import/prefer-default-export': 'error', // Allows named exports even if there is only one export.
     'import/extensions': 'off', // Allows omitting file extensions in imports.
