@@ -8,11 +8,12 @@ module.exports = {
     'eslint:recommended',
     'plugin:react/recommended',
     'next/core-web-vitals',
-    'airbnb',
-    'airbnb-typescript',
-    'plugin:@typescript-eslint/recommended',
-    'plugin:jsx-a11y/recommended',
+    'plugin:@next/next/recommended',
     'plugin:prettier/recommended',
+    'airbnb',
+    'plugin:@typescript-eslint/recommended',
+    'airbnb-typescript',
+    'plugin:jsx-a11y/recommended',
   ],
   parser: '@typescript-eslint/parser', // Use TypeScript parser.
   parserOptions: {
