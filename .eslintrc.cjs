@@ -1,8 +1,8 @@
 module.exports = {
   env: {
-    browser: true,
-    es2024: true,
-    node: true,
+    browser: true, // Set environment to browser.
+    es2024: true, // Enable support for ES2024 features.
+    node: true, // Set environment to Node.js.
   },
   extends: [
     'eslint:recommended',
