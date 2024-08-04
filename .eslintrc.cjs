@@ -45,6 +45,24 @@ module.exports = {
     'consistent-return': 'error', // Requires return statements to either always or never specify values.
     'no-else-return': ['error', { allowElseIf: false }], // Disallows else blocks after return statements unless in an else-if chain.
 
+    // ! eslint-plugin-react Rules
+    'react/react-in-jsx-scope': 'off', // Disables the rule requiring React to be in scope for JSX files (unnecessary in React 17+).
+    'react/function-component-definition': 'off', // Allows defining functional components without style restrictions.
+    'react/jsx-props-no-spreading': 'off', // Allows the use of spread props in JSX.
+    'react/jsx-sort-props': [
+      1,
+      {
+        shorthandFirst: true, // Sorts shorthand props first.
+        callbacksLast: true, // Places callbacks at the end.
+      },
+    ],
+    'react/require-default-props': 'off', // Disables the rule requiring default props for functional components.
+    'react/jsx-key': 'error', // Ensures all list elements in JSX have a key.
+    'react/jsx-no-bind': [
+      'warn',
+      { allowFunctions: true, allowArrowFunctions: true },
+    ], // Discourages the use of `.bind` in JSX to avoid performance issues.
+
     // ! eslint-plugin-import Rules
     'import/prefer-default-export': 'error', // Allows named exports even if there is only one export.
     'import/extensions': 'off', // Allows omitting file extensions in imports.
