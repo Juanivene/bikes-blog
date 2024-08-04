@@ -1,0 +1,11 @@
+**/*.md
+**/*.yml
+**/*.json
+**/*.css
+
+.next/
+
+config/
+dist/
+coverage/
+node_modules/

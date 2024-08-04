@@ -99,17 +99,6 @@ module.exports = {
     'no-eval': 'error', // Disable the use of eval.
     'no-implied-eval': 'error', // Disable the use of implicit eval.
   },
-  ignorePatterns: [
-    '.next/**',
-    'node_modules/',
-    'dist/',
-    'config/',
-    'coverage/',
-    '**/*.md',
-    '**/*.yml',
-    '**/*.json',
-    '**/*.css',
-  ],
   settings: {
     'import/resolver': {
       typescript: {}, // Ensures correct resolution of TypeScript files.
