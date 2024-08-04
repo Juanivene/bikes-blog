@@ -55,6 +55,9 @@ module.exports = {
     '**/*.css',
   ],
   settings: {
+    'import/resolver': {
+      typescript: {}, // Ensures correct resolution of TypeScript files.
+    },
     react: {
       version: 'detect', // Automatically detects the React version.
     },
