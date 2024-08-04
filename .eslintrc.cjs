@@ -14,9 +14,9 @@ module.exports = {
     'airbnb-typescript', // Extend Airbnb's configuration for TypeScript.
     'plugin:@typescript-eslint/recommended', // Use recommended rules for TypeScript.
     'plugin:jsx-a11y/recommended', // Use recommended rules for JSX accessibility.
-    'prettier',
+    'prettier', // Integrate Prettier rules with ESLint.
     'plugin:prettier/recommended', // Integrate Prettier rules with ESLint.
-    'eslint-config-prettier',
+    'eslint-config-prettier', // Disables rules that might interfere with Prettier.
   ],
   parser: '@typescript-eslint/parser', // Use TypeScript parser.
   parserOptions: {
