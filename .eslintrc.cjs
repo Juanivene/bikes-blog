@@ -63,6 +63,10 @@ module.exports = {
       { allowFunctions: true, allowArrowFunctions: true },
     ], // Discourages the use of `.bind` in JSX to avoid performance issues.
 
+    // ! eslint-plugin-react-hooks Rules
+    'react-hooks/rules-of-hooks': 'error', // Enforces the rules of hooks (use hooks only within functions and at the top level).
+    'react-hooks/exhaustive-deps': 'warn', // Warns if dependencies are missing in React effects (useEffect, etc.).
+
     // ! eslint-plugin-import Rules
     'import/prefer-default-export': 'error', // Allows named exports even if there is only one export.
     'import/extensions': 'off', // Allows omitting file extensions in imports.
