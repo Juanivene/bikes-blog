@@ -28,9 +28,9 @@ module.exports = {
     'react', // React plugin.
     'react-hooks', // Plugin for React Hooks rules.
     '@typescript-eslint', // TypeScript plugin.
-    'prettier', // Prettier plugin for formatting.
     'import', // Import plugin for managing imports.
     'jsx-a11y', // Plugin for accessibility rules in JSX.
+    'prettier', // Prettier plugin for formatting.
   ],
   rules: {
     'no-param-reassign': 'off',
