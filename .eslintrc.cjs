@@ -33,11 +33,17 @@ module.exports = {
     'prettier', // Prettier plugin for formatting.
   ],
   rules: {
-    'no-param-reassign': 'off',
-    'import/prefer-default-export': 'off',
-    'react/react-in-jsx-scope': 'off',
-    'react/function-component-definition': 'off',
-    '@typescript-eslint/no-empty-interface': 'off',
+    // ! ESLint Core Rules
+    'no-param-reassign': 'off', // Allows reassignment of parameters.
+    'arrow-body-style': ['warn', 'as-needed'], // Advises using arrow function body only when necessary.
+    'no-console': 'error', // Disables the use of console methods in production.
+    'no-duplicate-imports': 'error', // Prevents duplicate imports in the same file.
+    camelcase: 'error', // Enforces camelcase naming convention.
+    eqeqeq: ['error', 'always'], // Enforces the use of === and !== instead of == and !=.
+    'no-shadow': 'error', // Prevents variable declarations from shadowing variables in outer scopes.
+    'no-use-before-define': 'error', // Disallows the use of variables before they are defined.
+    'consistent-return': 'error', // Requires return statements to either always or never specify values.
+    'no-else-return': ['error', { allowElseIf: false }], // Disallows else blocks after return statements unless in an else-if chain.
 
     'import/extensions': 'off', // no extensions are needed in import statements
     'react/jsx-props-no-spreading': 'off',
