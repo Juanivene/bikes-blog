@@ -85,17 +85,19 @@ module.exports = {
     'import/named': 'error', // Ensures named imports exist.
     'import/no-absolute-path': 'error', // Disallows the use of absolute paths in imports.
 
-    // // ! eslint-plugin-react Rules
-    // 'react/react-in-jsx-scope': 'off', // Disables the rule requiring React to be in scope for JSX files (unnecessary in React 17+).
-    // 'react/function-component-definition': 'off', // Allows defining functional components without style restrictions.
-    // 'react/jsx-props-no-spreading': 'off', // Allows the use of spread props in JSX.
-    'react/jsx-sort-props': [
-      1,
-      {
-        shorthandFirst: true,
-        callbacksLast: true,
-      },
-    ],
+    // ! @typescript-eslint/eslint-plugin Rules
+    '@typescript-eslint/no-empty-interface': 'off', // Allows defining empty interfaces in TypeScript.
+    '@typescript-eslint/no-unused-vars': 'error',
+    '@typescript-eslint/explicit-function-return-type': 'error', // Requires explicit return types on functions and class methods.
+    '@typescript-eslint/ban-types': 'error', // Disallows specific types (e.g., `Object`, `Function`).
+    '@typescript-eslint/type-annotation-spacing': 'error', // Requires consistent spacing around type annotations.
+    '@typescript-eslint/no-explicit-any': 'error', // Avoids the use of the `any` type in TypeScript.
+    '@typescript-eslint/ban-ts-comment': 'warn', // Discourages unnecessary `@ts-ignore` comments.
+    '@typescript-eslint/no-floating-promises': 'error', // Avoid using floating promises.
+    '@typescript-eslint/no-unsafe-assignment': 'error', // Avoid unsafe assignments.
+    '@typescript-eslint/no-unsafe-member-access': 'error', // Prevent unsafe access to members of an object.
+    '@typescript-eslint/no-unsafe-call': 'error', // Avoid unsafe function calls.
+    '@typescript-eslint/no-misused-promises': 'error', // Avoid misuse of promises.
   },
   ignorePatterns: [
     '.next/**',
