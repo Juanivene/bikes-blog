@@ -4,16 +4,17 @@ module.exports = {
     es2024: true, // Enable support for ES2024 features.
     node: true, // Set environment to Node.js.
   },
+  // ! Do not change the order of the extends, it may affect their operation
   extends: [
-    'eslint:recommended',
-    'plugin:react/recommended',
-    'next/core-web-vitals',
-    'plugin:@next/next/recommended',
-    'airbnb',
-    'airbnb-typescript',
-    'plugin:@typescript-eslint/recommended',
-    'plugin:jsx-a11y/recommended',
-    'plugin:prettier/recommended',
+    'eslint:recommended', // Use ESLint's recommended rules.
+    'plugin:react/recommended', // Use recommended rules for React.
+    'next/core-web-vitals', // Use Next.js core web vitals rules.
+    'plugin:@next/next/recommended', // Use recommended rules for Next.js.
+    'airbnb', // Extend Airbnb's base configuration.
+    'airbnb-typescript', // Extend Airbnb's configuration for TypeScript.
+    'plugin:@typescript-eslint/recommended', // Use recommended rules for TypeScript.
+    'plugin:jsx-a11y/recommended', // Use recommended rules for JSX accessibility.
+    'plugin:prettier/recommended', // Integrate Prettier rules with ESLint.
   ],
   parser: '@typescript-eslint/parser', // Use TypeScript parser.
   parserOptions: {
