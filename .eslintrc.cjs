@@ -45,6 +45,9 @@ module.exports = {
     'consistent-return': 'error', // Requires return statements to either always or never specify values.
     'no-else-return': ['error', { allowElseIf: false }], // Disallows else blocks after return statements unless in an else-if chain.
 
+    'no-eval': 'error', // Disable the use of eval.
+    'no-implied-eval': 'error', // Disable the use of implicit eval.
+
     // ! eslint-plugin-react Rules
     'react/react-in-jsx-scope': 'off', // Disables the rule requiring React to be in scope for JSX files (unnecessary in React 17+).
     'react/function-component-definition': 'off', // Allows defining functional components without style restrictions.
@@ -66,6 +69,9 @@ module.exports = {
     // ! eslint-plugin-react-hooks Rules
     'react-hooks/rules-of-hooks': 'error', // Enforces the rules of hooks (use hooks only within functions and at the top level).
     'react-hooks/exhaustive-deps': 'warn', // Warns if dependencies are missing in React effects (useEffect, etc.).
+
+    // ! Additional rules disabled or modified from eslint-config-airbnb and others
+    'func-names': 'off', // Allows the use of anonymous functions, especially in IIFEs.
 
     // ! eslint-plugin-import Rules
     'import/prefer-default-export': 'error', // Allows named exports even if there is only one export.
