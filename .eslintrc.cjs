@@ -21,12 +21,12 @@ module.exports = {
     project: './tsconfig.json', // Specify the TypeScript configuration file.
   },
   plugins: [
-    'react',
-    'react-hooks',
-    '@typescript-eslint',
-    'prettier',
-    'import',
-    'jsx-a11y',
+    'react', // React plugin.
+    'react-hooks', // Plugin for React Hooks rules.
+    '@typescript-eslint', // TypeScript plugin.
+    'prettier', // Prettier plugin for formatting.
+    'import', // Import plugin for managing imports.
+    'jsx-a11y', // Plugin for accessibility rules in JSX.
   ],
   rules: {
     'no-param-reassign': 'off',
