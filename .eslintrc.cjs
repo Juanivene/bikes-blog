@@ -45,9 +45,6 @@ module.exports = {
     'consistent-return': 'error', // Requires return statements to either always or never specify values.
     'no-else-return': ['error', { allowElseIf: false }], // Disallows else blocks after return statements unless in an else-if chain.
 
-    'no-eval': 'error', // Disable the use of eval.
-    'no-implied-eval': 'error', // Disable the use of implicit eval.
-
     // ! eslint-plugin-react Rules
     'react/react-in-jsx-scope': 'off', // Disables the rule requiring React to be in scope for JSX files (unnecessary in React 17+).
     'react/function-component-definition': 'off', // Allows defining functional components without style restrictions.
@@ -73,9 +70,6 @@ module.exports = {
     // ! Additional rules disabled or modified from eslint-config-airbnb and others
     'func-names': 'off', // Allows the use of anonymous functions, especially in IIFEs.
 
-    // ! eslint-plugin-prettier Rules
-    'prettier/prettier': 'error', // Run Prettier as an ESLint rule and report differences as errors.
-
     // ! eslint-plugin-import Rules
     'import/prefer-default-export': 'error', // Allows named exports even if there is only one export.
     'import/extensions': 'off', // Allows omitting file extensions in imports.
@@ -98,6 +92,12 @@ module.exports = {
     '@typescript-eslint/no-unsafe-member-access': 'error', // Prevent unsafe access to members of an object.
     '@typescript-eslint/no-unsafe-call': 'error', // Avoid unsafe function calls.
     '@typescript-eslint/no-misused-promises': 'error', // Avoid misuse of promises.
+
+    // ! eslint-plugin-prettier Rules
+    'prettier/prettier': 'error', // Run Prettier as an ESLint rule and report differences as errors.
+
+    'no-eval': 'error', // Disable the use of eval.
+    'no-implied-eval': 'error', // Disable the use of implicit eval.
   },
   ignorePatterns: [
     '.next/**',
