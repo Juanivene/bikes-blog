@@ -11,8 +11,8 @@ module.exports = {
     'plugin:@next/next/recommended',
     'airbnb',
     'airbnb-typescript',
-    'plugin:prettier/recommended',
     'plugin:@typescript-eslint/recommended',
+    'plugin:prettier/recommended',
     'plugin:jsx-a11y/recommended',
   ],
   parser: '@typescript-eslint/parser', // Use TypeScript parser.
