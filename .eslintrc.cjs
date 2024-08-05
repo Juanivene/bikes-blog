@@ -69,7 +69,6 @@ module.exports = {
           Undefined: 'undefined',
         },
         requireParamType: true, // Requires all @param to have a specified type.
-        requireHyphenBeforeParamDescription: 'always', // Requires a dash before the parameter description.
       },
     ],
 
