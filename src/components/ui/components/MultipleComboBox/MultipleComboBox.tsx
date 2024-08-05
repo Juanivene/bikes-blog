@@ -88,7 +88,6 @@ const MultipleComboBox = <T extends FieldValues>(
   return (
     <div className={className}>
       <Combobox
-        // @ts-expect-error -- multiple "true" IS a valid prop
         multiple
         aria-describedby="error-message"
         aria-label="Seleccione una opción"
