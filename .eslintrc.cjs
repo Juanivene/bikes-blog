@@ -128,10 +128,10 @@ module.exports = {
       'error',
       {
         require: {
-          FunctionDeclaration: true,
+          FunctionDeclaration: true, // Require JSDoc for function declarations.
           MethodDefinition: false,
           ClassDeclaration: false,
-          ArrowFunctionExpression: true,
+          ArrowFunctionExpression: true, // Require JSDoc for arrow functions.
           FunctionExpression: false,
         },
       },
