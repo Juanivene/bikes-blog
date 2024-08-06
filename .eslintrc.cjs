@@ -123,6 +123,20 @@ module.exports = {
     // ! eslint-plugin-prettier Rules
     'prettier/prettier': 'error', // Run Prettier as an ESLint rule and report differences as errors.
 
+    // ! eslint-plugin-jsdoc Rules
+    'require-jsdoc': [
+      'error',
+      {
+        require: {
+          FunctionDeclaration: true,
+          MethodDefinition: false,
+          ClassDeclaration: false,
+          ArrowFunctionExpression: true,
+          FunctionExpression: false,
+        },
+      },
+    ],
+
     'no-eval': 'error', // Disable the use of eval.
     'no-implied-eval': 'error', // Disable the use of implicit eval.
   },
