@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import { store } from '@/redux/store/store';
 
 import type { FetchFnProps, FetchFnResult } from './interface';
