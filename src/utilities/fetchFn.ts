@@ -31,7 +31,7 @@ let statusCode: number | null = null;
  *              skip: false, // this is the default behavior - no "skip" option is needed
  *            });
  */
-export async function fetchFn<T extends object | Blob>({
+async function fetchFn<T extends object | Blob>({
   adapter,
   baseUrl,
   cache = false,
@@ -175,3 +175,5 @@ export async function fetchFn<T extends object | Blob>({
 }
 
 // TODO: REFETCH
+
+export default fetchFn;
