@@ -111,6 +111,16 @@ const ErrorToast = (text: string, time = 3000) => {
   });
 };
 
+/**
+ * Displays a success toast notification.
+ *
+ * @param {string} text - The text to display in the success toast.
+ * @param {number} [time=3000] - The duration in milliseconds the toast should be visible.
+ * @returns {Promise<SweetAlertResult<unknown>>} The result of the SweetAlert2 toast notification.
+ *
+ * @example
+ * const result = await SuccessToast('Operation was successful');
+ */
 const SuccessToast = (text: string, time = 3000) => {
   return customToast({
     icon: 'success',
