@@ -93,6 +93,16 @@ const customToast = async (
   return swal.fire({ ...args });
 };
 
+/**
+ * Displays an error toast notification.
+ *
+ * @param {string} text - The text to display in the error toast.
+ * @param {number} [time=3000] - The duration in milliseconds the toast should be visible.
+ * @returns {Promise<SweetAlertResult<unknown>>} The result of the SweetAlert2 toast notification.
+ *
+ * @example
+ * const result = await ErrorToast('An error occurred');
+ */
 const ErrorToast = (text: string, time = 3000) => {
   return customToast({
     icon: 'error',
