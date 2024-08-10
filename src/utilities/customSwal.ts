@@ -45,6 +45,18 @@ const customSwal = async (args: CustomSwalArgs) => {
   });
 };
 
+/**
+ * Displays a custom SweetAlert2 toast notification.
+ *
+ * @param {SweetAlertOptions} args - The configuration options for the SweetAlert2 toast notification.
+ * @returns {Promise<SweetAlertResult<unknown>>} The result of the SweetAlert2 toast notification.
+ *
+ * @example
+ * const result = await customToast({
+ *   icon: 'success',
+ *   title: 'Operation Successful',
+ * });
+ */
 const customToast = async (
   args: SweetAlertOptions
 ): Promise<SweetAlertResult<unknown>> => {
