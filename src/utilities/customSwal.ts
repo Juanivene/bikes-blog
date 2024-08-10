@@ -20,7 +20,7 @@ import { CustomSwalArgs } from './interface';
  *   console.log('Confirmed');
  * }
  */
-const customSwal = async (args: CustomSwalArgs) => {
+const customSwal = async (args: CustomSwalArgs): Promise<SweetAlertResult> => {
   const theme = localStorage.getItem('theme');
 
   const colorConfig =
@@ -103,13 +103,15 @@ const customToast = async (
  * @example
  * const result = await ErrorToast('An error occurred');
  */
-const ErrorToast = (text: string, time = 3000) => {
-  return customToast({
+const ErrorToast = (
+  text: string,
+  time = 3000
+): Promise<SweetAlertResult<unknown>> =>
+  customToast({
     icon: 'error',
     title: text,
     timer: time,
   });
-};
 
 /**
  * Displays a success toast notification.
@@ -121,12 +123,14 @@ const ErrorToast = (text: string, time = 3000) => {
  * @example
  * const result = await SuccessToast('Operation was successful');
  */
-const SuccessToast = (text: string, time = 3000) => {
-  return customToast({
+const SuccessToast = (
+  text: string,
+  time = 3000
+): Promise<SweetAlertResult<unknown>> =>
+  customToast({
     icon: 'success',
     title: text,
     timer: time,
   });
-};
 
 export { customSwal, customToast, ErrorToast, SuccessToast };
