@@ -4,7 +4,7 @@
  * @param values
  * @returns {string}
  */
-export const removeLineBreaks = (
+const removeLineBreaks = (
   strings: TemplateStringsArray,
   ...values: unknown[]
 ): string => {
@@ -22,3 +22,5 @@ export const removeLineBreaks = (
 
   return result;
 };
+
+export default removeLineBreaks;
