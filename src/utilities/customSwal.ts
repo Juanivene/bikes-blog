@@ -5,6 +5,21 @@ import Swal, {
 
 import { CustomSwalArgs } from './interface';
 
+/**
+ * Displays a custom SweetAlert2 modal with configurable options.
+ *
+ * @param {CustomSwalArgs} args - The configuration options for the SweetAlert2 modal.
+ * @returns {Promise<SweetAlertResult>} The result of the SweetAlert2 modal.
+ *
+ * @example
+ * const result = await customSwal({
+ *   title: 'Custom Title',
+ *   text: 'Custom Text',
+ * });
+ * if (result.isConfirmed) {
+ *   console.log('Confirmed');
+ * }
+ */
 const customSwal = async (args: CustomSwalArgs) => {
   const theme = localStorage.getItem('theme');
 
