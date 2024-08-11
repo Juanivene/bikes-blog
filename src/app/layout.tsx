@@ -8,7 +8,7 @@ import SonnerToast from '@/components/Common/SonnerToast';
 import ErrorBoundary from '@/components/Error/ErrorBoundary';
 
 import '@/styles/animations.css';
-import { robotoSlab } from '@/styles/fonts';
+import robotoSlab from '@/styles/fonts';
 import '@/styles/globals.css';
 import '@/styles/tailwind.css';
 
