@@ -5,8 +5,6 @@ import LoadingPage from '@/components/Loading/LoadingPage';
  *
  * @returns {JSX.Element} The rendered LoadingScreen component.
  */
-const LoadingScreen = () => {
-  return <LoadingPage />;
-};
+const LoadingScreen = (): JSX.Element => <LoadingPage />;
 
 export default LoadingScreen;
