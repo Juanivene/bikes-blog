@@ -28,22 +28,24 @@ export const metadata: Metadata = {
  *
  * @returns {JSX.Element} The rendered RootLayout component.
  */
-const RootLayout = ({ children }: { children: React.ReactNode }) => {
-  return (
-    <html suppressHydrationWarning lang="es">
-      <body className={robotoSlab.className}>
-        <ReduxProvider>
-          <ErrorBoundary>
-            <ThemeProvider>
-              <SkipNavButton />
-              <main id="main">{children}</main>
-              <SonnerToast />
-            </ThemeProvider>
-          </ErrorBoundary>
-        </ReduxProvider>
-      </body>
-    </html>
-  );
-};
+const RootLayout = ({
+  children,
+}: {
+  children: React.ReactNode;
+}): JSX.Element => (
+  <html suppressHydrationWarning lang="es">
+    <body className={robotoSlab.className}>
+      <ReduxProvider>
+        <ErrorBoundary>
+          <ThemeProvider>
+            <SkipNavButton />
+            <main id="main">{children}</main>
+            <SonnerToast />
+          </ThemeProvider>
+        </ErrorBoundary>
+      </ReduxProvider>
+    </body>
+  </html>
+);
 
 export default RootLayout;
