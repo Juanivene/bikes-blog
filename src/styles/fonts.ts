@@ -1,6 +1,6 @@
-import { Roboto_Slab } from 'next/font/google';
+import { Roboto_Slab as robotoSlabFont } from 'next/font/google';
 
-const robotoSlab = Roboto_Slab({
+const robotoSlab = robotoSlabFont({
   weight: '400',
   style: 'normal',
   subsets: ['latin'],
