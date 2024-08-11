@@ -20,6 +20,14 @@ export const metadata: Metadata = {
   keywords: ['...', 'pjt', 'poder judicial', 'tucuman', 'corte justicia'],
 };
 
+/**
+ * RootLayout component to wrap the application with providers and common components.
+ *
+ * @param {object} props - The component props.
+ * @param {React.ReactNode} props.children - The child components to render inside the layout.
+ *
+ * @returns {JSX.Element} The rendered RootLayout component.
+ */
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html suppressHydrationWarning lang="es">
