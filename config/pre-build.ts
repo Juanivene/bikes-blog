@@ -122,6 +122,7 @@ const runBuildCommand = () => {
 
       if (error) {
         console.error(`\n\x1b[31m❌ Build failed: ${error.message}\x1b[0m`);
+        throw new Error(error.message);
       } else {
         console.log('\n\x1b[32m✅ Build succeeded\x1b[0m');
       }
