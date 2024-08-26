@@ -206,7 +206,7 @@ const runPreBuildScript = async () => {
       console.log('\x1b[33m⚠️  WARNING: Starting Prettier fix...\x1b[0m\n');
     }
     await runCommand(
-      'npm run prettier:write',
+      'npm run prettier',
       'Prettier',
       !isLint ? 'Prettier check passed' : 'Prettier fix finished',
       !isLint ? 'Prettier check passed' : 'Prettier fix failed.\n\n'
