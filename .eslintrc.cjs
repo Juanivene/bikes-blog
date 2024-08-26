@@ -38,7 +38,16 @@ module.exports = {
     'arrow-body-style': ['warn', 'as-needed'], // Advises using arrow function body only when necessary.
     'no-console': 'error', // Disables the use of console methods in production.
     'no-duplicate-imports': 'error', // Prevents duplicate imports in the same file.
-    camelcase: 'error', // Enforces camelcase naming convention.
+    camelcase: [
+      'error',
+      {
+        properties: 'always', // Enforces camelCase naming for all properties.
+        ignoreDestructuring: false, // Do not ignore destructured variables.
+        ignoreImports: false, // Do not ignore import names.
+        ignoreGlobals: false, // Do not ignore global variables.
+        allow: [], // Allow specific exceptions.
+      },
+    ],
     eqeqeq: ['error', 'always'], // Enforces the use of === and !== instead of == and !=.
     'no-shadow': 'error', // Prevents variable declarations from shadowing variables in outer scopes.
     'no-use-before-define': 'error', // Disallows the use of variables before they are defined.
