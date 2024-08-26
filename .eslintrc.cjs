@@ -110,19 +110,40 @@ module.exports = {
     'import/prefer-default-export': 'error', // Allows named exports even if there is only one export.
     'import/extensions': 'off', // Allows omitting file extensions in imports.
     'import/order': 'off', // Disables automatic sorting of imports (controlled by Prettier).
-    'import/no-extraneous-dependencies': 'off', // Allows importing dependencies marked as devDependencies.
+    'import/no-extraneous-dependencies': ['error', { devDependencies: false }], // Allows importing dependencies marked as devDependencies.
     'import/no-unresolved': 'error', // Ensures all imports can be resolved.
     'import/named': 'error', // Ensures named imports exist.
     'import/no-absolute-path': 'error', // Disallows the use of absolute paths in imports.
 
     // ! @typescript-eslint/eslint-plugin Rules
-    '@typescript-eslint/no-empty-interface': 'off', // Allows defining empty interfaces in TypeScript.
-    '@typescript-eslint/no-unused-vars': 'error',
-    '@typescript-eslint/explicit-function-return-type': 'error', // Requires explicit return types on functions and class methods.
-    '@typescript-eslint/ban-types': 'error', // Disallows specific types (e.g., `Object`, `Function`).
-    '@typescript-eslint/type-annotation-spacing': 'error', // Requires consistent spacing around type annotations.
+    '@typescript-eslint/no-empty-interface': [
+      'error',
+      { allowSingleExtends: true }, // Allows single extends for empty interfaces.
+    ],
+    '@typescript-eslint/no-unused-vars': 'error', // Disallows unused variables.
+    '@typescript-eslint/explicit-function-return-type': [
+      'error',
+      { allowExpressions: true }, // Requires explicit return types for functions, but allows for functions assigned to variables.
+    ],
+    '@typescript-eslint/ban-types': [
+      'error',
+      {
+        extendDefaults: true, // Extends default banned types.
+        types: {
+          Object: false, // Disallows `Object` type, but allows custom types.
+          Function: false, // Disallows `Function` type, but allows custom types.
+        },
+      },
+    ],
+    '@typescript-eslint/type-annotation-spacing': [
+      'error',
+      { before: false, after: true }, // Requires consistent spacing around type annotations.
+    ],
     '@typescript-eslint/no-explicit-any': 'error', // Avoids the use of the `any` type in TypeScript.
-    '@typescript-eslint/ban-ts-comment': 'warn', // Discourages unnecessary `@ts-ignore` comments.
+    '@typescript-eslint/ban-ts-comment': [
+      'warn',
+      { 'ts-ignore': 'allow-with-description' }, // Allows `ts-ignore` comments with a description.
+    ],
     '@typescript-eslint/no-floating-promises': 'error', // Avoid using floating promises.
     '@typescript-eslint/no-unsafe-assignment': 'error', // Avoid unsafe assignments.
     '@typescript-eslint/no-unsafe-member-access': 'error', // Prevent unsafe access to members of an object.
