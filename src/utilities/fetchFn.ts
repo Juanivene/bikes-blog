@@ -132,6 +132,7 @@ async function fetchFn<T extends object | Blob>({
         break;
       case 'json':
       default:
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
         data = await response.json();
         break;
     }
