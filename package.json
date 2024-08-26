@@ -77,11 +77,10 @@
       "eslint --fix",
       "prettier -w"
     ],
-    "*.{css}": [
+    "*.css": [
       "stylelint --fix"
     ],
     "*.{html,css,md,json}": [
-      "stylelint --fix",
       "prettier -w"
     ]
   }
