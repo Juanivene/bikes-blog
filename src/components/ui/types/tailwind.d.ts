@@ -1,35 +1,15 @@
-export interface CheckboxColorType {
-  light:
-    | `bg-${DefaultColorNameType}`
-    | `bg-${ColorNameType}-${ColorIntensityType}`;
-  dark:
-    | `dark:bg-${DefaultColorNameType}`
-    | `dark:bg-${ColorNameType}-${ColorIntensityType}`;
-}
-
-export interface BgColorProp {
-  color?:
-    | `bg-${DefaultColorNameType}`
-    | `bg-${ColorNameType}-${ColorIntensityType}`;
-}
-
-export type DefaultColorNameType =
-  | 'neutral'
-  | 'primary'
-  | 'secondary'
-  | 'accent'
-  | 'ghost'
-  | 'link'
-  | 'info'
-  | 'success'
-  | 'warning'
-  | 'error'
-  | 'transparent'
-  | 'dark'
-  | 'white'
-  | 'black'
-  | 'current'
-  | 'inherit';
+export type ColorIntensityType =
+  | 50
+  | 100
+  | 200
+  | 300
+  | 400
+  | 500
+  | 600
+  | 700
+  | 800
+  | 900
+  | 950;
 
 export type ColorNameType =
   | 'slate'
@@ -55,18 +35,29 @@ export type ColorNameType =
   | 'pink'
   | 'rose';
 
-export type ColorIntensityType =
-  | 50
-  | 100
-  | 200
-  | 300
-  | 400
-  | 500
-  | 600
-  | 700
-  | 800
-  | 900
-  | 950;
+export type DefaultColorNameType =
+  | 'neutral'
+  | 'primary'
+  | 'secondary'
+  | 'accent'
+  | 'ghost'
+  | 'link'
+  | 'info'
+  | 'success'
+  | 'warning'
+  | 'error'
+  | 'transparent'
+  | 'dark'
+  | 'white'
+  | 'black'
+  | 'current'
+  | 'inherit';
+
+export interface BgColorProp {
+  color?:
+    | `bg-${DefaultColorNameType}`
+    | `bg-${ColorNameType}-${ColorIntensityType}`;
+}
 
 export interface ButtonColorType {
   light:
@@ -75,6 +66,15 @@ export interface ButtonColorType {
     | `bg-${ColorNameType}-${ColorIntensityType}`;
   dark:
     | `dark:btn-${DefaultColorNameType}`
+    | `dark:bg-${DefaultColorNameType}`
+    | `dark:bg-${ColorNameType}-${ColorIntensityType}`;
+}
+
+export interface CheckboxColorType {
+  light:
+    | `bg-${DefaultColorNameType}`
+    | `bg-${ColorNameType}-${ColorIntensityType}`;
+  dark:
     | `dark:bg-${DefaultColorNameType}`
     | `dark:bg-${ColorNameType}-${ColorIntensityType}`;
 }
