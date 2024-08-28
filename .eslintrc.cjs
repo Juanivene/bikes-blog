@@ -135,10 +135,6 @@ module.exports = {
         },
       },
     ],
-    '@typescript-eslint/type-annotation-spacing': [
-      'error',
-      { before: false, after: true }, // Requires consistent spacing around type annotations.
-    ],
     '@typescript-eslint/no-explicit-any': 'error', // Avoids the use of the `any` type in TypeScript.
     '@typescript-eslint/ban-ts-comment': [
       'warn',
