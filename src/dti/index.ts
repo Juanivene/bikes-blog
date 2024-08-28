@@ -1,4 +1,4 @@
-export const DTI = (val: string) =>
+export const DTI = (val: string): string | undefined =>
   process.env.env === 'test' ? val : undefined;
 
 export const DTI_LIST = {
