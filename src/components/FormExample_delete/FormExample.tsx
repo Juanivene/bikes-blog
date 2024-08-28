@@ -1,6 +1,8 @@
 'use client';
 
 // import Button from '../ui/Button';
+import { FormEvent } from 'react';
+
 import { useZodForm } from '@/hooks';
 
 // import DateInput from '../ui/forms/DateInput';
@@ -32,7 +34,7 @@ const FormExample = (): JSX.Element => {
   };
 
   // Wrapper to ensure onSubmitMiddleware does not return a promise
-  const handleFormSubmit = (event: React.FormEvent<HTMLFormElement>): void => {
+  const handleFormSubmit = (event: FormEvent<HTMLFormElement>): void => {
     event.preventDefault(); // Prevent default form submission
     onSubmitMiddleware(handleSubmit)(event).catch((error) => {
       // Handle any errors from onSubmitMiddleware
