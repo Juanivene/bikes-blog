@@ -22,14 +22,27 @@ import { ExampleSchema, exampleSchema } from '@/forms/schemas/exampleSchema';
 //   },
 // ];
 
-const FormExample = () => {
+const FormExample = (): JSX.Element => {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const { onSubmitMiddleware, control } = useZodForm(exampleSchema);
 
-  // eslint-disable-next-line no-console
-  const handleSubmit = (data: ExampleSchema) => console.log(data);
+  const handleSubmit = async (data: ExampleSchema): Promise<void> => {
+    // eslint-disable-next-line no-console
+    console.log(data);
+  };
+
+  // Wrapper to ensure onSubmitMiddleware does not return a promise
+  const handleFormSubmit = (event: React.FormEvent<HTMLFormElement>): void => {
+    event.preventDefault(); // Prevent default form submission
+    onSubmitMiddleware(handleSubmit)(event).catch((error) => {
+      // Handle any errors from onSubmitMiddleware
+      // eslint-disable-next-line no-console
+      console.error(error);
+    });
+  };
 
   return (
-    <form onSubmit={onSubmitMiddleware(handleSubmit)}>
+    <form onSubmit={handleFormSubmit}>
       {/* <TextInput
         control={control}
         dti={DTI(DTI_LIST.FORM.RESOLUTION)}
