@@ -2,7 +2,13 @@
 
 import { useEffect } from 'react';
 
-const ErrorScreen = ({ error, reset }: { error: Error; reset: () => void }) => {
+const ErrorScreen = ({
+  error,
+  reset,
+}: {
+  error: Error;
+  reset: () => void;
+}): JSX.Element => {
   useEffect(() => {
     // Log the error to an error reporting service
     // eslint-disable-next-line no-console
