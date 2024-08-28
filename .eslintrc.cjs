@@ -154,15 +154,16 @@ module.exports = {
     'prettier/prettier': 'error', // Run Prettier as an ESLint rule and report differences as errors.
 
     // ! eslint-plugin-jsdoc Rules
+    // TODO: reemplazar por libreria eslint-plugin-jsdoc
     'require-jsdoc': [
-      'error',
+      'off',
       {
         require: {
           FunctionDeclaration: true, // Require JSDoc for function declarations.
           MethodDefinition: false,
           ClassDeclaration: false,
           ArrowFunctionExpression: true, // Require JSDoc for arrow functions.
-          FunctionExpression: false,
+          FunctionExpression: true,
         },
       },
     ],
