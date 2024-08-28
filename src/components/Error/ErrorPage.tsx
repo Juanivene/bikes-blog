@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-import { PATHS } from '@/constants/paths';
+import PATHS from '@/constants/paths';
 
 const ErrorPage = (): JSX.Element => (
   <section className="flex justify-center text-center">
