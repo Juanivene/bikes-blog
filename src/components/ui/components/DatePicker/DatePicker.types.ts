@@ -2,17 +2,6 @@ import type { DataTestId } from '@/interface/globalTypes';
 import type { CustomLocale } from 'flatpickr/dist/types/locale';
 import type { Options } from 'flatpickr/dist/types/options';
 
-export interface DatePickerProps extends DataTestId {
-  className?: string;
-  disabled?: boolean;
-  error?: boolean;
-  name: string;
-  onChange: (selectedDate: Date | string) => void;
-  options?: OptionsDatePickerProps;
-  placeholder?: string;
-  value: Date | string;
-}
-
 export type OptionsDatePickerProps = Options & {
   allowInput?: boolean;
   clickOpens?: boolean;
@@ -30,3 +19,14 @@ export type OptionsDatePickerProps = Options & {
   mode?: 'single' | 'multiple' | 'range' | 'time';
   noCalendar?: boolean;
 };
+
+export interface DatePickerProps extends DataTestId {
+  className?: string;
+  disabled?: boolean;
+  error?: boolean;
+  name: string;
+  onChange: (selectedDate: Date | string) => void;
+  options?: OptionsDatePickerProps;
+  placeholder?: string;
+  value: Date | string;
+}
