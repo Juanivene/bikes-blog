@@ -12,7 +12,7 @@ const sizes: Sizes = {
   '2xl': '1536px',
 };
 
-export const usePortrait = (size: keyof Sizes = 'md'): boolean | undefined => {
+const usePortrait = (size: keyof Sizes = 'md'): boolean | undefined => {
   const windowObj = typeof window !== 'undefined' ? window : undefined;
 
   const mediaQuery = useMemo(
@@ -34,3 +34,5 @@ export const usePortrait = (size: keyof Sizes = 'md'): boolean | undefined => {
 
   return isPortrait;
 };
+
+export default usePortrait;
