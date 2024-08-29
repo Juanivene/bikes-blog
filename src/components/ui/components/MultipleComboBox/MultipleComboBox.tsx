@@ -53,9 +53,9 @@ const MultipleComboBox = <T extends FieldValues>(
   const filteredOptions =
     query === ''
       ? options
-      : options.filter(({ description }) => {
-          return description.toLowerCase().includes(query.toLowerCase());
-        });
+      : options.filter(({ description }) =>
+          description.toLowerCase().includes(query.toLowerCase())
+        );
 
   const positionedColor = positionedColorOption
     ? `${positionedColorOption.bgColor} ${positionedColorOption.textColor}`
