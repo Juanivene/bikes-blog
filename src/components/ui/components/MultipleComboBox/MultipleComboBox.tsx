@@ -75,6 +75,8 @@ const MultipleComboBox = <T extends FieldValues>(
       const newValue =
         controller.value && controller.value.length > 0
           ? filteredOptions.filter(({ id: optionId }) =>
+              // TODO: revisar y resolver
+              // eslint-disable-next-line @typescript-eslint/no-unsafe-call
               controller.value.some(
                 ({ id: valueId }: { id: string }) => valueId === optionId
               )
