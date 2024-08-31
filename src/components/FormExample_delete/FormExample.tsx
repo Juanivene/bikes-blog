@@ -1,7 +1,7 @@
 'use client';
 
 // import Button from '../ui/Button';
-import { FormEvent } from 'react';
+import { type FormEvent } from 'react';
 
 import { useZodForm } from '@/hooks';
 
