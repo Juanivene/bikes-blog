@@ -1,14 +1,15 @@
 'use client';
 
 // import Button from '../ui/Button';
-import { type FormEvent } from 'react';
-
 import { useZodForm } from '@/hooks';
 
 // import DateInput from '../ui/forms/DateInput';
 // import SelectInput from '../ui/forms/SelectInput';
 // import TextInput from '../ui/forms/TextInput';
-import { ExampleSchema, exampleSchema } from '@/forms/schemas/exampleSchema';
+import {
+  type ExampleSchema,
+  exampleSchema,
+} from '@/forms/schemas/exampleSchema';
 
 // import { DTI, DTI_LIST } from '@/dti';
 // import { ListOption } from '@/interface/globalTypes';
@@ -24,27 +25,17 @@ import { ExampleSchema, exampleSchema } from '@/forms/schemas/exampleSchema';
 //   },
 // ];
 
-const FormExample = (): JSX.Element => {
+// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
+const FormExample = () => {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const { onSubmitMiddleware, control } = useZodForm(exampleSchema);
 
-  const handleSubmit = async (data: ExampleSchema): Promise<void> => {
-    // eslint-disable-next-line no-console
-    console.log(data);
-  };
-
-  // Wrapper to ensure onSubmitMiddleware does not return a promise
-  const handleFormSubmit = (event: FormEvent<HTMLFormElement>): void => {
-    event.preventDefault(); // Prevent default form submission
-    onSubmitMiddleware(handleSubmit)(event).catch((error) => {
-      // Handle any errors from onSubmitMiddleware
-      // eslint-disable-next-line no-console
-      console.error(error);
-    });
-  };
+  // eslint-disable-next-line no-console, @typescript-eslint/explicit-function-return-type
+  const handleSubmit = (data: ExampleSchema) => console.log(data); // TODO: revisar tipos
 
   return (
-    <form onSubmit={handleFormSubmit}>
+    // eslint-disable-next-line @typescript-eslint/no-misused-promises
+    <form onSubmit={onSubmitMiddleware(handleSubmit)}>
       {/* <TextInput
         control={control}
         dti={DTI(DTI_LIST.FORM.RESOLUTION)}
