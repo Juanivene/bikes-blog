@@ -1,3 +1,5 @@
+/* eslint-disable valid-jsdoc */
+
 /* eslint-disable no-console */
 import { store } from '@/redux/store/store';
 
@@ -5,18 +7,44 @@ import type { FetchFnProps, FetchFnResult } from './interface';
 
 let statusCode: number | null = null;
 
+/**
+ * **Fetch function** - Use this wrapper to fetch data from server components.
+ * By default, it WON'T cache the data, so it will always fetch from the server.
+ * @param baseUrl - *Optional*. Base URL to concat with the URL. If not sent, it will use `NEXT_PUBLIC_API_BASE_URL` from Env variables. If not defined, it will throw an error.
+ * @param url - URL to be send the request, concatenated with the baseUrl.
+ * @param options - *Optional*. Options to be passed to the fetch function. See https://nextjs.org/docs/app/api-reference/functions/fetch#fetchurl-options
+ * @param mode - *Optional*. `"json"` (default) | `"blob"`
+ * @param adapter - *Optional*. Function to be used to parse the data. Use this to return only the data you need.
+ * @param skip - *Optional*. If true, the fetch will not be executed.
+ * @param params - *Optional*. Object containing the query params to be sent to the server.
+ * @returns Promise<any> - Returns a promise with the result of the fetch. Data will have the type of the generic passed, or `object` if not.
+ * @example const { data, isSuccess, isError, error } = await fetchFn<HelloResponseType>({
+ *              baseUrl: 'https://example.com',
+ *              url: '/api/hello',
+ *              options: { // this is the default behavior - no "options" object is needed
+ *                method: 'GET',
+ *              },
+ *              mode: 'json', // this is the default behavior - no "mode" option is needed
+ *              adapter: (data) => { // Here you should pass a defined function
+ *                return {
+ *                  text: data.text,
+ *                };
+ *              },
+ *              skip: false, // this is the default behavior - no "skip" option is needed
+ *            });
+ */
 async function fetchFn<T extends object | Blob>({
   adapter,
-  baseUrl,
   cache = false,
+  baseUrl,
   log = false,
   mode = 'json',
-  skip = false,
   options,
   params = {},
+  skip = false,
   url,
-  useToken = false,
   useCredentials = false,
+  useToken = false,
 }: FetchFnProps<T>): Promise<FetchFnResult<T extends Blob ? Blob : T>> {
   if (skip) {
     return {
