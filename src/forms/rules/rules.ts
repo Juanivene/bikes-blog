@@ -1,3 +1,6 @@
+/* eslint-disable camelcase */
+
+/* eslint-disable @typescript-eslint/explicit-function-return-type */
 import dayjs from 'dayjs';
 import { z } from 'zod';
 
@@ -49,14 +52,9 @@ export const dateRules = <T extends boolean = false>(required: T) => {
   const rule = z
     .union([z.date(), z.string()])
     // Check if it's a string (empty field)
-    .refine(
-      (data) => {
-        return typeof data === 'string' || data instanceof Date;
-      },
-      {
-        message: `Debe ingresar una fecha valida`,
-      }
-    )
+    .refine((data) => typeof data === 'string' || data instanceof Date, {
+      message: 'Debe ingresar una fecha valida',
+    })
     .refine(
       // If it has a value, it must be a valid date
       (data) => {
@@ -363,9 +361,7 @@ export const phoneRules = <T extends boolean = false>(required: T) => {
 // ----------------------------------------------------
 
 // At least one field must have value
-export const notEmptyForm = (data: object) => {
-  return Object.values(data).some(Boolean);
-};
+export const notEmptyForm = (data: object) => Object.values(data).some(Boolean);
 
 notEmptyForm.msg = () => ({
   message: 'Por lo menos un campo debe tener valores',

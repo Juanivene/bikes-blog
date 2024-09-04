@@ -1,7 +1,6 @@
 'use client';
 
-import { Controller } from 'react-hook-form';
-import type { Path, PathValue } from 'react-hook-form';
+import { Controller, type Path, type PathValue } from 'react-hook-form';
 
 import type { FormSchemas } from '@/forms';
 

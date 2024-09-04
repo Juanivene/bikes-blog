@@ -9,7 +9,7 @@ import type { z, ZodSchema } from 'zod';
 
 import type { UseZodForm } from './interface';
 
-export const useZodForm = <T extends ZodSchema>(
+const useZodForm = <T extends ZodSchema>(
   validationSchema: T
 ): UseZodForm<T> => {
   const {
@@ -51,3 +51,5 @@ export const useZodForm = <T extends ZodSchema>(
     setValue,
   };
 };
+
+export default useZodForm;

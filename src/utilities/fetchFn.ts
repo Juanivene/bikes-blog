@@ -1,3 +1,5 @@
+/* eslint-disable valid-jsdoc */
+
 /* eslint-disable no-console */
 import { store } from '@/redux/store/store';
 
@@ -31,18 +33,18 @@ let statusCode: number | null = null;
  *              skip: false, // this is the default behavior - no "skip" option is needed
  *            });
  */
-export async function fetchFn<T extends object | Blob>({
+async function fetchFn<T extends object | Blob>({
   adapter,
-  baseUrl,
   cache = false,
+  baseUrl,
   log = false,
   mode = 'json',
-  skip = false,
   options,
   params = {},
+  skip = false,
   url,
-  useToken = false,
   useCredentials = false,
+  useToken = false,
 }: FetchFnProps<T>): Promise<FetchFnResult<T extends Blob ? Blob : T>> {
   if (skip) {
     return {
@@ -132,6 +134,7 @@ export async function fetchFn<T extends object | Blob>({
         break;
       case 'json':
       default:
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
         data = await response.json();
         break;
     }
@@ -175,3 +178,5 @@ export async function fetchFn<T extends object | Blob>({
 }
 
 // TODO: REFETCH
+
+export default fetchFn;

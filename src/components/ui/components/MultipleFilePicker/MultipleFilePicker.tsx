@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { useEffect, useRef, useState } from 'react';
 
 import Button from '../Button/Button';
@@ -186,11 +187,13 @@ const MultipleFilePicker = (props: MultipleFilePickerProps): JSX.Element => {
               className="flex h-full w-full flex-col items-center justify-center text-center"
               ref={emptyRef}
             >
-              <img
+              <Image
                 alt="no data"
-                className="mx-auto w-32"
+                height={50}
                 src="https://user-images.githubusercontent.com/507615/54591670-ac0a0180-4a65-11e9-846c-e55ffce0fe7b.png"
+                width={50}
               />
+
               <span className="text-small mt-2 text-gray-500">
                 No hay archivos seleccionados
               </span>

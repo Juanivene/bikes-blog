@@ -1,10 +1,17 @@
 /**
+ * Removes line breaks and extra spaces from a template literal string.
  * Usage with template literals. To call the function, do not use parentheses.
- * @param strings
- * @param values
- * @returns {string}
+ *
+ * @param {TemplateStringsArray} strings - The template literal's string parts.
+ * @param {...unknown[]} values - The values to interpolate into the template literal.
+ * @returns {string} The string with line breaks and extra spaces removed.
+ *
+ * @example
+ * const result = removeLineBreaks`This is a line
+ * break example.   It will be cleaned.`;
+ * result will be: "This is a line break example. It will be cleaned."
  */
-export const removeLineBreaks = (
+const removeLineBreaks = (
   strings: TemplateStringsArray,
   ...values: unknown[]
 ): string => {
@@ -22,3 +29,5 @@ export const removeLineBreaks = (
 
   return result;
 };
+
+export default removeLineBreaks;

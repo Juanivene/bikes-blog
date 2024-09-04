@@ -53,9 +53,9 @@ const MultipleComboBox = <T extends FieldValues>(
   const filteredOptions =
     query === ''
       ? options
-      : options.filter(({ description }) => {
-          return description.toLowerCase().includes(query.toLowerCase());
-        });
+      : options.filter(({ description }) =>
+          description.toLowerCase().includes(query.toLowerCase())
+        );
 
   const positionedColor = positionedColorOption
     ? `${positionedColorOption.bgColor} ${positionedColorOption.textColor}`
@@ -75,6 +75,8 @@ const MultipleComboBox = <T extends FieldValues>(
       const newValue =
         controller.value && controller.value.length > 0
           ? filteredOptions.filter(({ id: optionId }) =>
+              // TODO: revisar y resolver
+              // eslint-disable-next-line @typescript-eslint/no-unsafe-call
               controller.value.some(
                 ({ id: valueId }: { id: string }) => valueId === optionId
               )

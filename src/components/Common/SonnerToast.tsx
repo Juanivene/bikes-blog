@@ -2,7 +2,7 @@
 
 import { Toaster } from 'sonner';
 
-const SonnerToast = () => {
-  return <Toaster richColors position="top-center" />;
-};
+const SonnerToast = (): JSX.Element => (
+  <Toaster richColors position="top-center" />
+);
 export default SonnerToast;

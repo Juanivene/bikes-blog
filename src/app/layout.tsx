@@ -8,7 +8,7 @@ import SonnerToast from '@/components/Common/SonnerToast';
 import ErrorBoundary from '@/components/Error/ErrorBoundary';
 
 import '@/styles/animations.css';
-import { robotoSlab } from '@/styles/fonts';
+import robotoSlab from '@/styles/fonts';
 import '@/styles/globals.css';
 import '@/styles/tailwind.css';
 
@@ -20,22 +20,24 @@ export const metadata: Metadata = {
   keywords: ['...', 'pjt', 'poder judicial', 'tucuman', 'corte justicia'],
 };
 
-const RootLayout = ({ children }: { children: React.ReactNode }) => {
-  return (
-    <html suppressHydrationWarning lang="es">
-      <body className={robotoSlab.className}>
-        <ReduxProvider>
-          <ErrorBoundary>
-            <ThemeProvider>
-              <SkipNavButton />
-              <main id="main">{children}</main>
-              <SonnerToast />
-            </ThemeProvider>
-          </ErrorBoundary>
-        </ReduxProvider>
-      </body>
-    </html>
-  );
-};
+const RootLayout = ({
+  children,
+}: {
+  children: React.ReactNode;
+}): JSX.Element => (
+  <html suppressHydrationWarning lang="es">
+    <body className={robotoSlab.className}>
+      <ReduxProvider>
+        <ErrorBoundary>
+          <ThemeProvider>
+            <SkipNavButton />
+            <main id="main">{children}</main>
+            <SonnerToast />
+          </ThemeProvider>
+        </ErrorBoundary>
+      </ReduxProvider>
+    </body>
+  </html>
+);
 
 export default RootLayout;

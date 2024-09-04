@@ -5,7 +5,22 @@ import Swal, {
 
 import { CustomSwalArgs } from './interface';
 
-const customSwal = async (args: CustomSwalArgs) => {
+/**
+ * Displays a custom SweetAlert2 modal with configurable options.
+ *
+ * @param {CustomSwalArgs} args - The configuration options for the SweetAlert2 modal.
+ * @returns {Promise<SweetAlertResult>} The result of the SweetAlert2 modal.
+ *
+ * @example
+ * const result = await customSwal({
+ *   title: 'Custom Title',
+ *   text: 'Custom Text',
+ * });
+ * if (result.isConfirmed) {
+ *   console.log('Confirmed');
+ * }
+ */
+const customSwal = async (args: CustomSwalArgs): Promise<SweetAlertResult> => {
   const theme = localStorage.getItem('theme');
 
   const colorConfig =
@@ -30,6 +45,18 @@ const customSwal = async (args: CustomSwalArgs) => {
   });
 };
 
+/**
+ * Displays a custom SweetAlert2 toast notification.
+ *
+ * @param {SweetAlertOptions} args - The configuration options for the SweetAlert2 toast notification.
+ * @returns {Promise<SweetAlertResult<unknown>>} The result of the SweetAlert2 toast notification.
+ *
+ * @example
+ * const result = await customToast({
+ *   icon: 'success',
+ *   title: 'Operation Successful',
+ * });
+ */
 const customToast = async (
   args: SweetAlertOptions
 ): Promise<SweetAlertResult<unknown>> => {
@@ -66,20 +93,44 @@ const customToast = async (
   return swal.fire({ ...args });
 };
 
-const ErrorToast = (text: string, time = 3000) => {
-  return customToast({
+/**
+ * Displays an error toast notification.
+ *
+ * @param {string} text - The text to display in the error toast.
+ * @param {number} [time=3000] - The duration in milliseconds the toast should be visible.
+ * @returns {Promise<SweetAlertResult<unknown>>} The result of the SweetAlert2 toast notification.
+ *
+ * @example
+ * const result = await ErrorToast('An error occurred');
+ */
+const ErrorToast = (
+  text: string,
+  time = 3000
+): Promise<SweetAlertResult<unknown>> =>
+  customToast({
     icon: 'error',
     title: text,
     timer: time,
   });
-};
 
-const SuccessToast = (text: string, time = 3000) => {
-  return customToast({
+/**
+ * Displays a success toast notification.
+ *
+ * @param {string} text - The text to display in the success toast.
+ * @param {number} [time=3000] - The duration in milliseconds the toast should be visible.
+ * @returns {Promise<SweetAlertResult<unknown>>} The result of the SweetAlert2 toast notification.
+ *
+ * @example
+ * const result = await SuccessToast('Operation was successful');
+ */
+const SuccessToast = (
+  text: string,
+  time = 3000
+): Promise<SweetAlertResult<unknown>> =>
+  customToast({
     icon: 'success',
     title: text,
     timer: time,
   });
-};
 
 export { customSwal, customToast, ErrorToast, SuccessToast };

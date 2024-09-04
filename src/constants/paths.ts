@@ -1,3 +1,5 @@
-export const PATHS = {
+const PATHS = {
   HOME: '/',
 };
+
+export default PATHS;

@@ -90,6 +90,7 @@ const DatePicker = (props: DatePickerProps): JSX.Element => {
     }
 
     return () => {};
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [onChange, options]);
 
   useEffect(() => {

@@ -1,7 +1,6 @@
 'use client';
 
-import type { ForwardedRef } from 'react';
-import { forwardRef, useEffect, useState } from 'react';
+import { ForwardedRef, forwardRef, useEffect, useState } from 'react';
 
 import Icon from '../Icon/Icon';
 
@@ -9,14 +8,6 @@ import { cn, removeLineBreaks } from '@/utilities';
 
 import type { ButtonPropsType } from './Button.types';
 
-/**
- * Generates the ARIA label for the button.
- *
- * @param content - The content of the button.
- * @param buttonAriaLabel - A custom ARIA label for the button.
- * @param aditionalText - Additional text to prepend to the generated ARIA label.
- * @returns The generated ARIA label for the button.
- */
 const generateAriaLabel = (
   content: ButtonPropsType['children'],
   buttonAriaLabel: string | undefined,

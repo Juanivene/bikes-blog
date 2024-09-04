@@ -6,7 +6,10 @@ import { useZodForm } from '@/hooks';
 // import DateInput from '../ui/forms/DateInput';
 // import SelectInput from '../ui/forms/SelectInput';
 // import TextInput from '../ui/forms/TextInput';
-import { ExampleSchema, exampleSchema } from '@/forms/schemas/exampleSchema';
+import {
+  type ExampleSchema,
+  exampleSchema,
+} from '@/forms/schemas/exampleSchema';
 
 // import { DTI, DTI_LIST } from '@/dti';
 // import { ListOption } from '@/interface/globalTypes';
@@ -22,13 +25,16 @@ import { ExampleSchema, exampleSchema } from '@/forms/schemas/exampleSchema';
 //   },
 // ];
 
+// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
 const FormExample = () => {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const { onSubmitMiddleware, control } = useZodForm(exampleSchema);
 
-  // eslint-disable-next-line no-console
-  const handleSubmit = (data: ExampleSchema) => console.log(data);
+  // eslint-disable-next-line no-console, @typescript-eslint/explicit-function-return-type
+  const handleSubmit = (data: ExampleSchema) => console.log(data); // TODO: revisar tipos
 
   return (
+    // eslint-disable-next-line @typescript-eslint/no-misused-promises
     <form onSubmit={onSubmitMiddleware(handleSubmit)}>
       {/* <TextInput
         control={control}

@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 
-export const useHydrate = (): boolean => {
+const useHydrate = (): boolean => {
   const [hydrated, setHydrated] = useState(false);
 
   useEffect(() => {
@@ -11,3 +11,5 @@ export const useHydrate = (): boolean => {
 
   return hydrated;
 };
+
+export default useHydrate;

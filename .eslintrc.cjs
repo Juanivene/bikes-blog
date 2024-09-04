@@ -38,7 +38,16 @@ module.exports = {
     'arrow-body-style': ['warn', 'as-needed'], // Advises using arrow function body only when necessary.
     'no-console': 'error', // Disables the use of console methods in production.
     'no-duplicate-imports': 'error', // Prevents duplicate imports in the same file.
-    camelcase: 'error', // Enforces camelcase naming convention.
+    camelcase: [
+      'error',
+      {
+        properties: 'always', // Enforces camelCase naming for all properties.
+        ignoreDestructuring: false, // Do not ignore destructured variables.
+        ignoreImports: false, // Do not ignore import names.
+        ignoreGlobals: false, // Do not ignore global variables.
+        allow: [], // Allow specific exceptions.
+      },
+    ],
     eqeqeq: ['error', 'always'], // Enforces the use of === and !== instead of == and !=.
     'no-shadow': 'error', // Prevents variable declarations from shadowing variables in outer scopes.
     'no-use-before-define': 'error', // Disallows the use of variables before they are defined.
@@ -101,19 +110,36 @@ module.exports = {
     'import/prefer-default-export': 'error', // Allows named exports even if there is only one export.
     'import/extensions': 'off', // Allows omitting file extensions in imports.
     'import/order': 'off', // Disables automatic sorting of imports (controlled by Prettier).
-    'import/no-extraneous-dependencies': 'off', // Allows importing dependencies marked as devDependencies.
+    'import/no-extraneous-dependencies': ['error', { devDependencies: false }], // Allows importing dependencies marked as devDependencies.
     'import/no-unresolved': 'error', // Ensures all imports can be resolved.
     'import/named': 'error', // Ensures named imports exist.
     'import/no-absolute-path': 'error', // Disallows the use of absolute paths in imports.
 
     // ! @typescript-eslint/eslint-plugin Rules
-    '@typescript-eslint/no-empty-interface': 'off', // Allows defining empty interfaces in TypeScript.
-    '@typescript-eslint/no-unused-vars': 'error',
-    '@typescript-eslint/explicit-function-return-type': 'error', // Requires explicit return types on functions and class methods.
-    '@typescript-eslint/ban-types': 'error', // Disallows specific types (e.g., `Object`, `Function`).
-    '@typescript-eslint/type-annotation-spacing': 'error', // Requires consistent spacing around type annotations.
+    '@typescript-eslint/no-empty-interface': [
+      'error',
+      { allowSingleExtends: true }, // Allows single extends for empty interfaces.
+    ],
+    '@typescript-eslint/no-unused-vars': 'error', // Disallows unused variables.
+    '@typescript-eslint/explicit-function-return-type': [
+      'error',
+      { allowExpressions: true }, // Requires explicit return types for functions, but allows for functions assigned to variables.
+    ],
+    '@typescript-eslint/ban-types': [
+      'error',
+      {
+        extendDefaults: true, // Extends default banned types.
+        types: {
+          Object: false, // Disallows `Object` type, but allows custom types.
+          Function: false, // Disallows `Function` type, but allows custom types.
+        },
+      },
+    ],
     '@typescript-eslint/no-explicit-any': 'error', // Avoids the use of the `any` type in TypeScript.
-    '@typescript-eslint/ban-ts-comment': 'warn', // Discourages unnecessary `@ts-ignore` comments.
+    '@typescript-eslint/ban-ts-comment': [
+      'warn',
+      { 'ts-ignore': 'allow-with-description' }, // Allows `ts-ignore` comments with a description.
+    ],
     '@typescript-eslint/no-floating-promises': 'error', // Avoid using floating promises.
     '@typescript-eslint/no-unsafe-assignment': 'error', // Avoid unsafe assignments.
     '@typescript-eslint/no-unsafe-member-access': 'error', // Prevent unsafe access to members of an object.
@@ -124,15 +150,16 @@ module.exports = {
     'prettier/prettier': 'error', // Run Prettier as an ESLint rule and report differences as errors.
 
     // ! eslint-plugin-jsdoc Rules
+    // TODO: reemplazar por libreria eslint-plugin-jsdoc
     'require-jsdoc': [
-      'error',
+      'off',
       {
         require: {
           FunctionDeclaration: true, // Require JSDoc for function declarations.
           MethodDefinition: false,
           ClassDeclaration: false,
           ArrowFunctionExpression: true, // Require JSDoc for arrow functions.
-          FunctionExpression: false,
+          FunctionExpression: true,
         },
       },
     ],
