@@ -1,6 +1,6 @@
 import { customToast } from './toastUtils';
 
-import { BaseToastProps } from './customSonner.types';
+import { BaseToastProps } from './sonner.types';
 
 /**
  * **Creates a toast of a specific type.**

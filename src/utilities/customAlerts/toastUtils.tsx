@@ -6,7 +6,7 @@ import {
   CustomToastArgs,
   PromiseToastArgs,
   ToastOptions,
-} from './customSonner.types';
+} from './sonner.types';
 
 /**
  * **Displays a custom toast notification using Sonner.**
