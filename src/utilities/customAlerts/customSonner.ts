@@ -180,3 +180,25 @@ const createToastComponent =
  * });
  */
 export const SuccessToast = createToastComponent('success');
+
+/**
+ * **Displays an error toast notification.**
+ *
+ * An error toast is used to indicate that an operation failed, or something went wrong.
+ *
+ * @example
+ * // Basic error toast
+ * ErrorToast({
+ *   message: 'Error occurred!',
+ *   description: 'Something went wrong while processing your request.',
+ * });
+ *
+ * @example
+ * // Error toast with retry action
+ * ErrorToast({
+ *   message: 'Failed to save data!',
+ *   description: 'There was an issue saving your changes.',
+ *   actionButton: { text: 'Retry', onClick: () => retrySave() },
+ * });
+ */
+export const ErrorToast = createToastComponent('error');
