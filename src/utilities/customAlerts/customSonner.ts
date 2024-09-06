@@ -203,6 +203,26 @@ export const ErrorToast = createToastComponent('error');
 export const InfoToast = createToastComponent('info');
 
 /**
+ * **Displays a loading toast notification.**
+ *
+ * A loading toast is used to indicate that a process or operation is ongoing, typically without an action button.
+ *
+ * @example
+ * // Basic loading toast
+ * LoadingToast({
+ *   message: 'Loading data...',
+ * });
+ *
+ * @example
+ * // Loading toast with description
+ * LoadingToast({
+ *   message: 'Processing...',
+ *   description: 'Please wait while we process your request.',
+ * });
+ */
+export const LoadingToast = createToastComponent('loading');
+
+/**
  * **Displays a success toast notification.**
  *
  * A success toast indicates a positive outcome, typically used when an operation completes successfully.
