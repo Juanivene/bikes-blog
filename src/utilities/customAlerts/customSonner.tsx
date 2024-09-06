@@ -1,15 +1,17 @@
+import { ReactNode } from 'react';
+
 import { toast } from 'sonner';
 
 interface ToastButtonConfig {
   text?: string;
   onClick?: () => void;
 }
-
 interface ToastOptions {
   action?: {
     label: string;
     onClick: () => void;
   };
+  closeButton?: boolean;
   description?: string;
   duration: number;
 }
@@ -20,6 +22,18 @@ interface CustomToastArgs {
   type?: 'success' | 'error' | 'info' | 'warning' | 'loading';
   duration?: number;
   actionButton?: ToastButtonConfig;
+  cancelButton?: ToastButtonConfig;
+  closeButton?: boolean;
+}
+
+interface PromiseToastArgs<T = unknown> {
+  promise: Promise<T>;
+  loadingMessage: string;
+  successMessage: (data: T) => string;
+  errorMessage: string;
+  duration?: number;
+  successDescription?: string;
+  errorDescription?: string;
   closeButton?: boolean;
 }
 
@@ -127,6 +141,47 @@ export const customToast = (args: CustomToastArgs): void => {
       break;
   }
 };
+
+/**
+ * **Displays a toast notification based on the state of a promise.**
+ *
+ * @param {PromiseToastArgs} args - The arguments to configure the promise-based toast.
+ * @param {Promise} args.promise - The promise to monitor.
+ * @param {string} args.loadingMessage - The message shown while the promise is loading.
+ * @param {Function} args.successMessage - The message shown if the promise resolves successfully.
+ * @param {string} args.errorMessage - The message shown if the promise is rejected.
+ * @param {number} [args.duration=4000] - How long the success/error toast will be visible.
+ * @param {boolean} [args.closeButton=true] - Whether to show a close button on the success/error toast.
+ * @returns {void} - The function does not return anything.
+ */
+export function promiseToast<T>({
+  promise,
+  loadingMessage,
+  successMessage,
+  errorMessage,
+  duration = 4000,
+  successDescription = '',
+  errorDescription = '',
+  closeButton = true,
+}: PromiseToastArgs<T>): void {
+  toast.promise(promise, {
+    loading: loadingMessage,
+    success: (data: T): ReactNode => (
+      <div>
+        <div>{successMessage(data)}</div>
+        {successDescription && <div>{successDescription}</div>}
+      </div>
+    ),
+    error: (): ReactNode => (
+      <div>
+        <div>{errorMessage}</div>
+        {errorDescription && <div>{errorDescription}</div>}
+      </div>
+    ),
+    duration,
+    closeButton,
+  });
+}
 
 /**
  * **Creates a toast of a specific type.**
