@@ -181,6 +181,28 @@ const createToastComponent =
 export const ErrorToast = createToastComponent('error');
 
 /**
+ * **Displays an informational toast notification.**
+ *
+ * An info toast is used to provide neutral information or status updates to the user.
+ *
+ * @example
+ * // Basic info toast
+ * InfoToast({
+ *   message: 'New update available!',
+ *   description: 'Version 2.0.1 is now available for download.',
+ * });
+ *
+ * @example
+ * // Info toast with close button disabled
+ * InfoToast({
+ *   message: 'Informational notice',
+ *   description: 'You have unread notifications.',
+ *   closeButton: false,
+ * });
+ */
+export const InfoToast = createToastComponent('info');
+
+/**
  * **Displays a success toast notification.**
  *
  * A success toast indicates a positive outcome, typically used when an operation completes successfully.
