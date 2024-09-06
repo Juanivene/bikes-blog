@@ -23,6 +23,8 @@ interface CustomToastArgs {
   closeButton?: boolean;
 }
 
+interface BaseToastProps extends CustomToastArgs {}
+
 /**
  * **Displays a custom toast notification using Sonner.**
  *
@@ -33,6 +35,7 @@ interface CustomToastArgs {
  * @param {number} [args.duration=4000] - How long the toast will be visible, in milliseconds.
  * @param {ToastButtonConfig} [args.actionButton] - Optional configuration for an action button (not applicable for 'loading' type).
  * @param {boolean} [args.closeButton=true] - Whether to show a close button.
+ * @returns {void} - The function does not return anything.
  *
  * @example
  * // Success toast example
@@ -125,3 +128,34 @@ export const customToast = (args: CustomToastArgs): void => {
       break;
   }
 };
+
+/**
+ * **Creates a toast of a specific type.**
+ *
+ * This higher-order function generates a toast notification for a specific type ('success', 'error', 'info', 'warning', or 'loading'),
+ * using the `customToast` utility. It allows you to simplify the toast creation process by binding the type of toast.
+ *
+ * @param {'success' | 'error' | 'info' | 'warning' | 'loading'} type - The type of toast to be displayed.
+ * @returns {Function} - A function that takes the toast arguments and displays a toast of the specified type.
+ *
+ *  */
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+const createToastComponent =
+  (type: 'success' | 'error' | 'info' | 'warning' | 'loading') =>
+  ({
+    message,
+    description,
+    duration,
+    actionButton,
+    closeButton,
+  }: BaseToastProps) => {
+    customToast({
+      message,
+      description,
+      type,
+      duration,
+      actionButton,
+      closeButton,
+    });
+    return null;
+  };
