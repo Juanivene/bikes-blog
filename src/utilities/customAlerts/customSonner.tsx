@@ -2,47 +2,12 @@ import { ReactNode } from 'react';
 
 import { toast } from 'sonner';
 
-interface ToastButtonConfig {
-  text?: string;
-  onClick?: () => void;
-}
-interface ToastOptions {
-  action?: {
-    label: string;
-    onClick: () => void;
-  };
-  cancel?: {
-    label: string;
-    onClick: () => void;
-  };
-  closeButton?: boolean;
-  description?: string;
-  duration: number;
-}
-
-interface CustomToastArgs {
-  message: string;
-  description?: string;
-  type?: 'success' | 'error' | 'info' | 'warning' | 'loading';
-  duration?: number;
-  actionButton?: ToastButtonConfig;
-  cancelButton?: ToastButtonConfig;
-  closeButton?: boolean;
-}
-
-interface PromiseToastArgs<T = unknown> {
-  promise: Promise<T>;
-  loadingMessage: string;
-  successMessage: (data: T) => string;
-  errorMessage: string;
-  duration?: number;
-  successDescription?: string;
-  errorDescription?: string;
-  closeButton?: boolean;
-  cancelButton?: ToastButtonConfig;
-}
-
-interface BaseToastProps extends CustomToastArgs {}
+import {
+  BaseToastProps,
+  CustomToastArgs,
+  PromiseToastArgs,
+  ToastOptions,
+} from './customSonner.types';
 
 /**
  * **Displays a custom toast notification using Sonner.**
