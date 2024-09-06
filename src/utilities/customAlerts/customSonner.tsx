@@ -145,14 +145,87 @@ export const customToast = (args: CustomToastArgs): void => {
 /**
  * **Displays a toast notification based on the state of a promise.**
  *
- * @param {PromiseToastArgs} args - The arguments to configure the promise-based toast.
- * @param {Promise} args.promise - The promise to monitor.
+ * This function allows you to display loading, success, and error notifications while a promise is pending, resolved, or rejected.
+ *
+ * @template T
+ * @param {PromiseToastArgs<T>} args - The arguments to configure the promise-based toast.
+ * @param {Promise<T>} args.promise - The promise to monitor.
  * @param {string} args.loadingMessage - The message shown while the promise is loading.
  * @param {Function} args.successMessage - The message shown if the promise resolves successfully.
  * @param {string} args.errorMessage - The message shown if the promise is rejected.
- * @param {number} [args.duration=4000] - How long the success/error toast will be visible.
+ * @param {number} [args.duration=4000] - How long the success/error toast will be visible in milliseconds.
+ * @param {string} [args.successDescription] - Optional description to show in the success toast.
+ * @param {string} [args.errorDescription] - Optional description to show in the error toast.
  * @param {boolean} [args.closeButton=true] - Whether to show a close button on the success/error toast.
  * @returns {void} - The function does not return anything.
+ *
+ * @example
+ * // Basic usage with a successful promise
+ * const fetchData = () => {
+ *   const mockPromise = new Promise((resolve) => {
+ *     setTimeout(() => resolve('Fetched data successfully!'), 2000);
+ *   });
+ *
+ *   promiseToast({
+ *     promise: mockPromise,
+ *     loadingMessage: 'Fetching data...',
+ *     successMessage: (data) => `Success: ${data}`,
+ *     errorMessage: 'Failed to fetch data',
+ *   });
+ * };
+ *
+ * @example
+ * // Handling a rejected promise
+ * const fetchDataWithError = () => {
+ *   const mockPromise = new Promise((_, reject) => {
+ *     setTimeout(() => reject('Error fetching data'), 2000);
+ *   });
+ *
+ *   promiseToast({
+ *     promise: mockPromise,
+ *     loadingMessage: 'Fetching data...',
+ *     successMessage: (data) => `Success: ${data}`,
+ *     errorMessage: 'Failed to fetch data',
+ *   });
+ * };
+ *
+ * @example
+ * // Adding custom descriptions for success and error
+ * const fetchDataWithCustomDescriptions = () => {
+ *   const mockPromise = new Promise((resolve, reject) => {
+ *     const success = Math.random() > 0.5;
+ *     setTimeout(() => {
+ *       if (success) resolve('Data fetched successfully!');
+ *       else reject('Failed to fetch data');
+ *     }, 2000);
+ *   });
+ *
+ *   promiseToast({
+ *     promise: mockPromise,
+ *     loadingMessage: 'Fetching data...',
+ *     successMessage: (data) => `Success: ${data}`,
+ *     errorMessage: 'Error occurred during data fetching',
+ *     successDescription: 'The data was fetched without any issues.',
+ *     errorDescription: 'An unexpected error happened during data fetching.',
+ *   });
+ * };
+ *
+ * @example
+ * // Adjusting the toast duration and removing the close button
+ * const longRunningTask = () => {
+ *   const mockPromise = new Promise((resolve) => {
+ *     setTimeout(() => resolve('Task completed!'), 5000);
+ *   });
+ *
+ *   promiseToast({
+ *     promise: mockPromise,
+ *     loadingMessage: 'Performing a long task...',
+ *     successMessage: (data) => `Success: ${data}`,
+ *     errorMessage: 'Task failed',
+ *     duration: 6000,  // The toast will stay for 6 seconds
+ *     closeButton: false, // The close button will not appear
+ *   });
+ * };
  */
 export function promiseToast<T>({
   promise,
