@@ -11,6 +11,10 @@ interface ToastOptions {
     label: string;
     onClick: () => void;
   };
+  cancel?: {
+    label: string;
+    onClick: () => void;
+  };
   closeButton?: boolean;
   description?: string;
   duration: number;
@@ -35,6 +39,7 @@ interface PromiseToastArgs<T = unknown> {
   successDescription?: string;
   errorDescription?: string;
   closeButton?: boolean;
+  cancelButton?: ToastButtonConfig;
 }
 
 interface BaseToastProps extends CustomToastArgs {}
@@ -48,6 +53,7 @@ interface BaseToastProps extends CustomToastArgs {}
  * @param {'success' | 'error' | 'info' | 'warning' | 'loading'} [args.type='info'] - Type of the toast (affects styling).
  * @param {number} [args.duration=4000] - How long the toast will be visible, in milliseconds.
  * @param {ToastButtonConfig} [args.actionButton] - Optional configuration for an action button (not applicable for 'loading' type).
+ * @param {ToastButtonConfig} [args.cancelButton] - Optional configuration for a cancel button.
  * @param {boolean} [args.closeButton=true] - Whether to show a close button.
  * @returns {void} - The function does not return anything.
  *
@@ -77,6 +83,7 @@ interface BaseToastProps extends CustomToastArgs {}
 export const customToast = (args: CustomToastArgs): void => {
   const {
     actionButton,
+    cancelButton,
     closeButton = true,
     duration,
     description = '',
@@ -97,11 +104,19 @@ export const customToast = (args: CustomToastArgs): void => {
         }
       : undefined;
 
+  const cancel = cancelButton
+    ? {
+        label: cancelButton.text || 'Cancel',
+        onClick: cancelButton.onClick || (() => {}),
+      }
+    : undefined;
+
   switch (type) {
     case 'success':
       toast.success(message, {
         ...baseOptions,
         action,
+        cancel,
         closeButton,
       });
       break;
@@ -109,6 +124,7 @@ export const customToast = (args: CustomToastArgs): void => {
       toast.error(message, {
         ...baseOptions,
         action,
+        cancel,
         closeButton,
       });
       break;
@@ -116,6 +132,7 @@ export const customToast = (args: CustomToastArgs): void => {
       toast.info(message, {
         ...baseOptions,
         action,
+        cancel,
         closeButton,
       });
       break;
@@ -123,6 +140,7 @@ export const customToast = (args: CustomToastArgs): void => {
       toast.warning(message, {
         ...baseOptions,
         action,
+        cancel,
         closeButton,
       });
       break;
@@ -136,6 +154,7 @@ export const customToast = (args: CustomToastArgs): void => {
       toast(message, {
         ...baseOptions,
         action,
+        cancel,
         closeButton,
       });
       break;
@@ -157,6 +176,7 @@ export const customToast = (args: CustomToastArgs): void => {
  * @param {string} [args.successDescription] - Optional description to show in the success toast.
  * @param {string} [args.errorDescription] - Optional description to show in the error toast.
  * @param {boolean} [args.closeButton=true] - Whether to show a close button on the success/error toast.
+ * @param {ToastButtonConfig} [args.cancelButton] - Optional configuration for a cancel button.
  * @returns {void} - The function does not return anything.
  *
  * @example
@@ -236,6 +256,7 @@ export function promiseToast<T>({
   successDescription = '',
   errorDescription = '',
   closeButton = true,
+  cancelButton,
 }: PromiseToastArgs<T>): void {
   toast.promise(promise, {
     loading: loadingMessage,
@@ -253,6 +274,12 @@ export function promiseToast<T>({
     ),
     duration,
     closeButton,
+    cancel: cancelButton
+      ? {
+          label: cancelButton.text || 'Cancelar',
+          onClick: cancelButton.onClick || (() => {}),
+        }
+      : undefined,
   });
 }
 
@@ -273,6 +300,7 @@ const createToastComponent =
     description,
     duration,
     actionButton,
+    cancelButton,
     closeButton,
   }: BaseToastProps) => {
     customToast({
@@ -281,6 +309,7 @@ const createToastComponent =
       type,
       duration,
       actionButton,
+      cancelButton,
       closeButton,
     });
     return null;
@@ -304,6 +333,7 @@ const createToastComponent =
  *   message: 'Failed to save data!',
  *   description: 'There was an issue saving your changes.',
  *   actionButton: { text: 'Retry', onClick: () => retrySave() },
+ *   cancelButton: { text: 'Cancel', onClick: () => cancelOperation() }
  * });
  */
 export const ErrorToast = createToastComponent('error');
@@ -386,11 +416,12 @@ export const SuccessToast = createToastComponent('success');
  * });
  *
  * @example
- * // Warning toast with close button disabled
+ * // Warning toast with retry action
  * WarningToast({
- *   message: 'Password expires soon!',
- *   description: 'Your password will expire in 3 days.',
- *   closeButton: false,
+ *   message: 'You have unsaved changes!',
+ *   description: 'Do you want to save before exiting?',
+ *   actionButton: { text: 'Save', onClick: () => saveChanges() },
+ *   cancelButton: { text: 'Discard', onClick: () => discardChanges() }
  * });
  */
 export const WarningToast = createToastComponent('warning');
