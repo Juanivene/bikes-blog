@@ -224,3 +224,25 @@ export const InfoToast = createToastComponent('info');
  * });
  */
 export const SuccessToast = createToastComponent('success');
+
+/**
+ * **Displays a warning toast notification.**
+ *
+ * A warning toast alerts the user to potential issues that may not be errors but need attention.
+ *
+ * @example
+ * // Basic warning toast
+ * WarningToast({
+ *   message: 'Low disk space!',
+ *   description: 'Your disk space is running low. Please free up some space.',
+ * });
+ *
+ * @example
+ * // Warning toast with close button disabled
+ * WarningToast({
+ *   message: 'Password expires soon!',
+ *   description: 'Your password will expire in 3 days.',
+ *   closeButton: false,
+ * });
+ */
+export const WarningToast = createToastComponent('warning');
