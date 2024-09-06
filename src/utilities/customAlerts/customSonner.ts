@@ -60,7 +60,6 @@ interface BaseToastProps extends CustomToastArgs {}
  *   type: 'loading',
  * });
  */
-// eslint-disable-next-line import/prefer-default-export
 export const customToast = (args: CustomToastArgs): void => {
   const {
     actionButton,
@@ -139,7 +138,6 @@ export const customToast = (args: CustomToastArgs): void => {
  * @returns {Function} - A function that takes the toast arguments and displays a toast of the specified type.
  *
  *  */
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const createToastComponent =
   (type: 'success' | 'error' | 'info' | 'warning' | 'loading') =>
   ({
@@ -159,3 +157,26 @@ const createToastComponent =
     });
     return null;
   };
+
+/**
+ * **Displays a success toast notification.**
+ *
+ * A success toast indicates a positive outcome, typically used when an operation completes successfully.
+ *
+ * @example
+ * // Basic success toast
+ * SuccessToast({
+ *   message: 'Operation successful!',
+ *   description: 'The action completed without issues.',
+ *   duration: 3000,
+ * });
+ *
+ * @example
+ * // Success toast with longer duration
+ * SuccessToast({
+ *   message: 'Data saved!',
+ *   description: 'Your changes have been successfully saved.',
+ *   duration: 5000,
+ * });
+ */
+export const SuccessToast = createToastComponent('success');
