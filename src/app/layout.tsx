@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 
-import ReduxProvider from '@/providers/ReduxProvider';
 import ThemeProvider from '@/providers/ThemeProvider';
 
 import SkipNavButton from '@/components/Accessibility/SkipNavButton';
@@ -27,15 +26,13 @@ const RootLayout = ({
 }): JSX.Element => (
   <html suppressHydrationWarning lang="es">
     <body className={robotoSlab.className}>
-      <ReduxProvider>
-        <ErrorBoundary>
-          <ThemeProvider>
-            <SkipNavButton />
-            <main id="main">{children}</main>
-            <SonnerToast />
-          </ThemeProvider>
-        </ErrorBoundary>
-      </ReduxProvider>
+      <ErrorBoundary>
+        <ThemeProvider>
+          <SkipNavButton />
+          <main id="main">{children}</main>
+          <SonnerToast />
+        </ThemeProvider>
+      </ErrorBoundary>
     </body>
   </html>
 );
