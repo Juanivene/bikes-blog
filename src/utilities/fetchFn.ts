@@ -1,7 +1,7 @@
 /* eslint-disable valid-jsdoc */
 
 /* eslint-disable no-console */
-import { store } from '@/redux/store/store';
+import { useAuthStore } from '@/zustand/store';
 
 import type { FetchFnProps, FetchFnResult } from './types/index.types';
 
@@ -56,7 +56,7 @@ async function fetchFn<T extends object | Blob>({
     };
   }
 
-  const { token } = store.getState().auth;
+  const { token } = useAuthStore.getState();
 
   try {
     let data: FetchFnResult<T>['data'] = null;
