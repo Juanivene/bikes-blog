@@ -1,10 +1,3 @@
-export interface CustomSwalArgs {
-  confirmButtonText: string;
-  showCancelButton: boolean;
-  text: string;
-  title: string;
-}
-
 export type ModeTypes = 'json' | 'blob' | undefined;
 
 /**
