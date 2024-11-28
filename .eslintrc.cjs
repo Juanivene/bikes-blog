@@ -26,7 +26,7 @@ module.exports = {
   },
   plugins: [
     'react', // React plugin.
-    'react-hooks', // Plugin for React Hooks rules.
+    // 'react-hooks', // Plugin for React Hooks rules.
     '@typescript-eslint', // TypeScript plugin.
     'import', // Import plugin for managing imports.
     'jsx-a11y', // Plugin for accessibility rules in JSX.
