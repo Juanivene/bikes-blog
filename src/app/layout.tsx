@@ -30,6 +30,7 @@ const RootLayout = ({
         <ThemeProvider>
           <SkipNavButton />
           <main id="main">{children}</main>
+          <h1 className="text-cyan-600">ROOT LAYOUT</h1>
           <SonnerToast />
         </ThemeProvider>
       </ErrorBoundary>
