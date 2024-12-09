@@ -9,7 +9,7 @@ module.exports = {
     'eslint:recommended', // Use ESLint's recommended rules.
     'plugin:react/recommended', // Use recommended rules for React.
     'next/core-web-vitals', // Use Next.js core web vitals rules.
-    'plugin:@next/next/recommended', // Use recommended rules for Next.js.
+    // 'plugin:@next/next/recommended', // Use recommended rules for Next.js.
     'airbnb', // Extend Airbnb's base configuration.
     'airbnb-typescript', // Extend Airbnb's configuration for TypeScript.
     'plugin:@typescript-eslint/recommended', // Use recommended rules for TypeScript.
