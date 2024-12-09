@@ -18,6 +18,14 @@ module.exports = {
     'plugin:prettier/recommended', // Integrate Prettier rules with ESLint.
     'eslint-config-prettier', // Disables rules that might interfere with Prettier.
   ],
+  overrides: [
+    {
+      files: ['**/*.test.{js,ts,jsx,tsx}', '**/__tests__/**/*.{js,ts,jsx,tsx}'],
+      rules: {
+        'import/no-extraneous-dependencies': 'off', // Disable this rule for test files.
+      },
+    },
+  ],
   parser: '@typescript-eslint/parser', // Use TypeScript parser.
   parserOptions: {
     ecmaVersion: 'latest', // Use the latest ECMAScript features.
