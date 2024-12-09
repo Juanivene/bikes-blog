@@ -85,7 +85,7 @@
     "*.{ts,tsx}": [
       "eslint --fix",
       "prettier -w",
-      "vitest related"
+      "vitest related --run"
     ],
     "*.css": [
       "stylelint --fix"
