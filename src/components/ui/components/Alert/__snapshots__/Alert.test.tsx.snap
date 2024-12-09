@@ -1,0 +1,38 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Alert Component > snapshot 1`] = `
+<div>
+  <div
+    class="grid grid-cols-12 row-span-1 bg-sky-200 dark:bg-sky-800 rounded-xl px-2 py-3 dark:text-white md:pr-3"
+  >
+    <div
+      class="col-span-2 sm:col-span-1 justify-center flex md:mr-1"
+    >
+      <div>
+        <svg
+          fill="currentColor"
+          height="1.5em"
+          stroke="currentColor"
+          stroke-width="0"
+          viewBox="0 0 24 24"
+          width="1.5em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M0 0h24v24H0V0z"
+            fill="none"
+          />
+          <path
+            d="M11 7h2v2h-2V7zm0 4h2v6h-2v-6zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"
+          />
+        </svg>
+      </div>
+    </div>
+    <div
+      class="col-span-11"
+    >
+      Default Alert
+    </div>
+  </div>
+</div>
+`;
