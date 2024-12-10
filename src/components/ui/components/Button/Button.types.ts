@@ -12,7 +12,7 @@ export type ButtonPropsType = React.ButtonHTMLAttributes<HTMLButtonElement> &
     children?: string | React.ReactNode;
     colorLight?: ButtonColorType['light'];
     colorDark?: ButtonColorType['dark'];
-    endIcon?: JSX.Element;
+    endIcon?: React.ReactElement;
     glass?: boolean;
     ignoreDefaultColor?: boolean;
     loading?: boolean;
@@ -37,7 +37,7 @@ export type ButtonPropsType = React.ButtonHTMLAttributes<HTMLButtonElement> &
       | 'text-7xl'
       | 'text-8xl'
       | `text-[${number}px]`;
-    startIcon?: JSX.Element;
+    startIcon?: React.ReactElement;
     textColorDark?: TextColorType['dark'];
     textColorLight?: TextColorType['light'];
     type?: 'button' | 'reset' | 'submit';

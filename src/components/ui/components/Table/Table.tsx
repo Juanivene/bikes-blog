@@ -17,7 +17,7 @@ import type { TablePropsType } from './Table.types';
  * @param shadow - For controlling iftable has shadow.
  * @param size - For controlling the font size.
  * @param transparent - For controlling if table has background color.
- * @returns JSX.Element The rendered Icon component.
+ * @returns React.ReactElement The rendered Icon component.
  *
  * ```
  * @example
@@ -25,7 +25,7 @@ import type { TablePropsType } from './Table.types';
  * ```
  */
 
-const Table = (props: TablePropsType): JSX.Element => {
+const Table = (props: TablePropsType): React.ReactElement => {
   const {
     bordered = false,
     children,

@@ -8,7 +8,7 @@ import type { CardPropsType } from './Card.types';
  * @param className - Additional class names to apply to the Card component.
  * @param img - Card using an image to reinforce the content.
  * @param outlined - To render an outlined card.
- * @returns JSX.Element The rendered Card component.
+ * @returns React.ReactElement The rendered Card component.
  *
  * ```
  * @example
@@ -18,7 +18,7 @@ import type { CardPropsType } from './Card.types';
  * ```
  */
 
-const Card = (props: CardPropsType): JSX.Element => {
+const Card = (props: CardPropsType): React.ReactElement => {
   const { children, className = '', img = false, outlined = false } = props;
 
   return (

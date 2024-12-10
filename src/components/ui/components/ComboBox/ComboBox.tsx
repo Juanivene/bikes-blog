@@ -33,12 +33,12 @@ import type { ListOption } from '@/interface/globalTypes';
  * @param sizing - Dimensions for the combo box.
  * @param controller - React Hook Form controller (sends onChange fn).
  *
- * @returns JSX.Element A custom combo box element.
+ * @returns React.ReactElement A custom combo box element.
  */
 
 const ComboBox = <T extends FieldValues>(
   props: ComboBoxProps<T>
-): JSX.Element => {
+): React.ReactElement => {
   const {
     className,
     disabled = false,

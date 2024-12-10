@@ -11,7 +11,7 @@ import type { InputProps } from '../TextInput/TextInput.types';
 
 const HourInput = <T extends FormSchemas>(
   props: InputProps<T>
-): JSX.Element => {
+): React.ReactElement => {
   const {
     control,
     helperText = '',

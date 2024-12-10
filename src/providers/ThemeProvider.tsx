@@ -8,7 +8,7 @@ import {
 const ThemeProvider = ({
   children,
   ...props
-}: ThemeProviderProps): JSX.Element => (
+}: ThemeProviderProps): React.ReactElement => (
   <NextThemesProvider {...props}>{children}</NextThemesProvider>
 );
 

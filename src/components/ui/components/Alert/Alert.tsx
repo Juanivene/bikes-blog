@@ -30,10 +30,10 @@ import type { AlertPropsType } from './Alert.types';
  * @param hideIcon - Hide the SVG icon
  * @param title - Alert's title
  * @param type - Alert type to switch the color and icon
- * @returns JSX.Element A custom combo box element.
+ * @returns React.ReactElement A custom combo box element.
  */
 
-const Alert = (props: AlertPropsType): JSX.Element => {
+const Alert = (props: AlertPropsType): React.ReactElement => {
   const {
     children,
     className,

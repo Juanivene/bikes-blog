@@ -14,7 +14,7 @@ import type { MultipleFileInputProps } from './MultipleFileInput.types';
 
 const MultipleFileInput = <T extends FormSchemas>(
   props: MultipleFileInputProps<T>
-): JSX.Element => {
+): React.ReactElement => {
   const {
     className = '',
     control,

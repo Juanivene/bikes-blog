@@ -25,12 +25,12 @@ import type { ListOption } from '@/interface/globalTypes';
  * @param selectedColorOption - Background color for selected option.
  * @param sizing - Dimensions for the combo box.
  +
- * @returns JSX.Element A custom combo box element.
+ * @returns React.ReactElement A custom combo box element.
  */
 
 const MultipleComboBox = <T extends FieldValues>(
   props: ComboBoxProps<T>
-): JSX.Element => {
+): React.ReactElement => {
   const {
     className,
     disabled = false,

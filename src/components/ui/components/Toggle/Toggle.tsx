@@ -17,7 +17,7 @@ import type { TogglePropsType } from './Toggle.types';
  * @param dti - Data Test ID for testing purposes.
  * @param label - You can provide a label to the Toggle component.
  * @param size - Icon's size.
- * @returns JSX.Element The rendered Toggle component.
+ * @returns React.ReactElement The rendered Toggle component.
  *
  * ```
  * @example
@@ -27,7 +27,7 @@ import type { TogglePropsType } from './Toggle.types';
  * ```
  */
 
-const Toggle = (props: TogglePropsType): JSX.Element => {
+const Toggle = (props: TogglePropsType): React.ReactElement => {
   const {
     className = '',
     defaultChecked = false,

@@ -23,7 +23,7 @@ const RootLayout = ({
   children,
 }: {
   children: React.ReactNode;
-}): JSX.Element => (
+}): React.ReactElement => (
   <html suppressHydrationWarning lang="es">
     <body className={robotoSlab.className}>
       <ErrorBoundary>

@@ -9,7 +9,7 @@ import type { StepperPropsType } from './Stepper.types';
  * @param className - Additional class names to apply to the stepper.
  * @param container - For fixing an element's width to the current breakpoint.
  * @param item - To control the flexbox behavior of an element.
- * @returns JSX.Element The rendered Stepper component.
+ * @returns React.ReactElement The rendered Stepper component.
  *
  * ```
  * @example
@@ -19,7 +19,7 @@ import type { StepperPropsType } from './Stepper.types';
  * ```
  */
 
-const Stepper = (props: StepperPropsType): JSX.Element => {
+const Stepper = (props: StepperPropsType): React.ReactElement => {
   const {
     active = false,
     children,

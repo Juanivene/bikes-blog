@@ -6,7 +6,7 @@ import { Spinner } from '@/components/ui';
 
 import type { LoadingBackdropProps } from '../interface/loading';
 
-const LoadingBackdrop = (props: LoadingBackdropProps): JSX.Element => {
+const LoadingBackdrop = (props: LoadingBackdropProps): React.ReactElement => {
   const { open } = props;
 
   const [showMessage, setShowMessage] = useState(false);

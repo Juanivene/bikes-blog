@@ -6,7 +6,7 @@ import { cn, removeLineBreaks } from '@/utilities';
 
 import type { CheckboxProps } from './Checkbox.types';
 
-const Checkbox = (props: CheckboxProps): JSX.Element => {
+const Checkbox = (props: CheckboxProps): React.ReactElement => {
   const {
     ariaLabel,
     className = '',

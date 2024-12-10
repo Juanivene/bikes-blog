@@ -1,6 +1,6 @@
 import FormExample from '@/components/FormExample_delete/FormExample';
 
-const Home = (): JSX.Element => (
+const Home = (): React.ReactElement => (
   <main>
     <FormExample />
   </main>

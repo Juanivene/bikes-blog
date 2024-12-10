@@ -19,7 +19,9 @@ const hasFiles = ({
   dataTransfer: { types = [] },
 }: React.DragEvent<HTMLDivElement>): boolean => types.includes('Files');
 
-const MultipleFilePicker = (props: MultipleFilePickerProps): JSX.Element => {
+const MultipleFilePicker = (
+  props: MultipleFilePickerProps
+): React.ReactElement => {
   const {
     className = '',
     disabled = false,

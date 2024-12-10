@@ -4,7 +4,7 @@ import { useState } from 'react';
 
 import Pagination from './Pagination';
 
-const PaginationExample = (): JSX.Element => {
+const PaginationExample = (): React.ReactElement => {
   const [page1, setPage1] = useState(0);
   const [page2, setPage2] = useState(0);
 

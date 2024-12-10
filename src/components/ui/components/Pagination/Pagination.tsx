@@ -21,10 +21,10 @@ import type { PaginationPropsType } from './Pagination.types';
  * @param props - The props for the Pagination component.
  * @param totalElements - Number of elements.
  * @param onPageChange - Callback fired when the page is changed.
- * @returns JSX.Element The Pagination element.
+ * @returns React.ReactElement The Pagination element.
  */
 
-const Pagination = (props: PaginationPropsType): JSX.Element => {
+const Pagination = (props: PaginationPropsType): React.ReactElement => {
   const { totalElements, onPageChange = () => {} } = props;
 
   const router = useRouter();

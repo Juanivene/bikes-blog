@@ -1,5 +1,5 @@
 import LoadingPage from '@/components/Loading/LoadingPage';
 
-const LoadingScreen = (): JSX.Element => <LoadingPage />;
+const LoadingScreen = (): React.ReactElement => <LoadingPage />;
 
 export default LoadingScreen;
