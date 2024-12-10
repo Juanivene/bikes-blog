@@ -9,3 +9,6 @@ config/
 dist/
 coverage/
 node_modules/
+
+vitest.config.ts
+vitest.setup.ts
