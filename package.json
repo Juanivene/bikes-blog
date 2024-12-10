@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "npx tsx ./config/pre-build.ts --mode development",
     "start": "next start",
-    "lint": "npx tsx ./config/pre-build.ts --ignore-build",
+    "lint": "npx tsx ./config/pre-build.ts --ignore-build --fix",
     "lint:css": "stylelint '**/*.{css,scss}'",
     "prettier": "npx prettier -w .",
     "prettier:check": "npx prettier -c .",
