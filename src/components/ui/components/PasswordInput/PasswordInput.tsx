@@ -16,7 +16,7 @@ import type { InputProps } from '../TextInput/TextInput.types';
 
 const PasswordInput = <T extends FormSchemas>(
   props: InputProps<T>
-): JSX.Element => {
+): React.ReactElement => {
   const {
     className = '',
     control,

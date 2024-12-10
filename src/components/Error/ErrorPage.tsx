@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 import PATHS from '@/constants/paths';
 
-const ErrorPage = (): JSX.Element => (
+const ErrorPage = (): React.ReactElement => (
   <section className="flex justify-center text-center">
     <div className="content-card w-fit">
       <h2 className="text-3xl font-bold">¡Ocurrió un error!</h2>

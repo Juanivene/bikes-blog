@@ -10,7 +10,7 @@ import type { TooltipPropsType } from './Tooltip.types';
  * @param className - Additional class names to apply to the icon container.
  * @param position - Placement.
  * @param title - Informative text displayed.
- * @returns JSX.Element The rendered Icon component.
+ * @returns React.ReactElement The rendered Icon component.
  *
  * ```
  * @example
@@ -20,7 +20,7 @@ import type { TooltipPropsType } from './Tooltip.types';
  * ```
  */
 
-const Tooltip = (props: TooltipPropsType): JSX.Element => {
+const Tooltip = (props: TooltipPropsType): React.ReactElement => {
   const { children, className = '', position = 'top', title = '' } = props;
 
   return (

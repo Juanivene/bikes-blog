@@ -24,7 +24,7 @@ const HourPicker = forwardRef(
   (
     props: HourPickerProps,
     inputRef: ForwardedRef<HTMLInputElement>
-  ): JSX.Element => {
+  ): React.ReactElement => {
     const {
       className = '',
       error = false,

@@ -2,7 +2,7 @@
 
 import { useRef } from 'react';
 
-const SkipNavButton = (): JSX.Element => {
+const SkipNavButton = (): React.ReactElement => {
   const element = useRef<HTMLAnchorElement>(null);
 
   const handleFocus = (): void => {

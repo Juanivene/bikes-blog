@@ -23,13 +23,14 @@ const RootLayout = ({
   children,
 }: {
   children: React.ReactNode;
-}): JSX.Element => (
+}): React.ReactElement => (
   <html suppressHydrationWarning lang="es">
     <body className={robotoSlab.className}>
       <ErrorBoundary>
         <ThemeProvider>
           <SkipNavButton />
           <main id="main">{children}</main>
+          <h1 className="text-cyan-600">ROOT LAYOUT</h1>
           <SonnerToast />
         </ThemeProvider>
       </ErrorBoundary>

@@ -13,7 +13,7 @@ import type { ComboBoxInputProps } from '../ComboBoxInput/ComboBoxInput.types';
 
 const MultipleComboBoxInput = <T extends FormSchemas>(
   props: ComboBoxInputProps<T>
-): JSX.Element => {
+): React.ReactElement => {
   const {
     className = '',
     control,

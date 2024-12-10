@@ -20,7 +20,12 @@ module.exports = {
   ],
   overrides: [
     {
-      files: ['**/*.test.{js,ts,jsx,tsx}', '**/__tests__/**/*.{js,ts,jsx,tsx}'],
+      files: [
+        'vitest.config.ts',
+        'vitest.setup.ts',
+        '**/*.test.{js,ts,jsx,tsx}',
+        '**/__tests__/**/*.{js,ts,jsx,tsx}',
+      ],
       rules: {
         'import/no-extraneous-dependencies': 'off', // Disable this rule for test files.
       },
@@ -34,7 +39,7 @@ module.exports = {
   },
   plugins: [
     'react', // React plugin.
-    'react-hooks', // Plugin for React Hooks rules.
+    // 'react-hooks', // Plugin for React Hooks rules.
     '@typescript-eslint', // TypeScript plugin.
     'import', // Import plugin for managing imports.
     'jsx-a11y', // Plugin for accessibility rules in JSX.

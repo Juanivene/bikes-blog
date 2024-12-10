@@ -8,7 +8,7 @@ import { DTI, DTI_LIST } from '@/dti';
 
 import type { ModalProps } from './Modal.types';
 
-const Modal = (props: ModalProps): JSX.Element | null => {
+const Modal = (props: ModalProps): React.ReactElement | null => {
   const {
     modalId,
     title,

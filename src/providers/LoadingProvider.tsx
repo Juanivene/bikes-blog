@@ -4,7 +4,7 @@ import { useLoadingStore } from '@/zustand/store';
 
 import LoadingBackdrop from '@/components/Loading/LoadingBackdrop';
 
-const LoadingProvider = (): JSX.Element => {
+const LoadingProvider = (): React.ReactElement => {
   const { isLoading } = useLoadingStore();
   return <LoadingBackdrop open={isLoading} />;
 };

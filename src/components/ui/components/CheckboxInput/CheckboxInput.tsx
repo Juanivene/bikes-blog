@@ -8,7 +8,7 @@ import { InputProps } from './CheckboxInput.types';
 
 const CheckboxInput = <T extends FormSchemas>(
   props: InputProps<T>
-): JSX.Element => {
+): React.ReactElement => {
   const {
     className = '',
     control,

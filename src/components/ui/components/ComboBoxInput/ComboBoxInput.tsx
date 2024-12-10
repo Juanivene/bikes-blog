@@ -13,7 +13,7 @@ import type { ComboBoxInputProps } from './ComboBoxInput.types';
 
 const ComboBoxInput = <T extends FormSchemas>(
   props: ComboBoxInputProps<T>
-): JSX.Element => {
+): React.ReactElement => {
   const {
     className = '',
     control,

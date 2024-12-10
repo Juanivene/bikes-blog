@@ -2,7 +2,7 @@ import { cn } from '@/utilities';
 
 import { type SkeletonProps } from './Skeleton.types';
 
-const Skeleton = (props: SkeletonProps): JSX.Element => {
+const Skeleton = (props: SkeletonProps): React.ReactElement => {
   const { type = 'rect', className, ...rest } = props;
 
   const circularStyles = cn(

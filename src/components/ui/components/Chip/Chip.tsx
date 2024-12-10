@@ -21,7 +21,7 @@ import type { ChipPropsType } from './Chip.types';
  * @param dti - Data Test ID for testing purposes.
  * @param onDelete - Event handler for the button's delete event.
  * @param size - Controlling the font size of the element.
- * @returns JSX.Element The rendered Icon component.
+ * @returns React.ReactElement The rendered Icon component.
  *
  * ```
  * @example
@@ -40,7 +40,7 @@ import type { ChipPropsType } from './Chip.types';
  * ```
  */
 
-const Chip = (props: ChipPropsType): JSX.Element => {
+const Chip = (props: ChipPropsType): React.ReactElement => {
   const {
     children,
     className,

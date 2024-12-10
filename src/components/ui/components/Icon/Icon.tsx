@@ -14,7 +14,7 @@ import type { IconProps } from './Icon.types';
  * @param iconComponent - The SVG icon component to render.
  * @param size - The size of the icon in CSS units (e.g., "2em", "16px").
  * @param title - The title attribute for the icon (used for accessibility).
- * @returns JSX.Element The rendered Icon component.
+ * @returns React.ReactElement The rendered Icon component.
  *
  * @example
  * - Standalone usage:
@@ -38,7 +38,7 @@ import type { IconProps } from './Icon.types';
  * For example, if using the `MdCalculator` icon component, the default `title` attribute would be `icon-MdCalculator`.
  */
 
-const Icon = (props: IconProps): JSX.Element => {
+const Icon = (props: IconProps): React.ReactElement => {
   const {
     className,
     color,

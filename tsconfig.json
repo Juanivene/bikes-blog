@@ -1,6 +1,5 @@
 {
   "compilerOptions": {
-    "types": ["vitest", "node"],
     "target": "ESNext",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
@@ -13,7 +12,7 @@
     "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve",
+    "jsx": "react-jsx",
     "incremental": true,
     "plugins": [
       {
@@ -22,7 +21,8 @@
     ],
     "paths": {
       "@/*": ["./src/*"]
-    }
+    },
+    "types": ["node", "react", "react-dom", "vitest"]
   },
   "include": [
     "**/*.ts",
@@ -36,6 +36,5 @@
     "tailwind.config.ts",
     "vitest.config.ts"
   ],
-  "exclude": ["node_modules", ".next"],
-  
+  "exclude": ["node_modules", ".next"]
 }

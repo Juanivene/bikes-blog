@@ -4,7 +4,7 @@ import { DTI, DTI_LIST } from '@/dti';
 
 import { TitleProps } from '../interface/common';
 
-const Title = (props: TitleProps): JSX.Element => {
+const Title = (props: TitleProps): React.ReactElement => {
   const { title, subtitle, showBackButton } = props;
 
   return (

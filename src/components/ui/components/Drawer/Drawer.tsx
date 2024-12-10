@@ -17,7 +17,7 @@ import type { DrawerPropsType } from './Drawer.types';
  * @param className - Additional class names to apply to the icon container.
  * @param title - Drawer's title
  * @param trigger - Button that will open the drawer
- * @returns JSX.Element The rendered Icon component.
+ * @returns React.ReactElement The rendered Icon component.
  *
  * ```
  * @example
@@ -27,7 +27,7 @@ import type { DrawerPropsType } from './Drawer.types';
  * ```
  */
 
-const Drawer = (props: DrawerPropsType): JSX.Element => {
+const Drawer = (props: DrawerPropsType): React.ReactElement => {
   const { children, className = '', title = '', trigger } = props;
 
   return (

@@ -7,7 +7,7 @@ import type { AccordionPropsType } from './Accordion.types';
  * @param props - The component props.
  * @param className - Additional class names to apply to the icon container.
  * @param title - Title element.
- * @returns JSX.Element The rendered Icon component.
+ * @returns React.ReactElement The rendered Icon component.
  *
  * @example
  * - Standalone usage:
@@ -16,7 +16,7 @@ import type { AccordionPropsType } from './Accordion.types';
  * ```
  */
 
-const Accordion = (props: AccordionPropsType): JSX.Element => {
+const Accordion = (props: AccordionPropsType): React.ReactElement => {
   const { children, className = '', title = '' } = props;
 
   return (

@@ -8,7 +8,7 @@ import { DTI, DTI_LIST } from '@/dti';
 
 import type { RadioButtonProps } from './RadioButton.types';
 
-const RadioButton = (props: RadioButtonProps): JSX.Element => {
+const RadioButton = (props: RadioButtonProps): React.ReactElement => {
   const {
     ariaLabel,
     className = '',

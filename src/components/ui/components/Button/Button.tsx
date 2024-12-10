@@ -51,7 +51,7 @@ const generateAriaLabel = (
  * @param type - Specifies the type of the button.
  * @param unstyled - Specifies whether the button should be unstyled (without default button styling).
  * @param withoutAnimation - Specifies whether to disable click animation.
- * @returns JSX.Element A stylized button element.
+ * @returns React.ReactElement A stylized button element.
  * @throws Will throw an error if both `activeButton` and `outlineButton` are enabled simultaneously.
  *
  * ```
@@ -74,7 +74,7 @@ const Button = forwardRef(
   (
     props: ButtonPropsType,
     ref: ForwardedRef<HTMLButtonElement>
-  ): JSX.Element => {
+  ): React.ReactElement => {
     const {
       activeButton = false,
       ariaHidden = false,

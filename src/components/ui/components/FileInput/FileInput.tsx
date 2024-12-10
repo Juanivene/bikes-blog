@@ -17,7 +17,7 @@ import type { FileInputProps } from './FileInput.types';
 
 const FileInput = <T extends FormSchemas>(
   props: FileInputProps<T>
-): JSX.Element => {
+): React.ReactElement => {
   const {
     className = '',
     control,

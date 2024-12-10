@@ -2,7 +2,7 @@ import './Spinner.styles.css';
 
 import type { SpinnerProps } from './Spinner.types';
 
-const Spinner = (props: SpinnerProps): JSX.Element => {
+const Spinner = (props: SpinnerProps): React.ReactElement => {
   const { useTheme = false } = props;
 
   let className = 'bg-white';

@@ -19,7 +19,7 @@ import type { IconButtonPropsType } from './IconButton.types';
  * @param iconComponent - The SVG icon component to render.
  * @param label - The title attribute for the icon (used for tooltip).
  * @param onClick - Event handler for the button's click event.
- * @returns JSX.Element The rendered Icon component.
+ * @returns React.ReactElement The rendered Icon component.
  *
  * ```
  * @example
@@ -39,7 +39,7 @@ import type { IconButtonPropsType } from './IconButton.types';
  * ```
  */
 
-const IconButton = (props: IconButtonPropsType): JSX.Element => {
+const IconButton = (props: IconButtonPropsType): React.ReactElement => {
   const {
     className,
     colorDark = '',

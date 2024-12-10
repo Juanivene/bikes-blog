@@ -14,7 +14,9 @@ import { DTI, DTI_LIST } from '@/dti';
 
 import type { ThemeTogglerButtonProps } from '@/components/interface/common';
 
-const ThemeTogglerButton = (props: ThemeTogglerButtonProps): JSX.Element => {
+const ThemeTogglerButton = (
+  props: ThemeTogglerButtonProps
+): React.ReactElement => {
   const { className, size = '1rem', ...buttonProps } = props;
 
   const [isClient, setIsClient] = useState(false);

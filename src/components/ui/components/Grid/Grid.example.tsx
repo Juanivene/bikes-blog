@@ -1,6 +1,6 @@
 import Grid from './Grid';
 
-const GridExample = (): JSX.Element => (
+const GridExample = (): React.ReactElement => (
   <>
     <Grid container className="col-span-12 bg-violet-400">
       <Grid

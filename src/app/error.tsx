@@ -8,7 +8,7 @@ const ErrorScreen = ({
 }: {
   error: Error;
   reset: () => void;
-}): JSX.Element => {
+}): React.ReactElement => {
   useEffect(() => {
     // Log the error to an error reporting service
     // eslint-disable-next-line no-console
