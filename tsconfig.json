@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "types": ["vitest", "node"],
     "target": "ESNext",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
@@ -24,15 +25,17 @@
     }
   },
   "include": [
-    "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "commitlint.config.ts",
-    "tailwind.config.ts",
     ".eslintrc.cjs",
+    ".next/types/**/*.ts",
+    "commitlint.config.ts",
     "next.config.mjs",
+    "next-env.d.ts",
     "postcss.config.js",
-    ".next/types/**/*.ts"
+    "tailwind.config.ts",
+    "vitest.config.ts"
   ],
-  "exclude": ["node_modules", ".next"]
+  "exclude": ["node_modules", ".next"],
+  
 }
