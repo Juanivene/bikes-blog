@@ -9,7 +9,7 @@ module.exports = {
     'eslint:recommended', // Use ESLint's recommended rules.
     'plugin:react/recommended', // Use recommended rules for React.
     'next/core-web-vitals', // Use Next.js core web vitals rules.
-    'plugin:@next/next/recommended', // Use recommended rules for Next.js.
+    // 'plugin:@next/next/recommended', // Use recommended rules for Next.js.
     'airbnb', // Extend Airbnb's base configuration.
     'airbnb-typescript', // Extend Airbnb's configuration for TypeScript.
     'plugin:@typescript-eslint/recommended', // Use recommended rules for TypeScript.
@@ -17,6 +17,19 @@ module.exports = {
     'prettier', // Integrate Prettier rules with ESLint.
     'plugin:prettier/recommended', // Integrate Prettier rules with ESLint.
     'eslint-config-prettier', // Disables rules that might interfere with Prettier.
+  ],
+  overrides: [
+    {
+      files: [
+        'vitest.config.ts',
+        'vitest.setup.ts',
+        '**/*.test.{js,ts,jsx,tsx}',
+        '**/__tests__/**/*.{js,ts,jsx,tsx}',
+      ],
+      rules: {
+        'import/no-extraneous-dependencies': 'off', // Disable this rule for test files.
+      },
+    },
   ],
   parser: '@typescript-eslint/parser', // Use TypeScript parser.
   parserOptions: {
