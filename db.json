@@ -1,0 +1,28 @@
+{
+  "bikes": [
+    {
+      "id": "1",
+      "title": "Honda Navi 110",
+      "description": "loremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremlorem",
+      "isFavorite": false
+    },
+    {
+      "id": "2",
+      "title": "KTM Duke 200",
+      "description": "loremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremlorem",
+      "isFavorite": false
+    },
+    {
+      "id": "3",
+      "title": "Bajaj Roiser NS 200",
+      "description": "loremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremlorem",
+      "isFavorite": false
+    },
+    {
+      "id": "4",
+      "title": "Honda CG 150",
+      "description": "loremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremlorem",
+      "isFavorite": false
+    }
+  ]
+}

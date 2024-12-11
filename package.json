@@ -16,7 +16,8 @@
     "test:vitest": "vitest",
     "test:watch": "vitest --watch",
     "update": "ncu",
-    "update:check": "ncu --interactive --format group"
+    "update:check": "ncu --interactive --format group",
+    "server": "json-server --watch db.json --port 4000"
   },
   "dependencies": {
     "@headlessui/react": "2.1.2",

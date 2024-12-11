@@ -1,9 +1,3 @@
-import FormExample from '@/components/FormExample_delete/FormExample';
-
-const Home = (): React.ReactElement => (
-  <main>
-    <FormExample />
-  </main>
-);
+const Home = (): React.ReactElement => <main>Inico</main>;
 
 export default Home;
