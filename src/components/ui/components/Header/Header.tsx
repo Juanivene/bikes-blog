@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
 const Header = (): React.ReactElement => (
-  <div className="navbar bg-base-100">
+  <header className="navbar bg-base-100">
     <div className="navbar-start">
       <div className="dropdown">
         <div className="btn btn-circle btn-ghost" role="button" tabIndex={0}>
@@ -75,7 +75,7 @@ const Header = (): React.ReactElement => (
         </div>
       </button>
     </div>
-  </div>
+  </header>
 );
 
 export default Header;

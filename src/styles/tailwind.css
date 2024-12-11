@@ -1,31 +1,3 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-.tooltip::before,
-.md\:tooltip::before {
-  color: #ffffff !important;
-  font-weight: 100;
-}
-
-.btn.btn-disabled,
-.btn[disabled],
-.btn:disabled {
-  @apply bg-gray-200 dark:bg-gray-700;
-}
-
-.modules-padding {
-  @apply px-7 py-5 md:px-10;
-}
-
-.content-card {
-  @apply card border border-gray-300 bg-white p-5 shadow dark:border-gray-600 dark:bg-slate-800;
-}
-
-.vertically-centered {
-  @apply flex h-[calc(100vh_-_300px)] flex-col items-center justify-center md:h-[calc(100vh_-_200px)];
-}
-
-.custom-skeleton {
-  @apply animate-pulse bg-gray-300 dark:bg-gray-700;
-}

@@ -88,9 +88,6 @@
       "prettier -w",
       "vitest related --run"
     ],
-    "*.css": [
-      "stylelint --fix"
-    ],
     "*.{html,css,md,json}": [
       "prettier -w"
     ]
