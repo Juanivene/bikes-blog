@@ -8,7 +8,7 @@ const BikeCard = (props: Props): React.ReactElement => {
   return (
     <article className="m-4 rounded-lg border border-gray-200 bg-slate-300 p-4 shadow-md">
       <div className="flex flex-col gap-2">
-        <h3 className="text-lg font-semibold text-blue-600">{title}</h3>
+        <h3 className="text-lg font-semibold text-yellow-500">{title}</h3>
         <p className="text-gray-700">{description}</p>
         <div className="mt-2 flex items-center">
           <p className="text-sm font-medium">
