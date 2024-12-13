@@ -2,57 +2,52 @@
   "bikes": [
     {
       "id": "1",
+      "image": "/img/bikes/navi.png",
       "title": "Honda Navi 110",
-      "description": "loremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremlorem",
-      "isFavorite": false
+      "description": "loremloremloremlo",
+      "isFavorite": true
     },
     {
       "id": "2",
+      "image": "/img/bikes/duke200.png",
       "title": "KTM Duke 200",
-      "description": "loremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremlorem",
+      "description": "loremloremloremloreml",
       "isFavorite": false
     },
     {
       "id": "3",
+      "image": "/img/bikes/rouser.png",
       "title": "Bajaj Rouser N 200",
-      "description": "loremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremlorem",
-      "isFavorite": false
+      "description": "loremloremloremloremloremloremloremloremlorem",
+      "isFavorite": true
     },
     {
       "id": "4",
+      "image": "/img/bikes/NS.png",
       "title": "Bajaj Rouser NS 160",
-      "description": "loremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremlorem",
+      "description": "loremloremloremloremloremlorem",
       "isFavorite": false
     },
     {
       "id": "5",
+      "image": "/img/bikes/titan.png",
       "title": "Honda CG 150 Titan",
-      "description": "loremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremlorem",
+      "description": "loremloremloremloremloremloremloremloremlore",
       "isFavorite": false
     },
     {
       "id": "6",
-      "title": "Honda CG 150 ",
-      "description": "loremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremlorem",
+      "image": "/img/bikes/xr.png",
+      "title": "Honda XR 250",
+      "description": "loremloremloremloremloremlorem",
       "isFavorite": false
     },
     {
       "id": "7",
-      "title": "Honda XR 250",
-      "description": "loremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremlorem",
-      "isFavorite": false
-    },
-    {
-      "id": "8",
+      "image": "/img/bikes/tornado.png",
       "title": "Honda Tornado 300",
-      "description": "loremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremlorem",
-      "isFavorite": false
-    },
-    {
-      "id": "9",
-      "title": "Honda Tornado 300",
-      "description": "loremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremlorem",
-      "isFavorite": false
+      "description": "loremloremloremloremloremloremloremloreml",
+      "isFavorite": true
     }
   ]
 }
