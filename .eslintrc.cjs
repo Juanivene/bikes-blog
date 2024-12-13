@@ -179,6 +179,7 @@ module.exports = {
 
     'no-eval': 'error', // Disable the use of eval.
     'no-implied-eval': 'error', // Disable the use of implicit eval.
+    'no-void': 'off',
   },
   settings: {
     'import/resolver': {

@@ -5,10 +5,11 @@ import BikeCard from '@/components/ui/components/BikeCard/BikeCard';
 import SearchForm from '@/components/ui/components/SearchForm/FormInfo';
 
 type Bikes = {
-  id: number;
+  id: string;
   title: string;
   description: string;
   isFavorite: boolean;
+  image: string;
 };
 
 const Home = async (): Promise<React.ReactElement> => {
@@ -62,16 +63,11 @@ const Home = async (): Promise<React.ReactElement> => {
       </Grid>
       <Grid
         item
-        className="mt-8 grid grid-cols-1 gap-1 md:grid-cols-2 lg:grid-cols-3"
+        className="mt-8 grid grid-cols-1 gap-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
         xs={12}
       >
         {bikes.map((bike) => (
-          <BikeCard
-            isFavorite
-            description={bike.description}
-            key={bike.id}
-            title={bike.title}
-          />
+          <BikeCard bike={bike} key={bike.id} />
         ))}
       </Grid>
     </Grid>
