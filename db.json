@@ -1,0 +1,58 @@
+{
+  "bikes": [
+    {
+      "id": "1",
+      "title": "Honda Navi 110",
+      "description": "loremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremlorem",
+      "isFavorite": false
+    },
+    {
+      "id": "2",
+      "title": "KTM Duke 200",
+      "description": "loremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremlorem",
+      "isFavorite": false
+    },
+    {
+      "id": "3",
+      "title": "Bajaj Rouser N 200",
+      "description": "loremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremlorem",
+      "isFavorite": false
+    },
+    {
+      "id": "4",
+      "title": "Bajaj Rouser NS 160",
+      "description": "loremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremlorem",
+      "isFavorite": false
+    },
+    {
+      "id": "5",
+      "title": "Honda CG 150 Titan",
+      "description": "loremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremlorem",
+      "isFavorite": false
+    },
+    {
+      "id": "6",
+      "title": "Honda CG 150 ",
+      "description": "loremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremlorem",
+      "isFavorite": false
+    },
+    {
+      "id": "7",
+      "title": "Honda XR 250",
+      "description": "loremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremlorem",
+      "isFavorite": false
+    },
+    {
+      "id": "8",
+      "title": "Honda Tornado 300",
+      "description": "loremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremlorem",
+      "isFavorite": false
+    },
+    {
+      "id": "9",
+      "title": "Honda Tornado 300",
+      "description": "loremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremlorem",
+      "isFavorite": false
+    }
+  ]
+}

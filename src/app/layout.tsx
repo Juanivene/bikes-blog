@@ -2,13 +2,13 @@ import type { Metadata } from 'next';
 
 import ThemeProvider from '@/providers/ThemeProvider';
 
-import SkipNavButton from '@/components/Accessibility/SkipNavButton';
 import SonnerToast from '@/components/Common/SonnerToast';
+import ThemeTogglerButton from '@/components/Common/ThemeTogglerButton';
 import ErrorBoundary from '@/components/Error/ErrorBoundary';
+import Footer from '@/components/ui/components/Footer/Footer';
+import Header from '@/components/ui/components/Header/Header';
 
-import '@/styles/animations.css';
 import robotoSlab from '@/styles/fonts';
-import '@/styles/globals.css';
 import '@/styles/tailwind.css';
 
 // TODO: Change Metadata
@@ -24,13 +24,16 @@ const RootLayout = ({
 }: {
   children: React.ReactNode;
 }): React.ReactElement => (
-  <html suppressHydrationWarning lang="es">
-    <body className={robotoSlab.className}>
+  <html suppressHydrationWarning className="h-full" lang="es">
+    <body className={`flex h-full flex-col ${robotoSlab.className}`}>
       <ErrorBoundary>
-        <ThemeProvider>
-          <SkipNavButton />
-          <main id="main">{children}</main>
-          <h1 className="text-cyan-600">ROOT LAYOUT</h1>
+        <ThemeProvider defaultTheme="light">
+          <Header />
+          <main className="flex-1" id="main">
+            {children}
+          </main>
+          <ThemeTogglerButton />
+          <Footer />
           <SonnerToast />
         </ThemeProvider>
       </ErrorBoundary>

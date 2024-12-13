@@ -22,13 +22,13 @@ const Header = (): React.ReactElement => (
         </div>
         <ul className="menu dropdown-content menu-sm z-[1] mt-3 w-52 rounded-box bg-base-100 p-2 shadow">
           <li>
-            <Link href="/">Homepage</Link>
+            <Link href="/">Inicio</Link>
           </li>
           <li>
-            <Link href="/">Portfolio</Link>
+            <Link href="/favorites">Favoritos</Link>
           </li>
           <li>
-            <Link href="/">About</Link>
+            <Link href="/about">Sobre Nosotros</Link>
           </li>
         </ul>
       </div>
