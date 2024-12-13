@@ -40,28 +40,35 @@ const BikeCard = (props: Props): React.ReactElement => {
   };
 
   return (
-    <article className=" max-w-sm rounded-lg border border-gray-200 bg-white shadow-lg transition  hover:shadow-xl">
-      <Image alt={bike.title} height={500} src={bike.image} width={350} />
-
-      <div className="flex flex-col gap-3 p-4">
-        <h3 className="text-xl font-bold text-gray-800">{bike.title}</h3>
-        <p className="text-gray-600">{bike.description}</p>
-        <div className="flex items-center">
-          <span
-            className={`text-sm font-medium ${favorite ? 'bg-green-500' : ''}`}
+    <article className="my-4 max-w-sm rounded-lg border border-gray-200 bg-white shadow-md transition-transform hover:scale-105 hover:shadow-lg">
+      <Image
+        alt={bike.title}
+        className="rounded-t-lg object-cover"
+        height={500}
+        src={bike.image}
+        width={350}
+      />
+      <div className="flex flex-col gap-4 p-4">
+        <h3 className="text-lg font-bold text-gray-800">{bike.title}</h3>
+        <p className="text-sm text-gray-600">{bike.description}</p>
+        <div className="flex items-center gap-2">
+          <button
+            className={`rounded-full p-2 transition ${
+              favorite ? 'bg-green-300 text-white' : 'bg-gray-200 text-gray-600'
+            }`}
+            type="button"
+            onClick={() => {
+              void handleFavorite(bike.id, favorite);
+            }}
           >
-            <button
-              type="button"
-              onClick={() => {
-                void handleFavorite(bike.id, favorite);
-              }}
-            >
-              ⭐
-            </button>
+            ⭐
+          </button>
+          <span className="text-sm font-medium text-gray-600">
+            {favorite ? 'Quitar de favoritos' : 'Agregar a favoritos'}
           </span>
         </div>
         <button
-          className="mt-3 rounded-lg bg-yellow-400 px-4 py-2 text-sm font-semibold text-black hover:bg-yellow-300"
+          className="mt-2 rounded-lg bg-yellow-400 px-4 py-2 text-sm font-semibold text-gray-900 transition hover:bg-yellow-300"
           type="button"
         >
           Ver detalles
