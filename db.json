@@ -5,7 +5,7 @@
       "image": "/img/bikes/navi.png",
       "title": "Honda Navi 110",
       "description": "loremloremloremlo",
-      "isFavorite": true
+      "isFavorite": false
     },
     {
       "id": "2",
@@ -19,7 +19,7 @@
       "image": "/img/bikes/rouser.png",
       "title": "Bajaj Rouser N 200",
       "description": "loremloremloremloremloremloremloremloremlorem",
-      "isFavorite": true
+      "isFavorite": false
     },
     {
       "id": "4",
@@ -47,7 +47,7 @@
       "image": "/img/bikes/tornado.png",
       "title": "Honda Tornado 300",
       "description": "loremloremloremloremloremloremloremloreml",
-      "isFavorite": true
+      "isFavorite": false
     }
   ]
 }
