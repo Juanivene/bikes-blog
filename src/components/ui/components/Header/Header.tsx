@@ -1,5 +1,7 @@
 import Link from 'next/link';
 
+import bangers from '@/styles/fontBanger';
+
 const Header = (): React.ReactElement => (
   <header className="bg-gradient-to-r from-gray-900 to-black p-4">
     <div className="container mx-auto flex items-center justify-between">
@@ -58,7 +60,10 @@ const Header = (): React.ReactElement => (
         </Link>
       </div>
       <div className="navbar-center">
-        <Link className="text-3xl font-semibold text-white" href="/">
+        <Link
+          className={`text-3xl font-semibold text-yellow-500 ${bangers.className}`}
+          href="/"
+        >
           BikeWorld
         </Link>
       </div>

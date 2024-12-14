@@ -1,9 +1,9 @@
-import { Roboto_Slab as robotoSlabFont } from 'next/font/google';
+import { Russo_One as russoOneFont } from 'next/font/google';
 
-const robotoSlab = robotoSlabFont({
+const russoOne = russoOneFont({
   weight: '400',
   style: 'normal',
   subsets: ['latin'],
 });
 
-export default robotoSlab;
+export default russoOne;
