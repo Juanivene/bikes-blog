@@ -1,79 +1,72 @@
 import Link from 'next/link';
 
 const Header = (): React.ReactElement => (
-  <header className="navbar bg-base-100">
-    <div className="navbar-start">
-      <div className="dropdown">
-        <div className="btn btn-circle btn-ghost" role="button" tabIndex={0}>
-          <svg
-            className="h-5 w-5"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M4 6h16M4 12h16M4 18h7"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-            />
-          </svg>
+  <header className="bg-gradient-to-r from-gray-900 to-black p-4">
+    <div className="container mx-auto flex items-center justify-between">
+      <div className="navbar-start flex items-center md:hidden">
+        <div className="dropdown">
+          <button className="btn btn-circle btn-ghost text-white" type="button">
+            <svg
+              className="h-6 w-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M4 6h16M4 12h16M4 18h7"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+              />
+            </svg>
+          </button>
+          <ul className="menu dropdown-content menu-sm z-[1] mt-3 w-52 rounded-lg bg-white p-2 shadow-lg">
+            <li>
+              <Link className="text-gray-800 hover:text-yellow-suave" href="/">
+                Inicio
+              </Link>
+            </li>
+            <li>
+              <Link
+                className="text-gray-800 hover:text-yellow-suave"
+                href="/favorites"
+              >
+                Motos
+              </Link>
+            </li>
+            <li>
+              <Link
+                className="text-gray-800 hover:text-yellow-suave"
+                href="/about"
+              >
+                Sobre Nosotros
+              </Link>
+            </li>
+          </ul>
         </div>
-        <ul className="menu dropdown-content menu-sm z-[1] mt-3 w-52 rounded-box bg-base-100 p-2 shadow">
-          <li>
-            <Link href="/">Inicio</Link>
-          </li>
-          <li>
-            <Link href="/favorites">Favoritos</Link>
-          </li>
-          <li>
-            <Link href="/about">Sobre Nosotros</Link>
-          </li>
-        </ul>
       </div>
-    </div>
-    <div className="navbar-center">
-      <Link className="btn btn-ghost text-xl" href="/">
-        daisyUI
-      </Link>
-    </div>
-    <div className="navbar-end">
-      <button className="btn btn-circle btn-ghost" type="button">
-        <svg
-          className="h-5 w-5"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-          />
-        </svg>
-      </button>
-      <button className="btn btn-circle btn-ghost" type="button">
-        <div className="indicator">
-          <svg
-            className="h-5 w-5"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-            />
-          </svg>
-          <span className="badge indicator-item badge-primary badge-xs" />
-        </div>
-      </button>
+      <div className="navbar-start hidden items-center space-x-8 md:flex">
+        <Link className="text-white hover:text-yellow-suave" href="/">
+          Inicio
+        </Link>
+        <Link className="text-white hover:text-yellow-suave" href="/favorites">
+          Motos
+        </Link>
+        <Link className="text-white hover:text-yellow-suave" href="/about">
+          Sobre Nosotros
+        </Link>
+      </div>
+      <div className="navbar-center">
+        <Link className="text-3xl font-semibold text-white" href="/">
+          BikeWorld
+        </Link>
+      </div>
+      <div className="navbar-end flex">
+        <button className="btn btn-circle btn-ghost text-white" type="button">
+          <div className="indicator p-1">⭐</div>
+        </button>
+      </div>
     </div>
   </header>
 );
