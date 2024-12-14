@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 
 import SonnerToast from '@/components/Common/SonnerToast';
 import ErrorBoundary from '@/components/Error/ErrorBoundary';
-import Footer from '@/components/ui/components/Footer/Footer';
 import Header from '@/components/ui/components/Header/Header';
 
 import russoOne from '@/styles/fonts';
@@ -30,7 +29,6 @@ const RootLayout = ({
         <main className="flex-1" id="main">
           {children}
         </main>
-        <Footer />
         <SonnerToast />
       </ErrorBoundary>
     </body>

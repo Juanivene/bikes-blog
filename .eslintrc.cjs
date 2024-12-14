@@ -123,7 +123,7 @@ module.exports = {
     'import/prefer-default-export': 'error', // Allows named exports even if there is only one export.
     'import/extensions': 'off', // Allows omitting file extensions in imports.
     'import/order': 'off', // Disables automatic sorting of imports (controlled by Prettier).
-    'import/no-extraneous-dependencies': ['error', { devDependencies: false }], // Allows importing dependencies marked as devDependencies.
+    'import/no-extraneous-dependencies': 'off', // Allows importing dependencies marked as devDependencies.
     'import/no-unresolved': 'error', // Ensures all imports can be resolved.
     'import/named': 'error', // Ensures named imports exist.
     'import/no-absolute-path': 'error', // Disallows the use of absolute paths in imports.

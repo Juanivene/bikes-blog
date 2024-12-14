@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 
 export type Bikes = {
@@ -19,6 +20,7 @@ const BACKEND_URL = process.env.NEXT_PUBLIC_DB_HOST;
 const BikeCard = (props: Props): React.ReactElement => {
   const { bike } = props;
   const [favorite, setFavorite] = useState(bike.isFavorite);
+  const router = useRouter();
 
   const handleFavorite = async (
     id: string,
@@ -72,6 +74,7 @@ const BikeCard = (props: Props): React.ReactElement => {
         <button
           className="mt-2 rounded-lg bg-yellow-400 px-6 py-3 text-sm font-semibold text-gray-900 transition hover:bg-yellow-300 sm:text-base md:text-lg"
           type="button"
+          onClick={() => router.push(`/detail?moto=${bike.id}`)}
         >
           Ver detalles
         </button>
