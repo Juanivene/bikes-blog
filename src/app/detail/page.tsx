@@ -14,7 +14,7 @@ const Detail = (): React.ReactElement => {
   const searchParams = useSearchParams();
   const bikeId = searchParams.get('moto');
   const [content, setContent] = useState<string>('');
-  const [error, setError] = useState<string | null>(null);
+  const [error, setError] = useState<boolean | null>(false);
 
   useEffect(() => {
     if (bikeId) {
@@ -28,7 +28,7 @@ const Detail = (): React.ReactElement => {
             .process(text);
           setContent(processedContent.toString());
         })
-        .catch((err) => setError(err));
+        .catch(() => setError(true));
     }
   }, [bikeId]);
 
@@ -45,15 +45,18 @@ const Detail = (): React.ReactElement => {
           </div>
 
           <div className="max-h-[70vh] space-y-4 overflow-y-auto p-6 text-sm md:text-base">
-            {error && <p className="text-red-500">{error}</p>}
-            {content ? (
+            {error && (
+              <p className="text-red-500">
+                Lamentablemente no pudimos acceder al detalle de tu moto.
+              </p>
+            )}
+            {content && (
               <div
                 className="prose-invert prose list-inside list-disc space-y-2 pl-5"
                 dangerouslySetInnerHTML={{ __html: content }}
               />
-            ) : (
-              <p>Cargando contenido...</p>
             )}
+            {!error && !content && <p>Cargando contenido...</p>}
           </div>
           <div className="flex justify-end border-t border-gray-700 p-4">
             <Link
