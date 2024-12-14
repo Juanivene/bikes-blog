@@ -6,7 +6,7 @@ import russoOne from '@/styles/fonts';
 type Bikes = {
   id: string;
   title: string;
-  description: string;
+  cc: string;
   isFavorite: boolean;
   image: string;
 };
@@ -23,7 +23,7 @@ const CardsContainer = async (): Promise<React.ReactElement> => {
       >
         Motos del momento
       </h1>
-      <div className="lg:px-8${russoOne.className grid grid-cols-1 gap-6 bg-gray-carbon px-4 xxs:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+      <div className="grid grid-cols-1 gap-6 bg-gray-carbon px-4 xxs:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 lg:px-10">
         {bikes.map((bike) => (
           <BikeCard bike={bike} key={bike.id} />
         ))}
