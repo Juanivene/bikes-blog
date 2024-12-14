@@ -5,7 +5,7 @@ import ErrorBoundary from '@/components/Error/ErrorBoundary';
 import Footer from '@/components/ui/components/Footer/Footer';
 import Header from '@/components/ui/components/Header/Header';
 
-import robotoSlab from '@/styles/fonts';
+import russoOne from '@/styles/fonts';
 import '@/styles/tailwind.css';
 
 // TODO: Change Metadata
@@ -23,7 +23,7 @@ const RootLayout = ({
 }): React.ReactElement => (
   <html suppressHydrationWarning className="h-full" lang="es">
     <body
-      className={`flex h-full flex-col bg-gray-carbon ${robotoSlab.className}`}
+      className={`flex h-full flex-col bg-gray-carbon ${russoOne.className}`}
     >
       <ErrorBoundary>
         <Header />
