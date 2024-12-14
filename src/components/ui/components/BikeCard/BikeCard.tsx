@@ -6,7 +6,7 @@ import { useState } from 'react';
 export type Bikes = {
   id: string;
   title: string;
-  description: string;
+  cc: string;
   image: string;
   isFavorite: boolean;
 };
@@ -51,9 +51,12 @@ const BikeCard = (props: Props): React.ReactElement => {
         src={bike.image}
         width={350}
       />
-      <div className="flex flex-col gap-4 space-y-4 p-4">
+      <div className="flex flex-col gap-4 space-y-2 p-4">
         <h3 className="text-lg font-bold text-gray-800">{bike.title}</h3>
-        <p className="text-sm text-gray-600">{bike.description}</p>
+        <p className="text-sm text-gray-600">
+          <b>Cilindrada: </b>
+          {bike.cc}
+        </p>
         <div className="flex items-center gap-2">
           <button
             className={`rounded-full p-2 text-lg transition ${favorite ? 'bg-green-300 text-white' : 'bg-gray-200 text-gray-600'}`}
