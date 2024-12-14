@@ -40,26 +40,25 @@ const BikeCard = (props: Props): React.ReactElement => {
   };
 
   return (
-    <article className="my-4 max-w-sm rounded-lg border border-gray-200 bg-white shadow-md transition-transform hover:scale-105 hover:shadow-lg">
+    <article
+      className="my-4 max-w-sm rounded-lg border border-gray-200 bg-white shadow-md transition-transform hover:scale-105 hover:shadow-lg lg:max-w-md"
+      key={bike.id}
+    >
       <Image
         alt={bike.title}
-        className="rounded-t-lg object-cover"
+        className="h-64 rounded-t-lg object-cover sm:h-72"
         height={500}
         src={bike.image}
         width={350}
       />
-      <div className="flex flex-col gap-4 p-4">
+      <div className="flex flex-col gap-4 space-y-4 p-4">
         <h3 className="text-lg font-bold text-gray-800">{bike.title}</h3>
         <p className="text-sm text-gray-600">{bike.description}</p>
         <div className="flex items-center gap-2">
           <button
-            className={`rounded-full p-2 transition ${
-              favorite ? 'bg-green-300 text-white' : 'bg-gray-200 text-gray-600'
-            }`}
+            className={`rounded-full p-2 text-lg transition ${favorite ? 'bg-green-300 text-white' : 'bg-gray-200 text-gray-600'}`}
             type="button"
-            onClick={() => {
-              void handleFavorite(bike.id, favorite);
-            }}
+            onClick={() => void handleFavorite(bike.id, favorite)}
           >
             ⭐
           </button>
@@ -68,7 +67,7 @@ const BikeCard = (props: Props): React.ReactElement => {
           </span>
         </div>
         <button
-          className="mt-2 rounded-lg bg-yellow-400 px-4 py-2 text-sm font-semibold text-gray-900 transition hover:bg-yellow-300"
+          className="mt-2 rounded-lg bg-yellow-400 px-6 py-3 text-sm font-semibold text-gray-900 transition hover:bg-yellow-300 sm:text-base md:text-lg"
           type="button"
         >
           Ver detalles

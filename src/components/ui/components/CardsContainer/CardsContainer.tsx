@@ -14,10 +14,15 @@ const CardsContainer = async (): Promise<React.ReactElement> => {
   const response = await fetch(`${BACKEND_URL}/bikes`);
   const bikes = (await response.json()) as Bikes[];
   return (
-    <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-      {bikes.map((bike) => (
-        <BikeCard bike={bike} key={bike.id} />
-      ))}
+    <div className="bg-gray-carbon">
+      <h1 className="mb-6 py-5 text-center text-2xl text-yellow-brillante sm:text-3xl md:text-4xl">
+        Motos del momento
+      </h1>
+      <div className="grid grid-cols-1 gap-6 bg-gray-carbon px-4 xxs:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 lg:px-8">
+        {bikes.map((bike) => (
+          <BikeCard bike={bike} key={bike.id} />
+        ))}
+      </div>
     </div>
   );
 };
