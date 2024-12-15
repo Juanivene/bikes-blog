@@ -69,7 +69,7 @@ Para instalar y ejecutar el proyecto, sigue estos pasos:
 - **pages/**: Contiene las páginas principales de la aplicación, como la página de inicio y las páginas de detalles de las motos.
 - **public/**: Contiene los archivos estáticos de la aplicación, como imágenes y fuentes.
 - **styles/**: Contiene los archivos de estilo personalizados, junto con la configuración de Tailwind CSS.
-- **data/**: Contiene los archivos Markdown con los detalles de cada moto que se muestran en el blog.
+- **bikesMD/**: Contiene los archivos Markdown con los detalles de cada moto que se muestran en el blog.
 
 ## Contribuciones
 
