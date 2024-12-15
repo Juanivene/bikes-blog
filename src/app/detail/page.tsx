@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
@@ -8,6 +9,7 @@ import { remark } from 'remark';
 import gfm from 'remark-gfm';
 import html from 'remark-html';
 
+import bangers from '@/styles/fontBanger';
 import poppins from '@/styles/poppinsFont';
 
 const Detail = (): React.ReactElement => {
@@ -59,12 +61,71 @@ const Detail = (): React.ReactElement => {
             {!error && !content && <p>Cargando contenido...</p>}
           </div>
 
-          <div className="flex justify-end border-t border-gray-700 p-4">
+          <div className="flex justify-between border-t border-gray-700 p-4">
+            <p
+              className={`text-3xl font-semibold text-yellow-500 ${bangers.className}`}
+            >
+              BikeWorld
+            </p>
+            <div className="flex justify-center space-x-6 text-2xl ">
+              <Link
+                className="transition-all duration-300 hover:scale-110"
+                href="https://facebook.com"
+                target="_blank"
+              >
+                <Image
+                  alt="Facebook Logo"
+                  className="hover:opacity-75"
+                  height={40}
+                  src="/img/socialNetworks/facebook.png"
+                  width={40}
+                />
+              </Link>
+              <Link
+                className="transition-all duration-300 hover:scale-110"
+                href="https://instagram.com"
+                target="_blank"
+              >
+                <Image
+                  alt="Instagram Logo"
+                  className="hover:opacity-75"
+                  height={40}
+                  src="/img/socialNetworks/instagram.png"
+                  width={40}
+                />
+              </Link>
+              <Link
+                className="transition-all duration-300 hover:scale-110"
+                href="https://x.com"
+                target="_blank"
+              >
+                <Image
+                  alt="X Logo"
+                  className="hover:opacity-75"
+                  height={40}
+                  src="/img/socialNetworks/x.png"
+                  width={40}
+                />
+              </Link>
+              <Link
+                className="transition-all duration-300 hover:scale-110"
+                href="https://youtube.com"
+                target="_blank"
+              >
+                <Image
+                  alt="YouTube Logo"
+                  className="hover:opacity-75"
+                  height={40}
+                  src="/img/socialNetworks/youtube.png"
+                  width={40}
+                />
+              </Link>
+            </div>
             <Link
               className="rounded-lg bg-yellow-suave px-4 py-2 text-sm text-gray-900 hover:bg-yellow-400 md:text-base"
               href="/"
             >
-              Volver
+              Volver al inicio
             </Link>
           </div>
         </div>
