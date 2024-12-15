@@ -61,7 +61,7 @@ const BikeCard = (props: Props): React.ReactElement => {
         </p>
         <div className="flex items-center gap-2">
           <button
-            className={`rounded-full p-2 text-lg transition ${favorite ? 'bg-green-300 text-white' : 'bg-gray-200 text-gray-600'}`}
+            className={`rounded-full p-2 text-lg transition ${favorite ? 'bg-yellow-300 text-white' : 'bg-gray-200 text-gray-600'}`}
             type="button"
             onClick={() => void handleFavorite(bike.id, favorite)}
           >

@@ -5,7 +5,7 @@
       "image": "/img/bikes/navi.png",
       "title": "Honda Navi 110",
       "cc": "110",
-      "isFavorite": true,
+      "isFavorite": false,
       "isFeatured": true
     },
     {
@@ -14,7 +14,7 @@
       "title": "KTM Duke 200",
       "cc": "200",
       "description": "loremloremloremloreml",
-      "isFavorite": true,
+      "isFavorite": false,
       "isFeatured": true
     },
     {
