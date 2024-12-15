@@ -43,7 +43,7 @@ const BikeCard = (props: Props): React.ReactElement => {
 
   return (
     <article
-      className="my-4 max-w-sm rounded-lg border border-gray-200 bg-white shadow-md transition-transform hover:scale-105 hover:shadow-lg lg:max-w-md"
+      className="mx-4 my-4 max-w-sm rounded-lg border border-gray-200 bg-white shadow-md transition-transform hover:scale-105 hover:shadow-lg sm:mx-0 lg:max-w-md"
       key={bike.id}
     >
       <Image

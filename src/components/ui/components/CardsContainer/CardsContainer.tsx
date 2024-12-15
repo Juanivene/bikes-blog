@@ -17,7 +17,7 @@ const CardsContainer = async (): Promise<React.ReactElement> => {
   const response = await fetch(`${BACKEND_URL}/bikes`);
   const bikes = (await response.json()) as Bikes[];
   return (
-    <div className={`bg-gray-carbon ${russoOne.className} `}>
+    <div className={`bg-gray-carbon pb-10 ${russoOne.className} `}>
       <h1
         className={`py-5 text-center text-2xl text-yellow-brillante sm:text-3xl md:text-4xl ${bangers.className}`}
       >
