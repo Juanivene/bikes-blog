@@ -1,5 +1,7 @@
 import React from 'react';
 
+import ButtonViewCataloge from '../ButtonViewCataloge/ButtonViewCataloge';
+
 import { Grid } from '@/components/ui';
 import SearchForm from '@/components/ui/components/SearchForm/FormInfo';
 
@@ -50,12 +52,7 @@ const Title = (): React.ReactElement => (
         <h3 className="text-lg text-white sm:text-xl md:text-2xl">
           Descubre todos los modelos
         </h3>
-        <button
-          className="rounded-lg bg-yellow-suave px-6 py-3 text-sm font-bold text-gray-900 hover:bg-yellow-400 sm:text-base"
-          type="button"
-        >
-          Ver catálogo completo
-        </button>
+        <ButtonViewCataloge />
       </Grid>
     </Grid>
   </section>
