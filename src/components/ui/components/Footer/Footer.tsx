@@ -60,7 +60,8 @@ const Footer = (): React.ReactElement => (
         <div className="flex justify-center space-x-6 text-2xl ">
           <Link
             className="transition-all duration-300 hover:scale-110"
-            href="/"
+            href="https://facebook.com"
+            target="_blank"
           >
             <Image
               alt="Facebook Logo"
@@ -72,7 +73,8 @@ const Footer = (): React.ReactElement => (
           </Link>
           <Link
             className="transition-all duration-300 hover:scale-110"
-            href="/"
+            href="https://instagram.com"
+            target="_blank"
           >
             <Image
               alt="Instagram Logo"
@@ -84,7 +86,8 @@ const Footer = (): React.ReactElement => (
           </Link>
           <Link
             className="transition-all duration-300 hover:scale-110"
-            href="/"
+            href="https://x.com"
+            target="_blank"
           >
             <Image
               alt="X Logo"
@@ -96,7 +99,8 @@ const Footer = (): React.ReactElement => (
           </Link>
           <Link
             className="transition-all duration-300 hover:scale-110"
-            href="/"
+            href="https://youtube.com"
+            target="_blank"
           >
             <Image
               alt="YouTube Logo"

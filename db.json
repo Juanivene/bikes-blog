@@ -5,7 +5,8 @@
       "image": "/img/bikes/navi.png",
       "title": "Honda Navi 110",
       "cc": "110",
-      "isFavorite": false
+      "isFavorite": false,
+      "isFeatured": true
     },
     {
       "id": "2",
@@ -13,49 +14,52 @@
       "title": "KTM Duke 200",
       "cc": "200",
       "description": "loremloremloremloreml",
-      "isFavorite": true
+      "isFavorite": false,
+      "isFeatured": true
     },
     {
       "id": "3",
       "image": "/img/bikes/rouser.png",
       "title": "Bajaj Rouser N 200",
       "cc": "200",
-      "isFavorite": true
+      "isFeatured": true
     },
     {
       "id": "4",
       "image": "/img/bikes/NS.png",
       "title": "Bajaj Rouser NS 160",
       "cc": "160",
-      "isFavorite": false
+      "isFeatured": true
     },
     {
       "id": "5",
       "image": "/img/bikes/titan.png",
       "title": "Honda CG Titan",
       "cc": "150",
-      "isFavorite": false
+      "isFeatured": true
     },
     {
       "id": "6",
       "image": "/img/bikes/xr.png",
       "title": "Honda XR ",
       "cc": "250",
-      "isFavorite": false
+      "isFeatured": true
     },
     {
       "id": "7",
       "image": "/img/bikes/tornado.png",
       "title": "Honda Tornado ",
       "cc": "300",
-      "isFavorite": false
+      "isFavorite": true,
+      "isFeatured": true
     },
     {
       "id": "8",
       "image": "/img/bikes/xtz.png",
       "title": "Yamaha xtz",
       "cc": "250",
-      "isFavorite": false
+      "isFavorite": true,
+      "isFeatured": true
     }
   ]
 }
