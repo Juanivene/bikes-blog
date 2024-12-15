@@ -1,6 +1,5 @@
+import Link from 'next/link';
 import React from 'react';
-
-import ButtonViewCataloge from '../ButtonViewCataloge/ButtonViewCataloge';
 
 import { Grid } from '@/components/ui';
 import SearchForm from '@/components/ui/components/SearchForm/FormInfo';
@@ -44,15 +43,22 @@ const Title = (): React.ReactElement => (
       <Grid item className="mt-10 flex items-center justify-center  " xs={12}>
         <SearchForm />
       </Grid>
+      <Grid item className="flex items-center justify-center" xs={12}>
+        <h3 className="text-lg text-white sm:text-xl md:text-2xl">
+          Descubre tu proxima moto
+        </h3>
+      </Grid>
       <Grid
         item
-        className="mb-4 mt-10 flex flex-col items-center justify-center md:mb-0  "
+        className="mb-4 flex items-center justify-center md:mb-0"
         xs={12}
       >
-        <h3 className="text-lg text-white sm:text-xl md:text-2xl">
-          Descubre todos los modelos
-        </h3>
-        <ButtonViewCataloge />
+        <Link
+          className="rounded-lg bg-yellow-suave px-6 py-3 text-sm font-bold text-gray-900 hover:bg-yellow-400 sm:text-base"
+          href="/about"
+        >
+          ¿Quiénes somos?
+        </Link>
       </Grid>
     </Grid>
   </section>
