@@ -18,7 +18,7 @@ const ButtonViewCataloge = (): React.ReactElement => {
       type="button"
       onClick={handleScroll}
     >
-      Ver catálogo completo
+      Ver modelos
     </button>
   );
 };
