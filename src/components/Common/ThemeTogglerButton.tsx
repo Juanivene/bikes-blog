@@ -1,10 +1,10 @@
 'use client';
 
-import { useEffect, useState } from 'react';
-
 import { useTheme } from 'next-themes';
 import { FaSun } from 'react-icons/fa';
 import { IoMoon } from 'react-icons/io5';
+
+import { useHydrate } from '@/hooks';
 
 import { Button, Icon } from '@/components/ui';
 
@@ -19,8 +19,8 @@ const ThemeTogglerButton = (
 ): React.ReactElement => {
   const { className, size = '1rem', ...buttonProps } = props;
 
-  const [isClient, setIsClient] = useState(false);
   const { theme, setTheme } = useTheme();
+  const isHydrated = useHydrate();
 
   const icon =
     theme === 'light' ? <IoMoon size={size} /> : <FaSun size={size} />;
@@ -30,11 +30,7 @@ const ThemeTogglerButton = (
     else setTheme('light');
   };
 
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
-
-  if (!isClient)
+  if (!isHydrated)
     return (
       <div
         className={cn(

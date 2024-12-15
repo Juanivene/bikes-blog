@@ -182,30 +182,12 @@ const runPreBuildScript = async () => {
       'TypeScript compilation succeeded',
       'TypeScript compilation failed\n\n'
     );
-    if (fixESLint) {
-      console.log(
-        '\x1b[33m⚠️  WARNING: ESLint will check AND overwrite your files, starting in 5... ⚠️\x1b[0m'
-      );
-      await new Promise((resolve) => {
-        setTimeout(resolve, 5000);
-      });
-      console.log('\x1b[33m⚠️  WARNING: Starting ESLint fix...\x1b[0m\n');
-    }
     await runCommand(
       `npx eslint . ${fixESLint ? '--fix' : ''}`,
       'ESLint',
       `ESLint ${fixESLint ? 'check and fix' : 'check'} passed`,
       `ESLint ${fixESLint ? 'check and fix' : 'check'} failed\n\n`
     );
-    if (isLint) {
-      console.log(
-        '\x1b[33m⚠️  WARNING: Prettier will check AND overwrite your files, starting in 5... ⚠️\x1b[0m'
-      );
-      await new Promise((resolve) => {
-        setTimeout(resolve, 5000);
-      });
-      console.log('\x1b[33m⚠️  WARNING: Starting Prettier fix...\x1b[0m\n');
-    }
     await runCommand(
       'npm run prettier',
       'Prettier',
