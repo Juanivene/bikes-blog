@@ -1,5 +1,13 @@
+import FavoritesCardsContainer from '@/components/ui/components/FavoritesCardsContainer/FavoritesCardsContainer';
+import Footer from '@/components/ui/components/Footer/Footer';
+import Header from '@/components/ui/components/Header/Header';
+
 const Favorites = (): React.ReactElement => (
-  <div>Motos marcadas como favoritas</div>
+  <div>
+    <Header />
+    <FavoritesCardsContainer />
+    <Footer />
+  </div>
 );
 
 export default Favorites;

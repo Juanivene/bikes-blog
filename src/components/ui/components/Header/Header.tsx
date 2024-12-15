@@ -67,10 +67,16 @@ const Header = (): React.ReactElement => (
           BikeWorld
         </Link>
       </div>
-      <div className="navbar-end flex">
-        <button className="btn btn-circle btn-ghost text-white" type="button">
+      <div className="navbar-end relative flex">
+        <Link
+          className="group btn btn-circle btn-ghost relative text-white"
+          href="/favorites"
+        >
           <div className="indicator p-1">⭐</div>
-        </button>
+          <span className="absolute left-1/2 top-full mt-2 hidden -translate-x-1/2 transform rounded bg-yellow-500 px-2 py-1 text-xs font-semibold text-blue-950 shadow-md group-hover:block">
+            Ver favoritos
+          </span>
+        </Link>
       </div>
     </div>
   </header>
