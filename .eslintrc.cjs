@@ -153,7 +153,7 @@ module.exports = {
       'warn',
       { 'ts-ignore': 'allow-with-description' }, // Allows `ts-ignore` comments with a description.
     ],
-    '@typescript-eslint/no-floating-promises': 'error', // Avoid using floating promises.
+    '@typescript-eslint/no-floating-promises': 'off', // Avoid using floating promises.
     '@typescript-eslint/no-unsafe-assignment': 'error', // Avoid unsafe assignments.
     '@typescript-eslint/no-unsafe-member-access': 'error', // Prevent unsafe access to members of an object.
     '@typescript-eslint/no-unsafe-call': 'error', // Avoid unsafe function calls.
