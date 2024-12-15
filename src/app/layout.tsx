@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 
 import SonnerToast from '@/components/Common/SonnerToast';
 import ErrorBoundary from '@/components/Error/ErrorBoundary';
-import Header from '@/components/ui/components/Header/Header';
 
 import russoOne from '@/styles/fonts';
 import '@/styles/tailwind.css';
@@ -25,7 +24,6 @@ const RootLayout = ({
       className={`flex h-full flex-col bg-gray-carbon ${russoOne.className}`}
     >
       <ErrorBoundary>
-        <Header />
         <main className="flex-1" id="main">
           {children}
         </main>
