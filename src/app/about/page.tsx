@@ -1,10 +1,13 @@
+import AboutContainer from '@/components/ui/components/AboutContainer/AboutContainer';
+import Footer from '@/components/ui/components/Footer/Footer';
+import Header from '@/components/ui/components/Header/Header';
+
 const About = (): React.ReactElement => (
-  <div>
-    Sobre miSobre miSobre miSobre miSobre miSobre miSobre miSobre miSobre
-    miSobre miSobre miSobre miSobre miSobre miSobre miSobre miSobre miSobre
-    miSobre miSobre miSobre miSobre miSobre miSobre miSobre miSobre miSobre
-    miSobre miSobre mi
-  </div>
+  <>
+    <Header />
+    <AboutContainer />
+    <Footer />
+  </>
 );
 
 export default About;
