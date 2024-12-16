@@ -40,10 +40,16 @@ const Detail = (): React.ReactElement => {
     >
       <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
         <div className="relative mx-2 w-full max-w-lg rounded-lg bg-gray-900 bg-opacity-30 text-white shadow-lg backdrop-blur-md sm:w-11/12 sm:max-w-md md:w-9/12 md:max-w-4xl lg:w-8/12">
-          <div className="border-b border-gray-700 p-4">
+          <div className=" border-b border-gray-700 p-4">
             <h2 className="text-lg font-semibold sm:text-xl md:text-2xl">
               Detalles de tu Moto
             </h2>
+            {/* "BikeWorld" superior, visible en md o menor */}
+            <p
+              className={`absolute right-4 top-4 block text-3xl font-semibold text-yellow-500 md:hidden ${bangers.className}`}
+            >
+              BikeWorld
+            </p>
           </div>
 
           <div className="max-h-[70vh] space-y-4 overflow-y-auto p-6 text-sm md:text-base">
@@ -62,8 +68,9 @@ const Detail = (): React.ReactElement => {
           </div>
 
           <div className="flex justify-between border-t border-gray-700 p-4">
+            {/* "BikeWorld" inferior, oculto en md o menor */}
             <p
-              className={`text-3xl font-semibold text-yellow-500 ${bangers.className}`}
+              className={`hidden text-3xl font-semibold text-yellow-500 md:block ${bangers.className}`}
             >
               BikeWorld
             </p>
