@@ -36,10 +36,10 @@ const Detail = (): React.ReactElement => {
 
   return (
     <div
-      className={`h-[100vh] w-full bg-[url('/img/bikes/bike-bg/bikersBg.png')] bg-cover bg-center md:h-[100vh] ${poppins.className}`}
+      className={`h-full w-full bg-[url('/img/bikes/bike-bg/bikersBg.png')] bg-cover bg-center md:h-full ${poppins.className}`}
     >
       <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
-        <div className="relative w-full max-w-3xl rounded-lg bg-gray-900 bg-opacity-30 text-white shadow-lg backdrop-blur-md sm:max-w-md md:max-w-4xl">
+        <div className="relative mx-2 w-full max-w-lg rounded-lg bg-gray-900 bg-opacity-30 text-white shadow-lg backdrop-blur-md sm:w-11/12 sm:max-w-md md:w-9/12 md:max-w-4xl lg:w-8/12">
           <div className="border-b border-gray-700 p-4">
             <h2 className="text-lg font-semibold sm:text-xl md:text-2xl">
               Detalles de tu Moto
@@ -67,7 +67,7 @@ const Detail = (): React.ReactElement => {
             >
               BikeWorld
             </p>
-            <div className="flex justify-center space-x-6 text-2xl ">
+            <div className="flex justify-center space-x-1 text-2xl md:space-x-6">
               <Link
                 className="transition-all duration-300 hover:scale-110"
                 href="https://facebook.com"
@@ -122,10 +122,10 @@ const Detail = (): React.ReactElement => {
               </Link>
             </div>
             <Link
-              className="rounded-lg bg-yellow-suave px-4 py-2 text-sm text-gray-900 hover:bg-yellow-400 md:text-base"
+              className="rounded-lg bg-yellow-suave px-4 py-2 text-base text-gray-900 hover:bg-yellow-400 sm:px-4 sm:py-2 sm:text-sm md:px-4 md:py-2 md:text-base"
               href="/"
             >
-              Volver al inicio
+              Inicio
             </Link>
           </div>
         </div>
@@ -133,5 +133,4 @@ const Detail = (): React.ReactElement => {
     </div>
   );
 };
-
 export default Detail;
