@@ -8,10 +8,10 @@ import '@/styles/tailwind.css';
 
 // TODO: Change Metadata
 export const metadata: Metadata = {
-  title: 'Template NextJS',
-  description: '...',
+  title: 'BikeWorld',
+  description: 'Blog de motos en español',
   authors: [{ name: 'Dirección de Sistemas del Poder Judicial de Tucumán' }],
-  keywords: ['...', 'pjt', 'poder judicial', 'tucuman', 'corte justicia'],
+  keywords: ['...', 'moto', 'motos', 'blogs', 'moto blogs'],
 };
 
 const RootLayout = ({
