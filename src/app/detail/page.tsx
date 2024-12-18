@@ -1,38 +1,34 @@
-'use client';
-
 import Image from 'next/image';
 import Link from 'next/link';
-import { useSearchParams } from 'next/navigation';
-import { useEffect, useState } from 'react';
 
-import { remark } from 'remark';
-import gfm from 'remark-gfm';
-import html from 'remark-html';
+import 'github-markdown-css';
+import ReactMarkdown from 'react-markdown';
+import rehypeRaw from 'rehype-raw';
+import remarkGfm from 'remark-gfm';
 
 import bangers from '@/styles/fontBanger';
 import poppins from '@/styles/poppinsFont';
 
-const Detail = (): React.ReactElement => {
-  const searchParams = useSearchParams();
-  const bikeId = searchParams.get('moto');
-  const [content, setContent] = useState<string>('');
-  const [error, setError] = useState<boolean | null>(false);
+const baseUrl = process.env.NEXT_PUBLIC_DB_HOST;
 
-  useEffect(() => {
-    if (bikeId) {
-      fetch(`/bikesMD/${bikeId}.md`)
-        .then(async (res) => {
-          if (!res.ok) throw new Error('No se pudo encontrar el archivo.');
-          const text = await res.text();
-          const processedContent = await remark()
-            .use(gfm)
-            .use(html)
-            .process(text);
-          setContent(processedContent.toString());
-        })
-        .catch(() => setError(true));
+const Detail = async ({
+  searchParams,
+}: {
+  searchParams: { [key: string]: string };
+}): Promise<React.ReactElement> => {
+  const bikeId = searchParams.moto;
+  let error = false;
+  let content = '';
+
+  try {
+    const res = await fetch(`${baseUrl}/bikesMD/${bikeId}.md`);
+    if (!res.ok) {
+      throw new Error('No se pudo encontrar el archivo.');
     }
-  }, [bikeId]);
+    content = await res.text();
+  } catch (err) {
+    error = true;
+  }
 
   return (
     <div
@@ -40,11 +36,10 @@ const Detail = (): React.ReactElement => {
     >
       <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
         <div className="relative mx-2 w-full max-w-lg rounded-lg bg-gray-900 bg-opacity-30 text-white shadow-lg backdrop-blur-md sm:w-11/12 sm:max-w-md md:w-9/12 md:max-w-4xl lg:w-8/12">
-          <div className=" border-b border-gray-700 p-4">
+          <div className="border-b border-gray-700 p-4">
             <h2 className="text-lg font-semibold sm:text-xl md:text-2xl">
               Detalles de tu Moto
             </h2>
-            {/* "BikeWorld" superior, visible en md o menor */}
             <p
               className={`absolute right-4 top-4 block text-3xl font-semibold text-yellow-500 md:hidden ${bangers.className}`}
             >
@@ -52,23 +47,26 @@ const Detail = (): React.ReactElement => {
             </p>
           </div>
 
-          <div className="max-h-[70vh] space-y-4 overflow-y-auto p-6 text-sm md:text-base">
+          <div className="max-h-[70vh] space-y-4 overflow-y-auto p-6">
             {error && (
               <p className="text-red-500">
                 Lamentablemente no pudimos acceder al detalle de tu moto.
               </p>
             )}
-            {content && (
-              <div
-                className="prose-invert prose list-inside list-disc space-y-2 pl-5"
-                dangerouslySetInnerHTML={{ __html: content }}
-              />
+            {!error && content && (
+              <div className="markdown-body">
+                <ReactMarkdown
+                  rehypePlugins={[rehypeRaw]}
+                  remarkPlugins={[remarkGfm]}
+                >
+                  {content}
+                </ReactMarkdown>
+              </div>
             )}
             {!error && !content && <p>Cargando contenido...</p>}
           </div>
 
           <div className="flex justify-between border-t border-gray-700 p-4">
-            {/* "BikeWorld" inferior, oculto en md o menor */}
             <p
               className={`hidden text-3xl font-semibold text-yellow-500 md:block ${bangers.className}`}
             >
@@ -140,4 +138,5 @@ const Detail = (): React.ReactElement => {
     </div>
   );
 };
+
 export default Detail;
