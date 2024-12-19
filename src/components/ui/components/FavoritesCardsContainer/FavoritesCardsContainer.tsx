@@ -29,7 +29,7 @@ const FavoritesCardsContainer = async (): Promise<React.ReactElement> => {
       </h1>
 
       {favoritesBikes.length > 0 ? (
-        <div className="grid grid-cols-1 gap-6 bg-gray-carbon px-4 xxs:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 lg:px-10">
+        <div className="xxs:grid-cols-2 grid grid-cols-1 gap-6 bg-gray-carbon px-4 md:grid-cols-3 lg:grid-cols-4 lg:px-10">
           {favoritesBikes.map((bike) => (
             <BikeCard bike={bike} key={bike.id} />
           ))}

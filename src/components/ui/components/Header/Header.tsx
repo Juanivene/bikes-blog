@@ -4,7 +4,7 @@ import bangers from '@/styles/fontBanger';
 
 const Header = (): React.ReactElement => (
   <header className="bg-gradient-to-r from-gray-900 to-black p-4">
-    <div className="container mx-auto flex items-center justify-between">
+    <div className=" mx-auto flex items-center justify-between px-5">
       <div className="navbar-start flex items-center md:hidden">
         <div className="dropdown">
           <button className="btn btn-circle btn-ghost text-white" type="button">

@@ -5,7 +5,7 @@
       "image": "/img/bikes/navi.png",
       "title": "Honda Navi 110",
       "cc": "110",
-      "isFavorite": true
+      "isFavorite": false
     },
     {
       "id": "2",
@@ -13,7 +13,7 @@
       "title": "KTM Duke 200",
       "cc": "200",
       "description": "loremloremloremloreml",
-      "isFavorite": false
+      "isFavorite": true
     },
     {
       "id": "3",
@@ -48,7 +48,7 @@
       "image": "/img/bikes/tornado.png",
       "title": "Honda Tornado ",
       "cc": "300",
-      "isFavorite": false
+      "isFavorite": true
     },
     {
       "id": "8",
