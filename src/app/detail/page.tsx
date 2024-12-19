@@ -32,10 +32,10 @@ const Detail = async ({
 
   return (
     <div
-      className={`h-full w-full bg-[url('/img/bikes/bike-bg/bikersBg.png')] bg-cover bg-center md:h-full ${poppins.className}`}
+      className={`h-full w-full bg-[url('/img/bikes/bike-bg/bikersBg.png')] bg-cover bg-center sm:px-2 ${poppins.className}`}
     >
       <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
-        <div className="relative mx-2 w-full max-w-lg rounded-lg bg-gray-900 bg-opacity-30 text-white shadow-lg backdrop-blur-md sm:w-11/12 sm:max-w-md md:w-9/12 md:max-w-4xl lg:w-8/12">
+        <div className="relative w-11/12 rounded-lg bg-gray-900 bg-opacity-30 text-white shadow-lg backdrop-blur-md md:max-w-4xl ">
           <div className="border-b border-gray-700 p-4">
             <h2 className="text-lg font-semibold sm:text-xl md:text-2xl">
               Detalles de tu Moto
