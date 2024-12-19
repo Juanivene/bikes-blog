@@ -36,7 +36,7 @@ export const theme = {
         'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
     },
     screens: {
-      xxs: '442px',
+      large: '1280px',
     },
   },
 };

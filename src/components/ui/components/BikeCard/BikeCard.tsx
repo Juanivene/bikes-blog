@@ -1,5 +1,6 @@
 'use client';
 
+import { Star } from 'lucide-react';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
@@ -43,16 +44,10 @@ const BikeCard = (props: Props): React.ReactElement => {
 
   return (
     <article
-      className="mx-4 my-4 max-w-sm rounded-lg border border-gray-200 bg-white shadow-md transition-transform hover:scale-105 hover:shadow-lg sm:mx-0 lg:max-w-md"
-      key={bike.id}
+      className="mx-4 my-4 max-w-sm rounded-lg border border-gray-200 bg-white shadow-md 
+      transition-transform hover:scale-105 hover:shadow-lg sm:mx-0 lg:max-w-md"
     >
-      <Image
-        alt={bike.title}
-        className="h-64 rounded-t-lg object-cover sm:h-72"
-        height={500}
-        src={bike.image}
-        width={350}
-      />
+      <Image alt={bike.title} height={500} src={bike.image} width={350} />
       <div className="flex flex-col gap-4 space-y-2 p-4">
         <h3 className="text-lg font-bold text-gray-800">{bike.title}</h3>
         <p className="text-sm text-gray-600">
@@ -61,18 +56,23 @@ const BikeCard = (props: Props): React.ReactElement => {
         </p>
         <div className="flex items-center gap-2">
           <button
-            className={`rounded-full p-2 text-lg transition ${favorite ? 'bg-yellow-300 text-white' : 'bg-gray-200 text-gray-600'}`}
+            className={`rounded-full p-2 text-lg transition ${
+              favorite
+                ? 'bg-yellow-300 text-white'
+                : 'bg-gray-200 text-gray-600'
+            }`}
             type="button"
             onClick={() => void handleFavorite(bike.id, favorite)}
           >
-            ⭐
+            <Star />
           </button>
           <span className="text-sm font-medium text-gray-600">
             {favorite ? 'Quitar de favoritos' : 'Agregar a favoritos'}
           </span>
         </div>
         <button
-          className="mt-2 rounded-lg bg-yellow-400 px-6 py-3 text-sm font-semibold text-gray-900 transition hover:bg-yellow-300 sm:text-base md:text-lg"
+          className="mt-2 rounded-lg bg-yellow-400 px-6 py-3 text-sm font-semibold 
+          text-gray-900 transition hover:bg-yellow-300 sm:text-base md:text-lg"
           type="button"
           onClick={() => router.push(`/detail?moto=${bike.id}`)}
         >
