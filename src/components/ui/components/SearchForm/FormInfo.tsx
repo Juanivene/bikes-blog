@@ -1,9 +1,11 @@
 'use client';
 
-import Image from 'next/image';
-import Link from 'next/link';
+// import Image from 'next/image';
+// import Link from 'next/link';
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 
+import SearchInput from './SearchInput';
+import SearchResults from './SearchResults';
 import { useForm } from 'react-hook-form';
 
 const BACKEND_URL = process.env.NEXT_PUBLIC_DB_HOST;
@@ -72,58 +74,18 @@ const SearchForm: React.FC = (): React.ReactElement => {
   return (
     <div className="relative flex flex-col items-center gap-4" ref={formRef}>
       <form
-        className="flex w-full max-w-lg flex-col items-center gap-4 rounded-lg bg-gray-800 p-6 shadow-lg sm:flex-row"
+        className="w-full max-w-md rounded-xl bg-gradient-to-r from-gray-900 to-gray-800 p-6 shadow-xl sm:max-w-sm sm:p-4"
         onSubmit={(event) => event.preventDefault()}
       >
-        <span className="sr-only">Buscar moto</span>
-
-        <input
-          aria-label="Campo de búsqueda"
-          className="w-full rounded-md bg-gray-700 px-4 py-2 text-sm text-gray-300 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-yellow-300"
-          placeholder="Busca tu moto..."
-          type="text"
-          {...register('title')}
-        />
+        <SearchInput register={register} />
       </form>
 
       {isListVisible && (
-        <ul className="absolute left-0 top-full z-10 mt-2 max-h-72 w-full max-w-lg divide-y divide-gray-700 overflow-y-auto rounded-lg bg-gray-800 text-gray-300 shadow-md">
-          {filteredResults.map((bike: Bike, index: number) => (
-            <Link
-              className="group relative flex items-center justify-between rounded-lg px-4 py-3 transition duration-300 ease-in-out hover:bg-gray-600"
-              href={`/detail?moto=${bike.id}`}
-              key={bike.id}
-            >
-              <div className="flex items-center gap-3">
-                <span className="text-sm font-medium text-gray-300">
-                  {index + 1}:
-                </span>
-                <p className="text-lg font-semibold text-gray-300">
-                  {bike.title}
-                </p>
-              </div>
-              <div className="flex-shrink-0">
-                <Image
-                  alt={bike.title}
-                  className="rounded-md border border-gray-500"
-                  height={20}
-                  src={bike.image}
-                  width={40}
-                />
-              </div>
-            </Link>
-          ))}
-          {filteredResults.length === 0 && searchValue.length > 2 && (
-            <li className="px-4 py-2 text-gray-500">
-              No se encontraron coincidencias.
-            </li>
-          )}
-          {error && (
-            <li className="px-4 py-2 text-gray-500">
-              Ocurrio un error, intenta de nuevo más tarde
-            </li>
-          )}
-        </ul>
+        <SearchResults
+          error={error}
+          filteredResults={filteredResults}
+          searchValue={searchValue}
+        />
       )}
     </div>
   );
