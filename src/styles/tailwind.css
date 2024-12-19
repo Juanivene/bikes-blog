@@ -4,3 +4,29 @@
 .markdown-body {
   background-color: transparent !important;
 }
+.markdown-body img {
+  border-radius: 10px;
+}
+.markdown-body table {
+  background-color: transparent !important; /* Asegura que las tablas también sean transparentes */
+  border: 1px solid transparent; /* Borde suave para las tablas */
+}
+
+.markdown-body th,
+.markdown-body td {
+  padding: 8px;
+  text-align: left;
+}
+
+.markdown-body th {
+  background-color: transparent !important; /* Fondo transparente para los encabezados */
+  font-weight: bold;
+}
+
+.markdown-body tr:nth-child(even) {
+  background-color: transparent !important; /* Fondo transparente para filas pares */
+}
+
+.markdown-body tr:nth-child(odd) {
+  background-color: transparent !important; /* Fondo transparente para filas impares */
+}
