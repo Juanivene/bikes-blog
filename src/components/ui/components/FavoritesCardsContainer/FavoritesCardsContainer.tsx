@@ -22,18 +22,12 @@ const FavoritesCardsContainer = async (): Promise<React.ReactElement> => {
     <div className="bg-gradient-to-b from-gray-900 to-gray-800">
       <div className="relative overflow-hidden">
         <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" />
-        <div
-          className="relative h-80 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage:
-              'url("https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&q=80&w=1920")',
-          }}
-        >
+        <div className="relative h-80 bg-[url('https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&q=80&w=1920')] bg-cover bg-center  bg-no-repeat">
           <div className="flex h-full flex-col items-center justify-center px-4 text-center">
             <div className="mb-2 flex items-center space-x-2">
               <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">
                 Motos favoritas
-              </h1>{' '}
+              </h1>
               <Heart
                 className="h-8 w-8 text-yellow-suave"
                 fill="currentColor"

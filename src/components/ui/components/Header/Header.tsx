@@ -73,7 +73,7 @@ const Header = (): React.ReactElement => (
           href="/favorites"
         >
           <div className="indicator p-1">⭐</div>
-          <span className="absolute left-1/2 top-full mt-2 hidden -translate-x-1/2 transform rounded bg-yellow-500 px-2 py-1 text-xs font-semibold text-blue-950 shadow-md group-hover:block">
+          <span className=" absolute left-1/2 top-full z-40 mt-2 hidden -translate-x-1/2 transform rounded bg-yellow-500 px-2 py-1 text-xs font-semibold text-blue-950 shadow-md group-hover:block">
             Ver favoritos
           </span>
         </Link>
