@@ -7,7 +7,7 @@ import rehypeRaw from 'rehype-raw';
 import remarkGfm from 'remark-gfm';
 
 import bangers from '@/styles/fontBanger';
-import poppins from '@/styles/poppinsFont';
+import '@/styles/markdown.css';
 
 const baseUrl = process.env.NEXT_PUBLIC_DB_HOST;
 
@@ -31,9 +31,7 @@ const Detail = async ({
   }
 
   return (
-    <div
-      className={`h-full w-full bg-[url('/img/bikes/bike-bg/bikersBg.png')] bg-cover bg-center md:h-full ${poppins.className}`}
-    >
+    <div className="h-full w-full bg-[url('/img/bikes/bike-bg/bikersBg.png')] bg-cover bg-center md:h-full ">
       <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
         <div className="relative mx-2 w-full max-w-lg rounded-lg bg-gray-900 bg-opacity-30 text-white shadow-lg backdrop-blur-md sm:w-11/12 sm:max-w-md md:w-9/12 md:max-w-4xl lg:w-8/12">
           <div className="border-b border-gray-700 p-4">

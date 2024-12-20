@@ -1,0 +1,33 @@
+.markdown-body {
+  background-color: transparent !important;
+  text-align: center;
+  display: flex; /* Activa Flexbox */
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  flex-direction: column; /* Asegura que los elementos estén apilados verticalmente si hay más contenido */
+}
+
+.markdown-body img {
+  border-radius: 10px;
+}
+
+.markdown-body table {
+  background-color: transparent !important; /* Asegura que las tablas también sean transparentes */
+  border: 1px solid transparent; /* Borde suave para las tablas */
+  margin: 0 auto; /* Alternativa para asegurar el centrado si no usas Flexbox */
+}
+
+.markdown-body td {
+  padding: 8px;
+  text-align: left;
+}
+
+.markdown-body th {
+  background-color: transparent !important; /* Fondo transparente para los encabezados */
+  font-weight: bold;
+}
+
+.markdown-body tr:nth-child(even),
+.markdown-body tr:nth-child(odd) {
+  background-color: transparent !important; /* Fondo transparente para todas las filas */
+}
