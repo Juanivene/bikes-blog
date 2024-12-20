@@ -46,7 +46,7 @@
       "image": "/img/bikes/xr.png",
       "title": "Honda XR ",
       "cc": "250",
-      "isFavorite": false,
+      "isFavorite": true,
       "isHighlighted": true
     },
     {
