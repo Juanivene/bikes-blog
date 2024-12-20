@@ -5,7 +5,7 @@
       "image": "/img/bikes/navi.png",
       "title": "Honda Navi 110",
       "cc": "110",
-      "isFavorite": false
+      "isFavorite": true
     },
     {
       "id": "2",
@@ -13,14 +13,14 @@
       "title": "KTM Duke 200",
       "cc": "200",
       "description": "loremloremloremloreml",
-      "isFavorite": true
+      "isFavorite": false
     },
     {
       "id": "3",
       "image": "/img/bikes/rouser.png",
       "title": "Bajaj Rouser N 200",
       "cc": "200",
-      "isFavorite": false
+      "isFavorite": true
     },
     {
       "id": "4",
@@ -34,7 +34,7 @@
       "image": "/img/bikes/titan.png",
       "title": "Honda CG Titan",
       "cc": "150",
-      "isFavorite": false
+      "isFavorite": true
     },
     {
       "id": "6",

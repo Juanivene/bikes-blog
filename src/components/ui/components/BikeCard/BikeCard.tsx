@@ -5,6 +5,8 @@ import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 
+import { toast } from 'sonner';
+
 export type Bikes = {
   id: string;
   title: string;
@@ -40,6 +42,11 @@ const BikeCard = (props: Props): React.ReactElement => {
     }
 
     setFavorite(!isFavorite);
+    if (!favorite) {
+      toast.success('Moto agregada a favoritos');
+    } else {
+      toast.info('Moto eliminada de favoritos');
+    }
   };
 
   return (
