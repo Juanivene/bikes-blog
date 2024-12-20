@@ -12,11 +12,13 @@ const Title = (): React.ReactElement => (
 
     <Grid container className="relative z-10 px-8" gap={4}>
       <Grid item className="flex items-center justify-center pt-16" xs={12}>
-        <Grid container className={bangers.className} gap={4}>
+        <Grid container gap={4}>
           <Grid item xs={12}>
-            <h2 className="bg-gradient-to-r from-yellow-300 to-yellow-100 bg-clip-text text-center text-4xl font-bold text-transparent sm:text-4xl md:text-6xl lg:text-7xl">
+            <h1
+              className={`${bangers.className} bg-gradient-to-r from-yellow-suave to-orange-500 bg-clip-text text-center text-4xl font-bold text-transparent sm:text-4xl md:text-6xl lg:text-7xl`}
+            >
               La moto que buscas, está aquí.
-            </h2>
+            </h1>
           </Grid>
           <Grid item className="flex items-center justify-center" xs={12}>
             <h3 className="text-center text-lg text-white sm:text-xl md:text-2xl lg:text-3xl">

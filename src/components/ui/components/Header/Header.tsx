@@ -23,7 +23,7 @@ const Header = (): React.ReactElement => (
               />
             </svg>
           </button>
-          <ul className="menu dropdown-content menu-sm z-[1] mt-3 w-52 rounded-lg bg-white p-2 shadow-lg">
+          <ul className="menu dropdown-content menu-sm z-40 mt-3 w-52 rounded-lg bg-yellow-suave bg-opacity-80 p-2 shadow-lg">
             <li>
               <Link className="text-gray-800 hover:text-yellow-suave" href="/">
                 Inicio
@@ -32,7 +32,7 @@ const Header = (): React.ReactElement => (
             <li>
               <Link
                 className="text-gray-800 hover:text-yellow-suave"
-                href="/favorites"
+                href="/bikes"
               >
                 Motos
               </Link>
@@ -52,7 +52,7 @@ const Header = (): React.ReactElement => (
         <Link className="text-white hover:text-yellow-suave" href="/">
           Inicio
         </Link>
-        <Link className="text-white hover:text-yellow-suave" href="/favorites">
+        <Link className="text-white hover:text-yellow-suave" href="/bikes">
           Motos
         </Link>
         <Link className="text-white hover:text-yellow-suave" href="/about">

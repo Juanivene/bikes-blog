@@ -9,6 +9,7 @@ type Bikes = {
   cc: string;
   isFavorite: boolean;
   image: string;
+  isHighlighted: boolean;
 };
 
 const BACKEND_URL = process.env.NEXT_PUBLIC_DB_HOST;
