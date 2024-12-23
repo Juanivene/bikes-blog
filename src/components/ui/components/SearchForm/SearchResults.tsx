@@ -16,15 +16,13 @@ const SearchResults = ({
   error,
 }: SearchResultsProps): React.ReactElement => (
   <motion.ul
-    animate={{ opacity: 1, y: 0 }}
-    className="absolute left-0 top-full z-10 mt-2 max-h-80 w-full max-w-xl 
-        divide-y divide-gray-700/50 overflow-y-auto rounded-xl bg-gray-900/95 
-        text-gray-100 shadow-xl ring-1 ring-gray-700/50 backdrop-blur-sm"
-    initial={{ opacity: 0, y: -10 }}
+    className="absolute left-0 top-full z-50 max-h-80 w-full max-w-xl 
+        divide-y divide-gray-700/50 overflow-y-auto rounded-xl rounded-t-none 
+        bg-gray-900/95 text-gray-100 shadow-xl ring-1 ring-gray-700/50 backdrop-blur-sm"
   >
     {filteredResults.map((bike: Bikes, index: number) => (
       <Link
-        className="group flex items-center justify-between gap-4 px-6 py-4 
+        className="group z-50 flex items-center justify-between gap-4 px-6 py-4 
             transition duration-300 hover:bg-gray-800"
         href={`/detail?moto=${bike.id}`}
         key={bike.id}

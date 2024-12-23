@@ -74,7 +74,7 @@ const SearchForm: React.FC = (): React.ReactElement => {
   return (
     <div className="relative flex flex-col items-center gap-4" ref={formRef}>
       <form
-        className="w-full max-w-md rounded-xl bg-gradient-to-r from-gray-900 to-gray-800 p-6 shadow-xl sm:max-w-sm sm:p-4"
+        className={`w-full max-w-md rounded-xl bg-gradient-to-r from-gray-900 to-gray-800 p-6 shadow-xl sm:max-w-sm sm:p-4 ${isListVisible ? 'rounded-b-none' : ''}`}
         onSubmit={(event) => event.preventDefault()}
       >
         <SearchInput register={register} />
