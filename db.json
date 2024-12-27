@@ -5,7 +5,7 @@
       "image": "/img/bikes/navi.png",
       "title": "Honda Navi 110",
       "cc": "110",
-      "isFavorite": true,
+      "isFavorite": false,
       "isHighlighted": true
     },
     {

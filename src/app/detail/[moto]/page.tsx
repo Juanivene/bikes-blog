@@ -12,11 +12,11 @@ import '@/styles/markdown.css';
 const baseUrl = process.env.NEXT_PUBLIC_DB_HOST;
 
 const Detail = async ({
-  searchParams,
+  params,
 }: {
-  searchParams: { [key: string]: string };
+  params: Promise<{ [key: string]: string }>;
 }): Promise<React.ReactElement> => {
-  const bikeId = searchParams.moto;
+  const { moto: bikeId } = await params;
   let error = false;
   let content = '';
 

@@ -81,7 +81,7 @@ const BikeCard = (props: Props): React.ReactElement => {
           className="mt-2 rounded-lg bg-yellow-400 px-6 py-3 text-sm font-semibold 
           text-gray-900 transition hover:bg-yellow-300 sm:text-base md:text-lg"
           type="button"
-          onClick={() => router.push(`/detail?moto=${bike.id}`)}
+          onClick={() => router.push(`/detail/${bike.id}`)}
         >
           Ver detalles
         </button>
