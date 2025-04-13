@@ -5,6 +5,8 @@ import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 
+import { toast } from 'sonner';
+
 export type Bikes = {
   id: string;
   title: string;
@@ -40,6 +42,11 @@ const BikeCard = (props: Props): React.ReactElement => {
     }
 
     setFavorite(!isFavorite);
+    if (!favorite) {
+      toast.success('Moto agregada a favoritos');
+    } else {
+      toast.info('Moto eliminada de favoritos');
+    }
   };
 
   return (
@@ -74,7 +81,7 @@ const BikeCard = (props: Props): React.ReactElement => {
           className="mt-2 rounded-lg bg-yellow-400 px-6 py-3 text-sm font-semibold 
           text-gray-900 transition hover:bg-yellow-300 sm:text-base md:text-lg"
           type="button"
-          onClick={() => router.push(`/detail?moto=${bike.id}`)}
+          onClick={() => router.push(`/detail/${bike.id}`)}
         >
           Ver detalles
         </button>

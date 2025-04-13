@@ -32,7 +32,8 @@ Para instalar y ejecutar el proyecto, sigue estos pasos:
 
 2. **Ejecutar el servidor de datos**:
 
-   Después de instalar las dependencias, necesitas iniciar el servidor de **JSON Server** para gestionar los datos de las motos. Usa uno de los siguientes comandos:
+   Después de instalar las dependencias, necesitas iniciar el servidor de **JSON Server** para gestionar los datos de las motos.
+   Usa uno de los siguientes comandos:
 
    - Si usas **pnpm**:
 
@@ -46,6 +47,12 @@ Para instalar y ejecutar el proyecto, sigue estos pasos:
      ```
 
    Este comando iniciará el servidor local de **JSON Server**, simulando una API RESTful para manejar los datos de las motos.
+
+> **Nota**: Asegúrate de crear un archivo `.env` en la raíz del proyecto con la siguiente variable de entorno antes de ejecutar el servidor:
+
+> ```env
+> NEXT_PUBLIC_DB_HOST=http://localhost:4000
+> ```
 
 3. **Ejecutar la aplicación en desarrollo**:
 
