@@ -125,8 +125,8 @@ const Footer = (): React.ReactElement => {
       <div className="mt-6 text-center">
         <p className="text-sm text-gray-500">
           &copy; {currentYear}{' '}
-          <span className="font-bold text-yellow-500">BikeWorld</span>. Todos
-          los derechos reservados.
+          <span className="font-bold text-yellow-500">BikeWorld</span>. Tu moto
+          favorita esta aquí.
         </p>
       </div>
     </footer>

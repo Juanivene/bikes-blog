@@ -59,7 +59,7 @@ const FavoritesCardsContainer = async (): Promise<React.ReactElement> => {
                 favoritas para crear tu colección
               </p>
               <Link
-                className="group relative inline-flex items-center overflow-hidden rounded-full bg-yellow-suave px-8 py-3 text-white transition hover:bg-yellow-500"
+                className="group relative inline-flex items-center rounded-full bg-yellow-suave px-8 py-3 text-white transition hover:bg-yellow-500"
                 href="/"
               >
                 <span className="absolute -end-full transition-all group-hover:end-4">

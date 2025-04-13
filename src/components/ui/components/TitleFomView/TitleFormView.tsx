@@ -7,7 +7,7 @@ import SearchForm from '@/components/ui/components/SearchForm/FormInfo';
 import bangers from '@/styles/fontBanger';
 
 const Title = (): React.ReactElement => (
-  <section className="relative w-full overflow-hidden md:min-h-screen">
+  <section className="relative w-full md:min-h-screen">
     <div className="absolute inset-0 bg-[url('https://img1.wallspic.com/crops/6/8/5/3/3/133586/133586-motociclismo-deporte_extremo-truco-el_off_road-cascos_de_moto-3840x2160.jpg')] bg-cover bg-center " />
 
     <Grid container className="relative z-10 px-8" gap={4}>
