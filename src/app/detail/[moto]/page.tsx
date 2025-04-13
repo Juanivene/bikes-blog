@@ -8,6 +8,7 @@ import remarkGfm from 'remark-gfm';
 
 import bangers from '@/styles/fontBanger';
 import '@/styles/markdown.css';
+import poppins from '@/styles/poppinsFont';
 
 const baseUrl = process.env.NEXT_PUBLIC_DB_HOST;
 
@@ -31,9 +32,11 @@ const Detail = async ({
   }
 
   return (
-    <div className="h-full w-full bg-[url('/img/bikes/bike-bg/bikersBg.png')] bg-cover bg-center md:h-full ">
+    <div
+      className={`h-full w-full bg-[url('/img/bikes/bike-bg/bikersBg.png')] bg-cover bg-center sm:px-2 ${poppins.className}`}
+    >
       <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
-        <div className="relative mx-2 max-w-sm rounded-xl bg-gray-900 bg-opacity-45 text-white shadow-lg backdrop-blur-md md:max-w-xl lg:max-w-5xl ">
+        <div className="relative w-11/12 rounded-lg bg-gray-900 bg-opacity-30 text-white shadow-lg backdrop-blur-md md:max-w-4xl ">
           <div className="border-b border-gray-700 p-4">
             <h2 className="text-lg font-semibold sm:text-xl md:text-2xl">
               Detalles de tu Moto
